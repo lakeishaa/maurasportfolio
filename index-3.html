@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @font-face {
+    font-family: 'Timezone';
+    src: url('./HALTimezoneMonoUnlicensed-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Timezone';
+    src: url('./HALTimezoneMonoUnlicensed-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #demo {
+    font-family: 'Timezone', sans-serif;
+    font-size: 52.837px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 123%;
+    width: 1200px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .letter {
+    display: inline-block;
+  font-family: 'Timezone', sans-serif;
+
+  /* makes the movement smooth */
+  transition: transform 0.18s ease;
+  }
+
+  .letter.active {
+    animation: letterJump 0.45s ease;
+}
+
+@keyframes letterJump {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-8px);
+  }
+
+  70% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+  }
+
+  .space {
+    display: inline-block;
+    width: 0.28em;
+  }
+
+  .cursor {
+  display: inline-block;
+  margin-left: 2px;
+
+  /* CHANGE THIS to whatever constant color you want */
+  color: #0058DD;
+
+  animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes cursorColors {
+    0% {
+      color: #E8ED1A;
+    }
+
+    16% {
+      color: #F43F25;
+    }
+
+    32% {
+      color: #C7DD38;
+    }
+
+    48% {
+      color: #0058DD;
+    }
+
+    64% {
+      color: #32B7FF;
+    }
+
+    80% {
+      color: #FF87F4;
+    }
+
+    100% {
+      /* color: #E8ED1A; */
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<p id="demo">
+  <span id="cursor" class="cursor">|</span>
+</p>
+
+<script>
+
+  /* =========================================================
+     CONTROL PANEL
+  ========================================================= */
+
+  // MASTER TYPING SPEED
+  // 1 = normal
+  // 0.5 = faster
+  // 2 = slower
+  const typingSpeed = 0.3;
+
+
+  // NORMAL LETTER SPEED
+  const LETTER_DELAY_MIN = 35;
+  const LETTER_DELAY_RANDOM = 20;
+
+
+  // EXTRA DELAY AFTER SPACES
+  const SPACE_DELAY_MIN = 20;
+  const SPACE_DELAY_RANDOM = 100;
+
+
+  // EXTRA DELAY AFTER PUNCTUATION
+  const PUNCTUATION_DELAY_MIN = 180;
+  const PUNCTUATION_DELAY_RANDOM = 300;
+
+
+  // RANDOM HESITATION
+  // 0.03 = 3% chance per character
+  const HESITATION_CHANCE = 0.03;
+
+  const HESITATION_DELAY_MIN = 150;
+  const HESITATION_DELAY_RANDOM = 300;
+
+
+  // BACKSPACE SPEED
+  const DELETE_DELAY_MIN = 25;
+  const DELETE_DELAY_RANDOM = 40;
+
+
+  // HOW LONG BEFORE TYPO IS NOTICED
+  const TYPO_NOTICE_DELAY_MIN = 300;
+  const TYPO_NOTICE_DELAY_RANDOM = 600;
+
+
+  // PAUSE AFTER DELETING TYPO
+  const TYPO_RETYPE_DELAY_MIN = 100;
+  const TYPO_RETYPE_DELAY_RANDOM = 150;
+
+
+  // PAUSE BEFORE TYPING STARTS
+  const START_DELAY = 700;
+
+
+  // CUSTOM THINKING PAUSES
+  const THINKING_PAUSE_1 = 800;
+  const THINKING_PAUSE_2 = 600;
+  const THINKING_PAUSE_3 = 900;
+
+
+  // HOVER SYMBOL CHANCE
+  // 0.25 = 25%
+  const SYMBOL_CHANCE = 0.25;
+
+
+  // HOW LONG HOVER EFFECT STAYS
+  const HOVER_ACTIVE_DURATION = 700;
+
+
+  // HOVER TRAIL SPEED
+  const TRAIL_CURRENT = 0;
+  const TRAIL_PREV_1 = 120;
+  const TRAIL_PREV_2 = 240;
+  const TRAIL_PREV_3 = 360;
+  const TRAIL_NEXT_1 = 160;
+
+
+  // =========================================================
+  // TYPING COLOR TRAIL
+  // =========================================================
+
+  // Number of newest letters that stay colored
+  const TYPING_COLOR_TRAIL = 4;
+
+  // How quickly old letters return to black
+  // Higher = slower trail
+  const TYPING_COLOR_RESET_DELAY = 120;
+
+  /* =========================================================
+     ELEMENTS
+  ========================================================= */
+
+  const demo = document.getElementById('demo');
+  const cursor = document.getElementById('cursor');
+
+
+  /* =========================================================
+     COLORS + SYMBOLS
+  ========================================================= */
+
+  const colors = [
+    '#F43F25',
+    '#C7DD38',
+    '#32B7FF',
+    '#FF87F4' ];
+
+
+  const symbols = [
+    '&',
+    '*',
+    '$',
+    '!',
+    '#',
+    '%',
+    '+',
+    '@'
+    // '⋆',
+    // '˚',
+    // '꩜',
+    // '｡',
+    // '☁︎',
+    // '♥︎',
+    // 'ʚɞ',
+    // 'ꨄ︎',
+    // '✿',
+    // 'ৎ',
+    // '𑣲'
+  ];
+
+  const specialCharacters = {
+//   '⋆': '#F43F25',
+//   '˚': '#F43F25',
+//   '✎': '#C7DD38',
+//   '❀': '#32B7FF',
+//   '✺': '#FF87F4',
+//   '✶': '#0058DD'
+
+};
+
+  /* =========================================================
+     HELPERS
+  ========================================================= */
+
+  function randomColor() {
+    return colors[
+      Math.floor(Math.random() * colors.length)
+    ];
+  }
+
+  function randomSymbol() {
+    return symbols[
+      Math.floor(Math.random() * symbols.length)
+    ];
+  }
+
+  function sleep(ms) {
+    return new Promise(resolve =>
+      setTimeout(resolve, ms * typingSpeed)
+    );
+  }
+
+
+  /* =========================================================
+     HUMAN TYPING DELAY
+  ========================================================= */
+
+  function getRandomTypingDelay(character) {
+
+    let delay =
+      LETTER_DELAY_MIN +
+      Math.random() * LETTER_DELAY_RANDOM;
+
+    // spaces
+    if (character === ' ') {
+      delay +=
+        SPACE_DELAY_MIN +
+        Math.random() * SPACE_DELAY_RANDOM;
+    }
+
+    // punctuation
+    if (/[,.!?]/.test(character)) {
+      delay +=
+        PUNCTUATION_DELAY_MIN +
+        Math.random() * PUNCTUATION_DELAY_RANDOM;
+    }
+
+    // random hesitation
+    if (Math.random() < HESITATION_CHANCE) {
+      delay +=
+        HESITATION_DELAY_MIN +
+        Math.random() * HESITATION_DELAY_RANDOM;
+    }
+
+    return delay;
+  }
+
+
+  /* =========================================================
+     HOVER EFFECT
+  ========================================================= */
+
+  function activateLetter(letter, delay = 0) {
+    if (!letter) return;
+
+    // Prevent the same letter from constantly changing
+    // while the effect is still active
+    if (letter.dataset.busy === 'true') return;
+
+    letter.dataset.busy = 'true';
+
+    setTimeout(() => {
+
+      const originalCharacter =
+        letter.dataset.original;
+
+      const temporaryColor =
+        randomColor();
+
+      let temporaryCharacter =
+        originalCharacter;
+
+      // Sometimes change character into a symbol
+      if (Math.random() < SYMBOL_CHANCE) {
+        temporaryCharacter = randomSymbol();
+      }
+
+      letter.classList.add('active');
+
+      letter.style.color =
+        temporaryColor;
+
+      letter.textContent =
+        temporaryCharacter;
+
+
+      // Return to original letter + original color
+      setTimeout(() => {
+
+        letter.textContent =
+          originalCharacter;
+
+        letter.style.color =
+          letter.dataset.baseColor;
+
+        letter.classList.remove('active');
+
+        letter.dataset.busy = 'false';
+
+      }, HOVER_ACTIVE_DURATION);
+
+    }, delay);
+  }
+
+
+  /* =========================================================
+     HOVER TRAIL
+  ========================================================= */
+
+  function createTrail(letter) {
+
+    const letters =
+      Array.from(
+        document.querySelectorAll('.letter')
+      );
+
+    const index =
+      letters.indexOf(letter);
+
+
+    // hovered letter
+    activateLetter(
+      letter,
+      TRAIL_CURRENT
+    );
+
+
+    // letters behind cursor
+
+    if (letters[index - 1]) {
+      activateLetter(
+        letters[index - 1],
+        TRAIL_PREV_1
+      );
+    }
+
+    if (letters[index - 2]) {
+      activateLetter(
+        letters[index - 2],
+        TRAIL_PREV_2
+      );
+    }
+
+    if (letters[index - 3]) {
+      activateLetter(
+        letters[index - 3],
+        TRAIL_PREV_3
+      );
+    }
+
+
+    // one letter ahead
+
+    if (letters[index + 1]) {
+      activateLetter(
+        letters[index + 1],
+        TRAIL_NEXT_1
+      );
+    }
+  }
+
+
+  /* =========================================================
+     CREATE LETTER
+  ========================================================= */
+
+  function createCharacter(character) {
+
+    const span = document.createElement('span');
+
+    if (character === ' ') {
+
+    span.className = 'space';
+    span.innerHTML = '&nbsp;';
+
+    } else {
+
+    span.className = 'letter';
+
+    span.dataset.original = character;
+    span.dataset.busy = 'false';
+
+    span.textContent = character;
+
+    // default = black
+    let baseColor = 'black';
+
+    // only special characters get color
+    if (specialCharacters[character]) {
+        baseColor = specialCharacters[character];
+    }
+
+    span.style.color = baseColor;
+    span.dataset.baseColor = baseColor;
+
+    span.addEventListener('mouseenter', () => {
+        createTrail(span);
+    });
+    }
+
+    demo.insertBefore(span, cursor);
+
+    return span;
+}
+
+
+  /* =========================================================
+     DELETE LAST CHARACTER
+  ========================================================= */
+
+  function deleteLastCharacter() {
+
+    const previous =
+      cursor.previousElementSibling;
+
+    if (previous) {
+      previous.remove();
+    }
+  }
+
+  // ///////////new function
+
+  function updateTypingColorTrail() {
+
+const letters = Array.from(
+  document.querySelectorAll('.letter')
+);
+
+// newest letters
+const newestLetters = letters.slice(-TYPING_COLOR_TRAIL);
+
+// everything BEFORE the newest letters
+const oldLetters = letters.slice(0, -TYPING_COLOR_TRAIL);
+
+// old letters return to black
+oldLetters.forEach((letter, index) => {
+
+  setTimeout(() => {
+
+    // Don't interfere with hover effect
+    if (letter.dataset.busy !== 'true') {
+      letter.style.color = 'black';
+      letter.dataset.baseColor = 'black';
+    }
+
+  }, index * 5);
+
+});
+
+
+// newest 3–4 letters are colored
+newestLetters.forEach(letter => {
+
+  if (letter.dataset.busy !== 'true') {
+
+    const color = randomColor();
+
+    letter.style.color = color;
+    letter.dataset.baseColor = color;
+
+  }
+
+});
+}
+
+
+  /* =========================================================
+     TYPE TEXT
+  ========================================================= */
+
+  async function typeCharacters(text) {
+
+for (const character of text) {
+
+  createCharacter(character);
+
+  // Update moving color trail
+  updateTypingColorTrail();
+
+  await sleep(
+    getRandomTypingDelay(character)
+  );
+}
+}
+
+// //////////////// turn text black
+function finishTypingColors() {
+
+const letters = document.querySelectorAll('.letter');
+
+letters.forEach((letter, index) => {
+
+  setTimeout(() => {
+
+    letter.style.color = 'black';
+    letter.dataset.baseColor = 'black';
+
+  }, index * 8);
+
+});
+}
+
+
+  /* =========================================================
+     DELETE TEXT
+  ========================================================= */
+
+  async function deleteCharacters(amount) {
+
+    for (
+      let i = 0;
+      i < amount;
+      i++
+    ) {
+
+      deleteLastCharacter();
+
+      await sleep(
+        DELETE_DELAY_MIN +
+        Math.random() *
+        DELETE_DELAY_RANDOM
+      );
+    }
+  }
+
+
+  /* =========================================================
+     TYPO FUNCTION
+  ========================================================= */
+
+  async function typo(
+    correct,
+    typoVersion
+  ) {
+
+    // Type incorrect version
+    await typeCharacters(
+      typoVersion
+    );
+
+
+    // Pause before noticing mistake
+    await sleep(
+      TYPO_NOTICE_DELAY_MIN +
+      Math.random() *
+      TYPO_NOTICE_DELAY_RANDOM
+    );
+
+
+    // Delete incorrect word
+    await deleteCharacters(
+      typoVersion.length
+    );
+
+
+    // Pause before retyping
+    await sleep(
+      TYPO_RETYPE_DELAY_MIN +
+      Math.random() *
+      TYPO_RETYPE_DELAY_RANDOM
+    );
+
+
+    // Type correct version
+    await typeCharacters(
+      correct
+    );
+  }
+
+
+  /* =========================================================
+     FULL HUMAN TYPING SEQUENCE
+  ========================================================= */
+
+  async function humanType() {
+
+// Initial pause
+await sleep(
+  START_DELAY
+);
+
+await typeCharacters(
+  'Maura is a Senior '
+);
+
+// TYPO #1
+await typo(
+  'Copywriter',
+  'Copywrtier'
+);
+
+await typeCharacters(
+  ' who digs '
+);
+
+await typeCharacters(
+  '⋆˚   sticky words⋆'
+);
+
+await sleep(
+  THINKING_PAUSE_1
+);
+
+await typeCharacters(
+  ', was a '
+);
+
+// TYPO #2
+await typo(
+  '✎journalist',
+  '✎journlaist'
+);
+
+await typeCharacters(
+  ' & dancer❀ in a past life,'
+);
+
+await sleep(
+  THINKING_PAUSE_2
+);
+
+await typeCharacters(
+  ' and is a Gemini who '
+);
+
+await sleep(
+  THINKING_PAUSE_3
+);
+
+await typeCharacters(
+  '✺can’t stop tinkering✶'
+);
+
+// tiny pause after final character
+await sleep(250);
+
+// turn everything black
+finishTypingColors();
+}
+
+  /* =========================================================
+     START
+  ========================================================= */
+
+  window.addEventListener(
+    'load',
+    humanType
+  );
+
+</script>
+
+</body>
+</html>
