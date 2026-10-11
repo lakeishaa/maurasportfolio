@@ -1,0 +1,1103 @@
+/* =========================================
+   01. GLOBAL STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  /* font-family: "Courier New", Courier, monospace; */
+  font-family: "Xanh Mono", monospace;
+}
+
+a {
+  color: inherit;
+}
+
+/* img,
+video {
+  max-width: 100%;
+} */
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   GLOBAL TYPOGRAPHY SYSTEM — 3 SIZES
+========================================= */
+
+:root {
+  --font-main: "Xanh Mono", monospace;
+
+  /* 01 — Large: homepage intro + project title */
+  --type-large: clamp(40px, 4.5vw, 80px);
+
+  /* 02 — Medium: headings, navigation, labels */
+  --type-medium: 20px;
+
+  /* 03 — Small: descriptions, credits, links */
+  --type-small: 16px;
+
+  --line-height-main: 1.4;
+}
+
+/* GLOBAL FONT FAMILY */
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-main);
+}
+
+/* =========================================
+   SIZE 01 — LARGE
+========================================= */
+
+/* Homepage intro */
+.intro h1,
+#maura-interactive {
+  font-size: var(--type-large);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* Individual project titles */
+body[data-page="project"] .project-heading {
+  font-size: var(--type-large);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* =========================================
+   SIZE 02 — MEDIUM
+========================================= */
+
+/* Header navigation */
+.site-header,
+.site-header a {
+  font-size: var(--type-medium);
+}
+
+/* Homepage project numbers + captions */
+.project-number,
+.card-caption,
+.card-caption .brand {
+  font-size: var(--type-medium);
+  line-height: var(--line-height-main);
+}
+
+/* Project section headings */
+.work-copy h2 {
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+/* Press + Credits headings */
+.project-bottom .project-links h2,
+.project-bottom .project-credits h2 {
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+/* Previous / Next */
+.project-navigation,
+.project-navigation a {
+  font-size: var(--type-medium);
+  line-height: var(--line-height-main);
+}
+
+/* =========================================
+   SIZE 03 — SMALL
+========================================= */
+
+/* Project introduction */
+body[data-page="project"] .project-intro,
+body[data-page="project"] .project-hero p {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* Section descriptions */
+body[data-page="project"] .work-copy,
+body[data-page="project"] .work-copy p {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* Press article names */
+.project-bottom .project-link-list,
+.project-bottom .project-link-list a {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* Credits roles and names */
+.project-bottom .project-credits p,
+.project-bottom .project-credits span {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* Media captions */
+.media-caption,
+.media-caption p,
+.media-caption a {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* About section */
+.about {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* =========================================
+   RESPONSIVE TYPOGRAPHY
+========================================= */
+
+@media (max-width: 600px) {
+  :root {
+    --type-large: clamp(34px, 8vw, 48px);
+    --type-medium: 16px;
+    --type-small: 14px;
+  }
+}
+
+/* =========================================
+   GLOBAL HYPERLINK STYLING
+========================================= */
+
+a,
+a:visited {
+  color: #4c9a42;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* Hover */
+a:hover {
+  color: #2f7428;
+  text-decoration: underline;
+}
+
+/* Keep homepage project cards unchanged */
+.project-card,
+.project-card:visited,
+.project-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Make all text inside links green */
+a .interactive-letter,
+a .letter {
+  color: inherit;
+}
+
+/* PROJECT TITLE SPACING */
+
+body[data-page="project"] .project-heading {
+  max-width: 1100px;
+  margin-bottom: 48px;
+  overflow-wrap: break-word;
+}
+
+/* Keep description comfortably readable */
+body[data-page="project"] .project-hero {
+  grid-template-columns: minmax(250px, 30%) minmax(0, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 600px) {
+  body[data-page="project"] .project-heading {
+    margin-bottom: 28px;
+  }
+
+  body[data-page="project"] .project-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  :root {
+    --font-size-main: 14px;
+    --font-size-small: 12px;
+    --font-size-heading: 28px;
+  }
+}
+
+/* =========================================
+     02. NAVIGATION
+  ========================================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px clamp(22px, 5vw, 72px);
+  font-size: 18px;
+}
+
+.site-header a {
+  text-decoration: none;
+}
+
+/* =========================================
+     03. HOMEPAGE INTRO
+  ========================================= */
+
+.intro {
+  padding: 40px clamp(22px, 5vw, 72px) 100px;
+}
+
+.intro h1 {
+  max-width: 1200px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.accent {
+  color: #bbcc30;
+}
+
+/* Typewriter typography and animations
+     are controlled in typewriter.css */
+
+/* =========================================
+     04. HOMEPAGE PROJECT GRID
+  ========================================= */
+
+.project-grid {
+  display: grid;
+
+  /* Exactly two columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  /* Horizontal and vertical spacing */
+  column-gap: clamp(30px, 8vw, 160px);
+  row-gap: clamp(60px, 9vw, 150px);
+
+  align-items: start;
+
+  padding: 80px clamp(22px, 5vw, 72px) 150px;
+}
+
+/* =========================================
+     05. PROJECT CARDS
+  ========================================= */
+
+.project-card,
+.project-card.large {
+  grid-column: auto;
+
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  transform: none;
+
+  text-decoration: none;
+}
+
+.project-card figure {
+  margin: 0;
+}
+
+/* =========================================
+   06. HOMEPAGE PROJECT IMAGES
+========================================= */
+
+/* Default: show full image without cropping */
+
+.project-card .cover {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* =========================================
+   07. INDIVIDUAL HOMEPAGE PROJECTS
+========================================= */
+
+/* PROJECT 01 — BASKIN-ROBBINS X IF */
+
+.project-card:nth-child(1) {
+  margin-top: 0;
+}
+
+.project-card:nth-child(1) .cover {
+  width: 90%;
+}
+
+/* PROJECT 02 — VENMO */
+
+.project-card:nth-child(2) {
+  /* margin-top: 120px; */
+}
+
+.project-card:nth-child(2) .cover {
+  width: 100%;
+}
+
+/* PROJECT 03 — FANTA */
+
+.project-card:nth-child(3) {
+  margin-top: 0;
+}
+
+.project-card:nth-child(3) .cover {
+  width: 85%;
+}
+
+/* PROJECT 04 — BASKIN-ROBBINS */
+
+.project-card:nth-child(4) {
+  /* margin-top: 80px; */
+}
+
+.project-card:nth-child(4) .cover {
+  width: 100%;
+}
+
+/* PROJECT 05 — WALMART */
+
+.project-card:nth-child(5) {
+  margin-top: 0;
+}
+
+.project-card:nth-child(5) .cover {
+  width: 95%;
+}
+
+/* PROJECT 06 — MERRILL */
+
+.project-card:nth-child(6) {
+  /* margin-top: 100px; */
+}
+
+.project-card:nth-child(6) .cover {
+  width: 80%;
+}
+
+/* PROJECT 07 — CIRCLE */
+
+.project-card:nth-child(7) {
+  margin-top: 0;
+}
+
+.project-card:nth-child(7) .cover {
+  width: 100%;
+}
+
+/* PROJECT 08 — PROTEST POSTER */
+
+.project-card:nth-child(8) {
+  /* margin-top: 60px; */
+}
+
+.project-card:nth-child(8) .cover {
+  width: 85%;
+}
+
+/* =========================================
+     08. PLACEHOLDER IMAGES
+  ========================================= */
+
+.placeholder {
+  display: grid;
+  place-items: center;
+
+  background: linear-gradient(140deg, #d9e3d0, #efb6cb 55%, #9c94c4);
+
+  color: #39333a;
+  text-align: center;
+
+  font-size: clamp(15px, 2vw, 28px);
+  padding: 20px;
+}
+
+/* =========================================
+     09. PROJECT CAPTIONS
+  ========================================= */
+
+.project-number,
+.card-caption {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.project-number {
+  margin-bottom: 6px;
+}
+
+.card-caption {
+  margin-top: 8px;
+}
+
+.card-caption .brand {
+  color: #a4b51b;
+}
+
+/* =========================================
+     10. ABOUT SECTION
+  ========================================= */
+
+.about {
+  padding: 80px clamp(22px, 5vw, 72px);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================
+     11. PROJECT DETAIL PAGE
+  ========================================= */
+
+.project-detail {
+  padding: 18px clamp(22px, 5vw, 72px) 80px;
+}
+
+.project-heading {
+  margin: 0 0 12px;
+
+  font-size: clamp(24px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* =========================================
+     12. PROJECT HERO
+  ========================================= */
+
+.project-hero {
+  display: grid;
+
+  grid-template-columns:
+    minmax(140px, 23%)
+    minmax(0, 1fr);
+
+  gap: 24px;
+  align-items: start;
+
+  margin: 8px 0 68px;
+}
+
+.project-hero p {
+  max-width: 280px;
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.hero-media {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* =========================================
+     13. HORIZONTAL PROJECT GALLERIES
+  ========================================= */
+
+.work-section {
+  margin: 0 0 54px;
+}
+
+.work-scroll {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+
+  padding-bottom: 8px;
+}
+
+.work-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================
+     14. GALLERY TEXT
+  ========================================= */
+
+.work-copy {
+  flex: 0 0 clamp(145px, 18vw, 260px);
+
+  padding-right: 14px;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.work-copy h2 {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.work-copy p {
+  margin: 0;
+}
+
+/* =========================================
+     15. GALLERY MEDIA
+  ========================================= */
+
+.media-item {
+  display: block;
+  flex: 0 0 auto;
+
+  width: clamp(220px, 32vw, 540px);
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  background: #eee;
+  border: 0;
+}
+
+/* Vertical videos and images */
+
+.media-item.portrait {
+  width: clamp(170px, 19vw, 320px);
+  aspect-ratio: 9 / 16;
+}
+
+/* Social media content */
+
+.media-item.social {
+  width: clamp(170px, 18vw, 280px);
+  aspect-ratio: 4 / 5;
+}
+
+/* Tweets and horizontal screenshots */
+
+.media-item.tweet {
+  width: clamp(250px, 31vw, 460px);
+  aspect-ratio: 2.4;
+}
+
+/* Large landscape media */
+
+.media-item.wide {
+  width: clamp(280px, 40vw, 680px);
+}
+
+/* =========================================
+     16. GALLERY PLACEHOLDERS
+  ========================================= */
+
+.media-placeholder {
+  display: grid;
+  place-items: center;
+
+  padding: 16px;
+
+  background: #f0edf0;
+
+  font-size: 13px;
+  text-align: center;
+}
+
+.work-scroll iframe {
+  border: 0;
+}
+
+/* =========================================
+     17. PROJECT CREDITS
+  ========================================= */
+
+.project-credits {
+  margin-top: 80px;
+
+  font-size: 11px;
+  text-align: right;
+}
+
+.project-credits p {
+  margin: 0;
+}
+
+/* =========================================
+   GLOBAL INTERACTIVE LETTERS
+========================================= */
+
+.interactive-letter {
+  display: inline-block;
+  position: relative;
+  cursor: inherit;
+  transition:
+    color 0.15s ease,
+    transform 0.2s ease;
+}
+
+.interactive-letter:hover {
+  color: #f43f25;
+  transform: translateY(-2px);
+}
+
+/* Keep letters grouped within words */
+.interactive-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Preserve spaces between words */
+.interactive-space {
+  white-space: pre-wrap;
+}
+
+/* Don't animate letters for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .interactive-letter {
+    transition: none;
+  }
+
+  .interactive-letter:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   HOMEPAGE — IMAGE HOVER SCRUBBING
+========================================= */
+
+.project-card .cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: cover;
+
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Don't animate image changes */
+.project-card .cover {
+  transition: none;
+}
+
+/* Keep normal cursor behavior on touch devices */
+@media (hover: none) {
+  .project-card .cover {
+    cursor: pointer;
+  }
+}
+
+/* =========================================
+   PROJECT PAGE ENHANCEMENTS
+========================================= */
+
+/* Preserve paragraph breaks from data.js */
+.project-intro {
+  white-space: pre-line;
+}
+
+.project-intro a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-intro a:hover {
+  color: #d84b36;
+}
+
+/* Hero video */
+.hero-media {
+  min-width: 0;
+}
+
+.hero-media .media-item {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Gallery item with optional caption */
+.media-entry {
+  flex: 0 0 auto;
+  width: clamp(220px, 32vw, 540px);
+  margin: 0;
+}
+
+.media-entry:has(.portrait) {
+  width: clamp(170px, 19vw, 320px);
+}
+
+.media-entry:has(.social) {
+  width: clamp(170px, 18vw, 280px);
+}
+
+.media-entry:has(.tweet) {
+  width: clamp(250px, 31vw, 460px);
+}
+
+.media-entry:has(.wide) {
+  width: clamp(280px, 40vw, 680px);
+}
+
+.media-entry .media-item {
+  width: 100%;
+}
+
+/* Show full images without cropping */
+img.media-item {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Video and embed dimensions */
+video.media-item,
+iframe.media-item {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+video.media-item.portrait,
+iframe.media-item.portrait {
+  aspect-ratio: 9 / 16;
+}
+
+video.media-item.social,
+iframe.media-item.social {
+  aspect-ratio: 4 / 5;
+}
+
+/* Captions */
+.media-caption {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.media-caption strong {
+  font-weight: 600;
+}
+
+.media-caption p {
+  margin: 4px 0;
+}
+
+.media-caption a {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Press and external links */
+.project-links {
+  margin-top: 70px;
+}
+
+.project-links h2,
+.project-credits h2 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 18px;
+}
+
+.project-link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+}
+
+/* Credits */
+.project-credits {
+  margin-top: 70px;
+  text-align: left;
+}
+
+.project-credits p {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+/* Previous / next */
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.project-navigation a {
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .media-entry {
+    width: 76vw;
+  }
+
+  .media-entry:has(.portrait),
+  .media-entry:has(.social) {
+    width: 58vw;
+  }
+
+  .media-entry:has(.tweet) {
+    width: 78vw;
+  }
+
+  .project-navigation {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   PROJECT BOTTOM — PRESS + CREDITS
+========================================= */
+
+.project-bottom {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 350px);
+  justify-content: end;
+  gap: 40px;
+
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+/* PRESS — LEFT ALIGNED */
+.project-press {
+  text-align: left;
+}
+
+.project-press .project-links {
+  margin: 0;
+}
+
+.project-press .project-link-list {
+  align-items: flex-start;
+}
+
+/* CREDITS — ROLE LEFT, NAME RIGHT */
+.project-bottom .project-credits {
+  margin: 0;
+  text-align: left;
+}
+
+.project-bottom .project-credits p {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+}
+
+.project-bottom .project-credits p span:first-child {
+  text-align: left;
+}
+
+.project-bottom .project-credits p span:last-child {
+  text-align: right;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .project-bottom {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
+  }
+}
+
+/* =========================================
+     19. MOBILE — 600PX AND BELOW
+  ========================================= */
+
+@media (max-width: 600px) {
+  /* Navigation */
+
+  .site-header {
+    padding: 20px;
+  }
+
+  /* Homepage intro */
+
+  .intro {
+    padding: 30px 20px 60px;
+  }
+
+  /* Project grid becomes one column */
+
+  .project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding: 40px 20px 80px;
+  }
+
+  /* Remove desktop stagger */
+
+  .project-card,
+  .project-card.large,
+  .project-card:nth-child(even) {
+    margin-top: 0;
+    transform: none;
+  }
+
+  /* Full-width images */
+
+  .project-card .cover {
+    width: 100% !important;
+  }
+
+  /* Smaller captions */
+
+  .project-number,
+  .card-caption {
+    font-size: 10px;
+  }
+
+  /* About */
+
+  .about {
+    padding: 60px 20px;
+  }
+
+  /* Project detail */
+
+  .project-detail {
+    padding: 16px 20px 70px;
+  }
+
+  .project-hero {
+    grid-template-columns: 1fr;
+    margin-bottom: 42px;
+  }
+
+  /* Horizontal galleries */
+
+  .work-section {
+    margin-bottom: 38px;
+  }
+
+  .work-scroll {
+    gap: 12px;
+
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+
+  .work-copy {
+    flex-basis: 70vw;
+  }
+
+  .work-scroll .media-item {
+    width: 76vw;
+  }
+
+  .work-scroll .media-item.portrait,
+  .work-scroll .media-item.social {
+    width: 58vw;
+  }
+
+  .work-scroll .media-item.tweet {
+    width: 78vw;
+  }
+
+  /* Credits */
+
+  .project-credits {
+    text-align: left;
+  }
+}
+
+/* =========================================
+     20. ACCESSIBILITY
+  ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* PORTFOLIO GRID */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 8vw;
+  row-gap: 100px;
+  padding: 60px 5vw;
+  align-items: start;
+}
+
+/* INDIVIDUAL PROJECT */
+
+.portfolio-card {
+  width: 100%;
+  min-width: 0;
+}
+
+/* IMAGE */
+
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* PROJECT CAPTION */
+
+.portfolio-card .caption {
+  margin-top: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 32px 20px;
+  }
+}
