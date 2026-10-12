@@ -182,7 +182,7 @@ window.PORTFOLIO = [
         media: [
           {
             type: "video",
-            src: "",
+            src: "assets/baskin-if/imagination-station/video-1.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
           },
@@ -199,12 +199,36 @@ window.PORTFOLIO = [
         title: "Social Takeover",
         description: "",
         media: [
-          ...Array.from({ length: 4 }, (_, i) => ({
+          // ...Array.from({ length: 4 }, (_, i) => ({
+          //   type: "video",
+          //   src: "",
+          //   label: `Social Takeover Video ${i + 1}`,
+          //   ratio: "portrait",
+          // })),
+          {
             type: "video",
-            src: "",
-            label: `Social Takeover Video ${i + 1}`,
-            ratio: "portrait",
-          })),
+            src: "assets/baskin-if/social/video-1.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/baskin-if/social/video-2.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/baskin-if/social/video-1.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/baskin-if/social/video-2.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
         ],
       },
     ],
