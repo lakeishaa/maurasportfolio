@@ -219,13 +219,13 @@ window.PORTFOLIO = [
           },
           {
             type: "video",
-            src: "assets/baskin-if/social/video-1.mp4",
+            src: "assets/baskin-if/social/video-3.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
           },
           {
             type: "video",
-            src: "assets/baskin-if/social/video-2.mp4",
+            src: "assets/baskin-if/social/video-4.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
           },
@@ -453,12 +453,62 @@ window.PORTFOLIO = [
       {
         title: "IG Posts",
         layout: "social",
-        media: [],
+        media: [
+          {
+            type: "video",
+            src: "assets/fanta/instagram/video-1.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/fanta/instagram/video-2.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/fanta/instagram/video-3.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
+        ],
       },
       {
         title: "TikTok Posts",
         layout: "social",
-        media: [],
+        media: [
+          {
+            type: "video",
+            src: "assets/fanta/tiktok/video-1.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/fanta/tiktok/video-2.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/fanta/tiktok/video-3.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/fanta/tiktok/video-4.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+          },
+          {
+            type: "video",
+            src: "assets/fanta/tiktok/video-5.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+          },
+        ],
       },
     ],
   },
