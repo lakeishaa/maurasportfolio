@@ -237,7 +237,7 @@
   }
 
   const finalText =
-    "Maura is a Senior Copywriter who writes big, magnetic, magical ideas for ⋆˚social⋆ and beyond. A ✎journalist and dancer❀ in a past life, a dolphin in her next one ✺";
+    "Maura is a Senior Copywriter who writes magnetic and magical ⋆˚stories⋆. A✎journalist and dancer❀ in a past life, a dolphin in her next one ✺";
 
   async function humanType() {
     if (reducedMotion) {
@@ -247,10 +247,10 @@
     await sleep(START_DELAY);
     await typeCharacters("Maura is a Senior ");
     await typo("Copywriter", "Copywrtier");
-    await typeCharacters(" who writes big,");
-    await typeCharacters(" magnetic, magical ideas for ");
+    await typeCharacters(" who writes");
+    await typeCharacters(" magnetic and ");
     await sleep(THINKING_PAUSE_1);
-    await typeCharacters("⋆˚social⋆ and beyond. A ");
+    await typeCharacters("magical ⋆˚stories⋆. A ");
     await typo("✎journalist", "✎journlist");
     await typeCharacters(" and dancer❀ in a past life,");
     await sleep(THINKING_PAUSE_2);

@@ -44,11 +44,20 @@ window.PORTFOLIO = [
     In partnership with Paramount Pictures and John Krasinski's <a href="https://www.imdb.com/title/tt11152168/" target="_blank" rel="noopener noreferrer">IF</a>, I helped create an integrated campaign that brought imaginary friends (or IFs) into the real world—all with the help of Baskin-Robbins ice cream.`,
 
     hero: {
-      type: "youtube",
-      id: "2yj6B2XVt7M", // Main campaign YouTube video ID
+      // type: "youtube",
+      // id: "2yj6B2XVt7M", // Main campaign YouTube video ID
+      // autoplay: true,
+      // muted: true,
+      // loop: true,
+
+      type: "video",
+      src: "assets/baskin-if/video-1.mp4",
+      label: "",
+      // ratio: "wide",
       autoplay: true,
-      muted: true,
+      // muted: true,
       loop: true,
+      controls: true,
     },
 
     press: [
@@ -185,6 +194,9 @@ window.PORTFOLIO = [
             src: "assets/baskin-if/imagination-station/video-1.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "image",
@@ -210,24 +222,36 @@ window.PORTFOLIO = [
             src: "assets/baskin-if/social/video-1.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/baskin-if/social/video-2.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/baskin-if/social/video-3.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/baskin-if/social/video-4.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
         ],
       },
@@ -447,7 +471,7 @@ window.PORTFOLIO = [
     ],
 
     intro:
-      "The world is draining online and offline. But Gen Z is still craving ways to tap back into fun. Fanta's role on social media? To infuse indulgent escapes into the scroll by being undeniably f'ing delicious.\n\nI created always-on content, jumped on real-time trends, and experimented with new features to keep our fans hooked on everything Fanta.",
+      "The world is draining online and offline. But Gen Z is still craving ways to tap back into fun. Fanta’s role on social media? To infuse indulgent escapes into the scroll by being undeniably fᶦᶻᶻing delicious.\n\n I created always-on content, jumped on real-time trends, and experimented with new features to keep our fans hooked on everything Fanta.",
 
     sections: [
       {
@@ -457,20 +481,29 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/fanta/instagram/video-1.mp4",
-            label: "Imagination Station Image",
+            label: "",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/fanta/instagram/video-2.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/fanta/instagram/video-3.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
         ],
       },
@@ -483,30 +516,86 @@ window.PORTFOLIO = [
             src: "assets/fanta/tiktok/video-1.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/fanta/tiktok/video-2.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/fanta/tiktok/video-3.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/fanta/tiktok/video-4.mp4",
             label: "Imagination Station Video",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "video",
             src: "assets/fanta/tiktok/video-5.mp4",
             label: "Imagination Station Image",
             ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+        ],
+      },
+      {
+        title: "Threads Posts",
+        layout: "social",
+        media: [],
+      },
+      {
+        title: "IG Broadcast & More",
+        layout: "social",
+        media: [
+          {
+            type: "image",
+            src: "assets/fanta/more/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/more/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/landing/7.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/more/image-3.gif",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/more/image-5.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/more/image-4.png",
+            ratio: "portrait",
           },
         ],
       },
@@ -542,22 +631,131 @@ window.PORTFOLIO = [
       {
         title: "Trolli Sour Blast",
         layout: "editorial",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/baskin/trolli/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/trolli/image-2.png",
+            ratio: "portrait",
+          },
+        ],
       },
       {
         title: "Sweet on Sydney",
         layout: "editorial",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/baskin/sydney/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/sydney/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/sydney/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/sydney/image-4.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/sydney/image-6.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/sydney/image-5.png",
+            ratio: "portrait",
+          },
+        ],
       },
       {
         title: "Island Sips",
         layout: "editorial",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/baskin/island/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-4.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-5.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-6.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-7.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-8.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-9.png",
+            ratio: "portrait",
+          },
+        ],
       },
       {
         title: "Galactic Brownie",
         layout: "editorial",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/baskin/galactic/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/galactic/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/galactic/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/galactic/image-4.png",
+            ratio: "portrait",
+          },
+        ],
       },
     ],
   },
@@ -584,13 +782,77 @@ window.PORTFOLIO = [
     ],
 
     intro:
-      "Good bye winter hermitting. Hello to your next era.\n\nFor Walmart's spring campaign in 2024, we channeled big new year, new me energy through 6 paid social spots—all shot with an iPhone.\n\nWhether you're becoming a pro pet parent or a proud homebody, we showed how Walmart can be your partner in your next era.",
+      "Good bye winter hermitting. Hello to your next era. \n\n For Walmart’s spring campaign in 2024, we channeled big new year, new me energy through 6 paid social spots—all shot with an iPhone.\n\n Whether you’re becoming a pro pet parent or a proud homebody, we showed how Walmart can be your partner in your next era. ",
+
+    hero: {
+      type: "video",
+      src: "assets/walmart/video-1.mp4",
+      label: "Hero Video",
+      ratio: "wide",
+      autoplay: true,
+      loop: true,
+    },
 
     sections: [
       {
         title: "Campaign Films",
         layout: "media",
-        media: [],
+        media: [
+          {
+            type: "video",
+            src: "assets/walmart/video-1.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/walmart/video-2.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/walmart/video-3.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/walmart/video-4.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/walmart/video-5.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/walmart/video-6.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+        ],
       },
     ],
   },
@@ -617,13 +879,50 @@ window.PORTFOLIO = [
     ],
 
     intro:
-      "In the sea of shiny investment banks, Merrill might be seen as the stodgy option. But in reality, their digital tools are way ahead of the curve.\n\nTo show just how powerful their digital tools are, I wrote three spots that tapped into everyone's habit of being on their phones, yet doing what you least expect—banking.",
+      "In the sea of shiny investment banks, Merrill might be seen as the stodgy option. But in reality, their digital tools are way ahead of the curve. \n\n To show just how powerful their digital tools are, I wrote three spots that tapped into everyone's habit of being on their phones, yet doing what you least expect—banking.",
 
     sections: [
       {
         title: "Campaign Films",
         layout: "media",
-        media: [],
+        media: [
+          {
+            type: "video",
+            src: "assets/merrill/video-1.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/merrill/video-2.mp4",
+            label: "Imagination Station Video",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/merrill/video-3.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
+            type: "video",
+            src: "assets/merrill/video-4.mp4",
+            label: "Imagination Station Image",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+        ],
       },
     ],
   },
@@ -651,13 +950,76 @@ window.PORTFOLIO = [
     ],
 
     intro:
-      "To build a more inclusive financial future, Circle is the bridge that brings two incompatible things together.\n\nBetween traditional and digital currencies. Between banking and blockchain. Between today and tomorrow.\n\nI helped build an awareness campaign that took place in the space between, because that's where Circle lives. For entrepreneurs, developers, and creators to build for the future.",
+      "To build a more inclusive financial future, Circle is the bridge that brings two incompatible things together. \n\n Between traditional and digital currencies. Between banking and blockchain. Between today and tomorrow. \n\n I helped build an awareness campaign that took place in the space between, because that's where Circle lives. For entrepreneurs, developers, and creators to build for the future.",
 
     sections: [
       {
-        title: "Campaign",
+        title: "Main Look & Feel",
         layout: "editorial",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/circle/main/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/main/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/main/image-3.png",
+            ratio: "portrait",
+          },
+        ],
+      },
+      {
+        title: "OOH Placements",
+        layout: "editorial",
+        media: [
+          {
+            type: "image",
+            src: "assets/circle/ooh/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/ooh/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/ooh/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/ooh/image-4.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/ooh/image-5.png",
+            ratio: "portrait",
+          },
+        ],
+      },
+      {
+        title: "Print Ads",
+        layout: "editorial",
+        media: [
+          {
+            type: "image",
+            src: "assets/circle/print/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/print/image-2.png",
+            ratio: "portrait",
+          },
+        ],
       },
     ],
   },
@@ -677,13 +1039,29 @@ window.PORTFOLIO = [
     hoverImages: ["assets/protest/cover.jpg", "assets/protest/landing/1.jpg"],
 
     intro:
-      "To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet 'selling' the lifestyle that no one would dream of living.\n\nBecause living unhoused is affordable, but unlivable.\n\nWon a Graphis Silver Award.",
+      'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',
 
     sections: [
       {
         title: "Poster Design",
         layout: "editorial",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/protest/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/protest/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/protest/image-3.png",
+            ratio: "portrait",
+          },
+        ],
       },
     ],
   },

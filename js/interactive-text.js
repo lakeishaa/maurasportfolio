@@ -120,32 +120,45 @@ document.addEventListener("pointerover", (event) => {
   ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  makeTextInteractive();
+  const headingSelector = [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    ".project-number",
+  ].join(", ");
 
-  // Handle project cards/content added later by JavaScript.
+  function applyToHeadings(root = document) {
+    if (root.nodeType === Node.ELEMENT_NODE && root.matches(headingSelector)) {
+      makeTextInteractive(root);
+    }
+
+    root.querySelectorAll(headingSelector).forEach((heading) => {
+      makeTextInteractive(heading);
+    });
+  }
+
+  // Apply only to headings already on the page
+  applyToHeadings();
+
+  // Apply to headings added later by site.js
   const observer = new MutationObserver((mutations) => {
     const addedElements = new Set();
 
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
         if (node.nodeType === Node.ELEMENT_NODE) {
-          if (
-            node.matches(
-              ".interactive-word, .interactive-letter, .no-interaction"
-            )
-          ) {
-            return;
-          }
-
           addedElements.add(node);
         }
       });
     });
 
     addedElements.forEach((element) => {
-      if (!element.isConnected) return;
-
-      makeTextInteractive(element);
+      if (element.isConnected) {
+        applyToHeadings(element);
+      }
     });
   });
 
