@@ -594,6 +594,15 @@ window.PORTFOLIO = [
             ratio: "portrait",
           },
           {
+            type: "video",
+            src: "assets/fanta/more/video-1.mov",
+            label: "Fanta Video",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
             type: "image",
             src: "assets/fanta/more/image-2.png",
             ratio: "portrait",
