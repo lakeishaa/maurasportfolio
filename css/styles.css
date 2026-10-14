@@ -1,5 +1,4 @@
-/* MAURA PORTFOLIO — CLEAN STYLESHEET */
-
+/* MAURA PORTFOLIO â€” CLEAN STYLESHEET */
 /* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
 :root {
   --font-main: "Xanh Mono", monospace;
@@ -10,8 +9,8 @@
   --link-color: #a4b51b;
   --link-hover: #798678;
   --page-gutter: clamp(22px, 5vw, 72px);
+  --gallery-height: 400px;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -37,31 +36,21 @@ img {
   width: 100%;
   height: auto;
 }
-
-a,
-a:visited {
+/* Links: one consistent dotted style */
+a:not(.project-card),
+a:not(.project-card):visited {
   color: var(--link-color);
-  text-decoration: underline;
+  text-decoration: underline dotted currentColor;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
-a:hover {
+a:not(.project-card):hover {
   color: var(--link-hover);
 }
 a .interactive-letter,
 a .interactive-word {
   color: inherit;
 }
-/* Underline each word instead of the space between words. */
-a .interactive-word {
-  color: inherit;
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: var(--link-color);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
 /* Large: homepage introduction and project title */
 .intro h1,
 #maura-interactive,
@@ -101,29 +90,23 @@ a .interactive-word {
   font-size: var(--type-small);
   line-height: var(--line-height-main);
 }
-
 /* Homepage typewriter hyperlinks */
-
 #demo {
   line-height: 1.15 !important;
 }
-
 #demo .typewriter-link,
 #demo .typewriter-link:visited {
   color: #a4b51b;
   text-decoration: none;
   border-bottom: 2px dotted #4c9a42;
 }
-
 #demo .typewriter-link .letter {
   color: inherit !important;
 }
-
 #demo .typewriter-link:hover {
   color: #ff87f4;
   border-bottom-color: #a4b51b;
 }
-
 /* 02. HEADER + HOMEPAGE INTRO */
 .site-header {
   display: flex;
@@ -143,18 +126,30 @@ a .interactive-word {
 }
 /* Typewriter animations remain in typewriter.css. */
 
-/* 03. HOMEPAGE GRID + CARDS */
+/* HOMEPAGE GRID */
+
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(30px, 8vw, 160px);
-  row-gap: clamp(60px, 9vw, 150px);
+  grid-template-columns: 1fr;
+  /* gap: 55px; */
+  gap: 35px;
   align-items: start;
   padding: 80px var(--page-gutter) 150px;
 }
+
+/* DESKTOP — 12 COLUMNS */
+
+@media (min-width: 601px) {
+  .project-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(8px, 1.5vw, 24px);
+    /* row-gap: clamp(40px, 6vw, 100px); */
+  }
+}
+
 .project-card,
 .project-card.large {
-  grid-column: auto;
+  /* grid-column: auto; */
   display: block;
   width: 100%;
   min-width: 0;
@@ -173,40 +168,61 @@ a .interactive-word {
 }
 .project-card .cover {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  aspect-ratio: auto;
+  max-width: 100%;
+  /* max-height: 33vh; */
+  /* max-height: clamp(300px, 45vh, 550px); */
+  max-height: clamp(350px, 55vh, 650px);
+  max-height: clamp(400px, 60vh, 750px);
   object-fit: cover;
+  aspect-ratio: auto;
   cursor: crosshair;
-  user-select: none;
-  -webkit-user-drag: none;
-  transition: none;
 }
 /* Preserve individual cover widths and homepage arrangement. */
-.project-card:nth-child(1) .cover {
-  width: 90%;
+
+/* INDIVIDUAL PROJECT IMAGE SIZES — DESKTOP */
+
+/* INDIVIDUAL PROJECT IMAGE SIZES */
+
+@media (min-width: 601px) {
+  .project-card:nth-child(1) {
+    grid-column: 1 / span 5;
+  }
+
+  .project-card:nth-child(2) {
+    grid-column: 8 / span 4;
+    /* margin-top: -150px; */
+  }
+
+  .project-card:nth-child(3) {
+    grid-column: 2 / span 4;
+  }
+
+  .project-card:nth-child(4) {
+    grid-column: 7 / span 6;
+    margin-top: 80px;
+  }
+
+  .project-card:nth-child(5) {
+    grid-column: 1 / span 4;
+  }
+
+  .project-card:nth-child(6) {
+    grid-column: 8 / span 4;
+    margin-top: 60px;
+  }
+
+  .project-card:nth-child(7) {
+    grid-column: 2 / span 5;
+  }
+
+  .project-card:nth-child(8) {
+    grid-column: 9 / span 3;
+    margin-top: 60px;
+  }
 }
-.project-card:nth-child(2) .cover {
-  width: 100%;
-}
-.project-card:nth-child(3) .cover {
-  width: 85%;
-}
-.project-card:nth-child(4) .cover {
-  width: 100%;
-}
-.project-card:nth-child(5) .cover {
-  width: 95%;
-}
-.project-card:nth-child(6) .cover {
-  width: 80%;
-}
-.project-card:nth-child(7) .cover {
-  width: 100%;
-}
-.project-card:nth-child(8) .cover {
-  width: 85%;
-}
+
 .project-number {
   margin-bottom: 6px;
 }
@@ -227,7 +243,6 @@ a .interactive-word {
 .about {
   padding: 80px var(--page-gutter);
 }
-
 /* 04. PROJECT PAGE HEADER + HERO */
 .project-detail {
   padding: 18px var(--page-gutter) 80px;
@@ -252,16 +267,21 @@ a .interactive-word {
 .project-intro {
   white-space: pre-line;
 }
+/* Hero: one-third viewport height; width follows natural proportions */
 .hero-media {
   width: 100%;
   max-width: 900px;
   min-width: 0;
 }
-.hero-media .media-item {
-  width: 100%;
+.hero-media img.media-item,
+.hero-media video.media-item {
+  width: auto;
+  height: auto;
   max-width: 100%;
+  max-height: min(33vh, 450px);
+  aspect-ratio: auto;
+  object-fit: contain;
 }
-
 /* 05. HORIZONTAL GALLERIES */
 .work-section {
   margin-bottom: 54px;
@@ -291,7 +311,6 @@ a .interactive-word {
 .work-copy p {
   margin: 0;
 }
-
 /* 06. MEDIA + OPTIONAL CAPTIONS */
 .media-item {
   display: block;
@@ -379,7 +398,25 @@ iframe.media-item.social {
   display: inline-block;
   margin-top: 6px;
 }
-
+/* Gallery: consistent height, natural width, no cropping */
+.work-scroll img.media-item,
+.work-scroll video.media-item {
+  width: auto;
+  height: var(--gallery-height);
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.work-scroll .media-entry {
+  width: max-content;
+  max-width: none;
+}
+.work-scroll .media-entry img.media-item,
+.work-scroll .media-entry video.media-item {
+  width: auto;
+  height: var(--gallery-height);
+  max-width: none;
+}
 /* 07. PRESS + CREDITS: GROUPED ON RIGHT */
 .project-bottom {
   display: grid;
@@ -420,7 +457,6 @@ iframe.media-item.social {
 .project-credits p span:last-child {
   text-align: right;
 }
-
 /* 08. PREVIOUS / NEXT */
 .project-navigation {
   display: flex;
@@ -430,7 +466,6 @@ iframe.media-item.social {
   padding-top: 24px;
   border-top: 1px solid #ddd;
 }
-
 /* 09. INTERACTIVE LETTERS */
 .interactive-letter {
   display: inline-block;
@@ -451,7 +486,6 @@ iframe.media-item.social {
 .interactive-space {
   white-space: pre-wrap;
 }
-
 /* 10. MOBILE */
 @media (max-width: 600px) {
   :root {
@@ -459,7 +493,15 @@ iframe.media-item.social {
     --type-medium: 16px;
     --type-small: 14px;
     --page-gutter: 20px;
+    --gallery-height: 280px;
   }
+
+  /* do i need this below? */
+  .project-card {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
   .site-header {
     padding: 20px;
   }
@@ -478,7 +520,9 @@ iframe.media-item.social {
     transform: none;
   }
   .project-card .cover {
-    width: 100% !important;
+    width: auto;
+    max-width: 100%;
+    max-height: none;
   }
   .about {
     padding: 60px 20px;
@@ -539,140 +583,5 @@ iframe.media-item.social {
   }
   .interactive-letter:hover {
     transform: none;
-  }
-}
-
-/* =========================================
-   GLOBAL LINKS — GREEN DOTTED UNDERLINE
-========================================= */
-
-:root {
-  --link-color: #a4b51b;
-}
-
-/* All links, including navigation */
-a,
-a:visited,
-a:hover,
-a:focus-visible,
-.site-header a,
-.project-navigation a,
-.work-copy a,
-.project-intro a,
-.project-link-list a {
-  color: var(--link-color);
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: var(--link-color);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-/* Links containing interactive typography */
-a:has(.interactive-word) {
-  text-decoration: none;
-}
-
-a .interactive-word {
-  color: inherit;
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: var(--link-color);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-a .interactive-letter {
-  color: inherit;
-}
-
-/* Homepage project cards remain clean */
-.project-card,
-.project-card:visited,
-.project-card:hover,
-.project-card .interactive-word {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* GREEN DOTTED LINKS — FINAL */
-
-a:not(.project-card),
-a:not(.project-card):visited,
-a:not(.project-card):hover {
-  color: #a4b51b;
-  text-decoration: underline dotted #4c9a42;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-/* Let the link itself handle the underline */
-a .interactive-word,
-a .interactive-letter {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Keep project cards without underlines */
-.project-card,
-.project-card:visited,
-.project-card:hover {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================================
-   GALLERY — FIXED HEIGHT, AUTO WIDTH
-========================================= */
-
-:root {
-  --gallery-height: 400px;
-}
-
-/* Horizontal gallery */
-.work-scroll {
-  display: flex;
-  align-items: flex-start;
-  overflow-x: auto;
-}
-
-/* Images */
-.work-scroll img.media-item {
-  width: auto;
-  height: var(--gallery-height);
-  max-width: none;
-  aspect-ratio: auto;
-  object-fit: contain;
-  flex: 0 0 auto;
-}
-
-/* Videos */
-.work-scroll video.media-item {
-  width: auto;
-  height: var(--gallery-height);
-  max-width: none;
-  aspect-ratio: auto;
-  object-fit: contain;
-  flex: 0 0 auto;
-}
-
-/* Media with captions */
-.work-scroll .media-entry {
-  width: max-content;
-  max-width: none;
-  flex: 0 0 auto;
-}
-
-.work-scroll .media-entry img.media-item,
-.work-scroll .media-entry video.media-item {
-  width: auto;
-  height: var(--gallery-height);
-  max-width: none;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  :root {
-    --gallery-height: 280px;
   }
 }

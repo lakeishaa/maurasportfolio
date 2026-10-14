@@ -57,7 +57,7 @@ window.PORTFOLIO = [
       autoplay: true,
       // muted: true,
       loop: true,
-      controls: true,
+      // controls: true,
     },
 
     press: [
@@ -93,18 +93,32 @@ window.PORTFOLIO = [
         description: "",
         media: [
           {
-            type: "youtube",
-            id: "v2GiAfEaVfc",
+            // type: "youtube",
+            // id: "v2GiAfEaVfc",
+            // ratio: "wide",
+            // title: "",
+            // description: "",
+            type: "video",
+            src: "assets/baskin-if/tv/video-1.mp4",
+            label: "",
             ratio: "wide",
-            title: "",
-            description: "",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
-            type: "youtube",
-            id: "-cYY2rxZFZg",
+            // type: "youtube",
+            // id: "-cYY2rxZFZg",
+            // ratio: "wide",
+            // title: "",
+            // description: "",
+            type: "video",
+            src: "assets/baskin-if/tv/video-2.mp4",
+            label: "",
             ratio: "wide",
-            title: "",
-            description: "",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
         ],
       },
@@ -442,6 +456,13 @@ window.PORTFOLIO = [
         media: [],
       },
     ],
+
+    credits: [
+      { role: "Agency", name: "Swift" },
+      { role: "Creative Directors", name: "Annie Vieira & Kate Gates" },
+      { role: "Senior Copywriter", name: "Me!" },
+      { role: "Designers", name: "Ryan Michael & Taylor Franklin " },
+    ],
   },
 
   /* ======================================
@@ -451,7 +472,7 @@ window.PORTFOLIO = [
   {
     slug: "fanta",
     brand: "Fanta",
-    tagline: "Undeniably F'ing Delicious",
+    tagline: "Undeniably Fᶦᶻᶻing Delicious",
 
     cover: "assets/fanta/cover.gif",
     shape: "portrait",
@@ -471,7 +492,7 @@ window.PORTFOLIO = [
     ],
 
     intro:
-      "The world is draining online and offline. But Gen Z is still craving ways to tap back into fun. Fanta’s role on social media? To infuse indulgent escapes into the scroll by being undeniably fᶦᶻᶻing delicious.\n\n I created always-on content, jumped on real-time trends, and experimented with new features to keep our fans hooked on everything Fanta.",
+      "The world is draining online and offline. But Gen Z is still craving ways to tap back into fun. Fanta’s role on social media? To infuse indulgent escapes into the scroll by being undeniably fᶦᶻᶻing delicious.\n\nI created always-on content, jumped on real-time trends, and experimented with new features to keep our fans hooked on everything Fanta.",
 
     sections: [
       {
@@ -482,7 +503,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/instagram/video-1.mp4",
             label: "",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -491,7 +512,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/instagram/video-2.mp4",
             label: "Imagination Station Video",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -500,7 +521,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/instagram/video-3.mp4",
             label: "Imagination Station Image",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -515,7 +536,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/tiktok/video-1.mp4",
             label: "Imagination Station Image",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -524,7 +545,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/tiktok/video-2.mp4",
             label: "Imagination Station Video",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -533,7 +554,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/tiktok/video-3.mp4",
             label: "Imagination Station Image",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -542,7 +563,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/tiktok/video-4.mp4",
             label: "Imagination Station Video",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -551,7 +572,7 @@ window.PORTFOLIO = [
             type: "video",
             src: "assets/fanta/tiktok/video-5.mp4",
             label: "Imagination Station Image",
-            ratio: "wide",
+            ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
@@ -600,6 +621,19 @@ window.PORTFOLIO = [
         ],
       },
     ],
+
+    credits: [
+      { role: "Agency", name: "Ogilvy" },
+      { role: "Creative Director", name: "Christa Felton" },
+      { role: "ACD Art", name: "Sofia Rembalsky" },
+      { role: "ACD Copy", name: "Allison Macintosh" },
+      { role: "Sr. Content Creator (Copy)", name: "Me!" },
+      { role: "Junior Copywriterr", name: "Dana Gross" },
+      {
+        role: "Sr. Content Creators (Art)",
+        name: "Helen Ratner, Smitee Oberoi, Jamar Callender",
+      },
+    ],
   },
 
   /* ======================================
@@ -627,6 +661,33 @@ window.PORTFOLIO = [
     intro:
       "As a flavor powerhouse, Baskin-Robbins needed flavor campaigns that matched their delicious craft. I developed flavor personas for new flavors every month and created social-first work to reach ice cream fans (and their cravings) nationwide.",
 
+    press: [
+      // put in
+      {
+        title: "EDIT THIS Only for Sweet on Sydney Campaign",
+        url: "https://",
+      },
+      {
+        title: "Hollywood Reporter",
+        url: "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/sydney-sweeney-baskin-robbins-ice-cream-collaboration-1236300838/",
+      },
+      {
+        title: "Hypebae",
+        url: "https://hypebae.com/2025/7/laneige-sydney-sweeney-baskin-robbins-collaboration-rainbow-sherbet-lip-sleeping-mask-where-to-buy",
+      },
+      {
+        title: " Sports Illustrated",
+        url: "https://lifestyle.si.com/fashion-beauty/sydney-sweeney-pretty-in-pink-new-baskin-robbins-collab",
+      },
+      {
+        title: "Daily Mail",
+        url: "https://www.dailymail.com/yourmoney/consumer/article-14839951/ice-cream-chain-limited-edition-menu-sydney-sweeney-baskin-robbins.html",
+      },
+      {
+        title: "Elite Daily",
+        url: "https://www.elitedaily.com/lifestyle/baskin-robbins-sydney-sweeney-menu-review",
+      },
+    ],
     sections: [
       {
         title: "Trolli Sour Blast",
@@ -758,6 +819,17 @@ window.PORTFOLIO = [
         ],
       },
     ],
+
+    credits: [
+      { role: "Agency", name: "22Squared" },
+      { role: "ECD", name: "Della Mathew" },
+      { role: "Senior Art Director", name: "Ryan Bailey" },
+      { role: "Senior Copywriter", name: "Me!" },
+      { role: "Senior Designer", name: "Chris Thompson" },
+      { role: "Producer", name: "Lori Lawery " },
+      { role: "Production House", name: "Yacht Club" },
+      { role: "Director", name: "Matt Morgan" },
+    ],
   },
 
   /* ======================================
@@ -855,6 +927,16 @@ window.PORTFOLIO = [
         ],
       },
     ],
+
+    credits: [
+      { role: "Agency", name: "DeptW (Digitas, Publicis NY)" },
+      { role: "Creative Directors", name: "Mark Snow & Mai Nakamura" },
+      { role: "Art Director", name: " Alessandra Divizia" },
+      { role: "Copywriter", name: "Me!" },
+      { role: "Producer", name: "Peter McCann" },
+      { role: "Production House", name: "Station Film" },
+      { role: "Director", name: "Lena Beug" },
+    ],
   },
 
   /* ======================================
@@ -924,6 +1006,17 @@ window.PORTFOLIO = [
           },
         ],
       },
+    ],
+
+    credits: [
+      { role: "Agency", name: "GroupeConnect (A Publicis Company)" },
+      {
+        role: "Creative Directors",
+        name: "George Apfelbach & Hache Hernandez",
+      },
+      { role: "ACDs", name: "Carly Drown, Tanya Saliba" },
+      { role: "Copywriter", name: "Me!" },
+      { role: "Art Director", name: "Aarti Thamma" },
     ],
   },
 
@@ -1022,6 +1115,17 @@ window.PORTFOLIO = [
         ],
       },
     ],
+
+    credits: [
+      { role: "Agency", name: "Performance Art" },
+      {
+        role: "Creative Directors",
+        name: "Paul Fung & Omar Dbeis",
+      },
+      { role: "Art Director", name: "Benny Brickner" },
+      { role: "Copywriter", name: "Me!" },
+      { role: "Production Company", name: "Preymaker" },
+    ],
   },
 
   /* ======================================
@@ -1041,6 +1145,20 @@ window.PORTFOLIO = [
     intro:
       'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',
 
+    press: [
+      {
+        title: "Campaigns Of The World",
+        url: "https://campaignsoftheworld.com/creative-print-ads/homelessness-awareness-unlivable/",
+      },
+      {
+        title: "AdStasher",
+        url: "https://www.adstasher.com/2021/12/affordable-but-unlivable-campaign-wins.html",
+      },
+      {
+        title: "Voice of America",
+        url: "https://www.voaindonesia.com/a/angkat-isu-tuna-wisma-maura-munaf-menang-kompetisi-desain-poster-di-as/6410622.html",
+      },
+    ],
     sections: [
       {
         title: "Poster Design",
@@ -1063,6 +1181,10 @@ window.PORTFOLIO = [
           },
         ],
       },
+    ],
+    credits: [
+      { role: "Art Director", name: "Allie Phelan" },
+      { role: "Copywriter", name: "Me!" },
     ],
   },
 ];

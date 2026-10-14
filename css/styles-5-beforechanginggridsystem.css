@@ -1,0 +1,628 @@
+/* MAURA PORTFOLIO â€” CLEAN STYLESHEET */
+/* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
+:root {
+  --font-main: "Xanh Mono", monospace;
+  --type-large: clamp(40px, 4.5vw, 80px);
+  --type-medium: 20px;
+  --type-small: 16px;
+  --line-height-main: 1.4;
+  --link-color: #a4b51b;
+  --link-hover: #798678;
+  --page-gutter: clamp(22px, 5vw, 72px);
+  --gallery-height: 400px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Links: one consistent dotted style */
+a:not(.project-card),
+a:not(.project-card):visited {
+  color: var(--link-color);
+  text-decoration: underline dotted currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+a:not(.project-card):hover {
+  color: var(--link-hover);
+}
+a .interactive-letter,
+a .interactive-word {
+  color: inherit;
+}
+/* Large: homepage introduction and project title */
+.intro h1,
+#maura-interactive,
+.project-heading {
+  font-size: var(--type-large);
+  font-weight: 400;
+  line-height: 1.1;
+}
+/* Medium: all headings and navigational labels */
+.site-header,
+.site-header a,
+.project-number,
+.card-caption,
+.card-caption .brand,
+.work-copy h2,
+.project-links h2,
+.project-credits h2,
+.project-navigation,
+.project-navigation a {
+  font-size: var(--type-medium);
+  line-height: var(--line-height-main);
+  font-weight: 400;
+}
+/* Small: paragraphs, credit rows, press links and captions */
+.project-intro,
+.project-hero p,
+.work-copy,
+.work-copy p,
+.project-link-list,
+.project-link-list a,
+.project-credits p,
+.project-credits p span,
+.media-caption,
+.media-caption p,
+.media-caption a,
+.about {
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+/* Homepage typewriter hyperlinks */
+#demo {
+  line-height: 1.15 !important;
+}
+#demo .typewriter-link,
+#demo .typewriter-link:visited {
+  color: #a4b51b;
+  text-decoration: none;
+  border-bottom: 2px dotted #4c9a42;
+}
+#demo .typewriter-link .letter {
+  color: inherit !important;
+}
+#demo .typewriter-link:hover {
+  color: #ff87f4;
+  border-bottom-color: #a4b51b;
+}
+/* 02. HEADER + HOMEPAGE INTRO */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px var(--page-gutter);
+}
+.intro {
+  padding: 40px var(--page-gutter) 100px;
+}
+.intro h1 {
+  max-width: 1200px;
+  margin: 0;
+}
+.accent {
+  color: #bbcc30;
+}
+/* Typewriter animations remain in typewriter.css. */
+/* 03. HOMEPAGE GRID + CARDS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(30px, 8vw, 160px);
+  row-gap: clamp(50px, 4vw, 130px);
+  align-items: start;
+  padding: 80px var(--page-gutter) 150px;
+}
+.project-card,
+.project-card.large {
+  grid-column: auto;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  transform: none;
+  color: inherit;
+  text-decoration: none;
+}
+.project-card:visited,
+.project-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.project-card figure {
+  margin: 0;
+}
+.project-card .cover {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 33vh;
+  object-fit: cover;
+  aspect-ratio: auto;
+  cursor: crosshair;
+}
+/* Preserve individual cover widths and homepage arrangement. */
+
+/* INDIVIDUAL PROJECT IMAGE SIZES — DESKTOP */
+
+/* INDIVIDUAL PROJECT IMAGE SIZES */
+
+@media (min-width: 601px) {
+  .project-card:nth-child(1) .cover {
+    max-height: 40vh;
+  }
+
+  .project-card:nth-child(2) .cover {
+    max-height: 80vh;
+  }
+
+  .project-card:nth-child(3) .cover {
+    max-height: 70vh;
+  }
+
+  .project-card:nth-child(4) .cover {
+    max-height: 70vh;
+  }
+
+  .project-card:nth-child(5) .cover {
+    max-height: 72vh;
+  }
+
+  .project-card:nth-child(6) .cover {
+    max-height: 40vh;
+  }
+
+  .project-card:nth-child(7) .cover {
+    max-height: 73vh;
+  }
+
+  .project-card:nth-child(8) .cover {
+    max-height: 70vh;
+  }
+}
+
+/* STAGGERED HOMEPAGE PROJECTS — DESKTOP */
+
+@media (min-width: 601px) {
+  .project-card:nth-child(2) {
+    margin-top: 0px;
+  }
+
+  .project-card:nth-child(3) {
+    margin-top: -250px;
+  }
+
+  .project-card:nth-child(4) {
+    margin-top: 100px;
+  }
+
+  .project-card:nth-child(5) {
+    margin-top: -50px;
+  }
+
+  .project-card:nth-child(6) {
+    margin-top: 40px;
+  }
+
+  .project-card:nth-child(7) {
+    margin-top: 0px;
+  }
+
+  .project-card:nth-child(8) {
+    margin-top: -50px;
+  }
+}
+
+/* EDITORIAL HORIZONTAL STAGGERING */
+
+@media (min-width: 601px) {
+  .project-card:nth-child(1) {
+    translate: 0;
+  }
+
+  .project-card:nth-child(2) {
+    translate: 8% 0;
+  }
+
+  .project-card:nth-child(3) {
+    translate: 12% 0;
+  }
+
+  .project-card:nth-child(4) {
+    translate: -10% 0;
+  }
+
+  .project-card:nth-child(5) {
+    translate: 5% 0;
+  }
+
+  .project-card:nth-child(6) {
+    translate: 4% 0;
+  }
+
+  .project-card:nth-child(7) {
+    translate: 10% 0;
+  }
+
+  .project-card:nth-child(8) {
+    translate: 30% 0;
+  }
+}
+
+.project-number {
+  margin-bottom: 6px;
+}
+.card-caption {
+  margin-top: 8px;
+}
+.card-caption .brand {
+  color: #a4b51b;
+}
+.placeholder {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #d9e3d0, #efb6cb 55%, #9c94c4);
+  color: #39333a;
+  text-align: center;
+  padding: 20px;
+}
+.about {
+  padding: 80px var(--page-gutter);
+}
+/* 04. PROJECT PAGE HEADER + HERO */
+.project-detail {
+  padding: 18px var(--page-gutter) 80px;
+}
+.project-heading {
+  max-width: 1100px;
+  margin: 0 0 48px;
+  overflow-wrap: break-word;
+  /* color: #a4b51b; */
+}
+.project-hero {
+  display: grid;
+  grid-template-columns: minmax(250px, 30%) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+  margin: 8px 0 68px;
+}
+.project-hero p {
+  max-width: 380px;
+  margin: 0;
+}
+.project-intro {
+  white-space: pre-line;
+}
+/* Hero: one-third viewport height; width follows natural proportions */
+.hero-media {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+}
+.hero-media img.media-item,
+.hero-media video.media-item {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(33vh, 450px);
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+/* 05. HORIZONTAL GALLERIES */
+.work-section {
+  margin-bottom: 54px;
+}
+.work-scroll {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+}
+.work-scroll::-webkit-scrollbar {
+  display: none;
+}
+.work-copy {
+  flex: 0 0 clamp(220px, 23vw, 350px);
+  padding-right: 14px;
+}
+.work-copy h2 {
+  margin: 0 0 12px;
+  color: #a4b51b;
+}
+.work-copy p {
+  margin: 0;
+}
+/* 06. MEDIA + OPTIONAL CAPTIONS */
+.media-item {
+  display: block;
+  flex: 0 0 auto;
+  width: clamp(220px, 32vw, 540px);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #eee;
+  border: 0;
+}
+.media-item.portrait {
+  width: clamp(170px, 19vw, 320px);
+  aspect-ratio: 9 / 16;
+}
+.media-item.social {
+  width: clamp(170px, 18vw, 280px);
+  aspect-ratio: 4 / 5;
+}
+.media-item.tweet {
+  width: clamp(250px, 31vw, 460px);
+  aspect-ratio: 2.4;
+}
+.media-item.wide {
+  width: clamp(280px, 40vw, 680px);
+}
+.media-entry {
+  flex: 0 0 auto;
+  width: clamp(220px, 32vw, 540px);
+  margin: 0;
+}
+.media-entry:has(.portrait) {
+  width: clamp(170px, 19vw, 320px);
+}
+.media-entry:has(.social) {
+  width: clamp(170px, 18vw, 280px);
+}
+.media-entry:has(.tweet) {
+  width: clamp(250px, 31vw, 460px);
+}
+.media-entry:has(.wide) {
+  width: clamp(280px, 40vw, 680px);
+}
+.media-entry .media-item {
+  width: 100%;
+}
+img.media-item {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+video.media-item,
+iframe.media-item {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+video.media-item.portrait,
+iframe.media-item.portrait {
+  aspect-ratio: 9 / 16;
+}
+video.media-item.social,
+iframe.media-item.social {
+  aspect-ratio: 4 / 5;
+}
+.media-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: #f0edf0;
+  text-align: center;
+}
+.work-scroll iframe {
+  border: 0;
+}
+.media-caption {
+  margin-top: 12px;
+}
+.media-caption strong {
+  font-weight: 600;
+}
+.media-caption p {
+  margin: 4px 0;
+}
+.media-caption a {
+  display: inline-block;
+  margin-top: 6px;
+}
+/* Gallery: consistent height, natural width, no cropping */
+.work-scroll img.media-item,
+.work-scroll video.media-item {
+  width: auto;
+  height: var(--gallery-height);
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.work-scroll .media-entry {
+  width: max-content;
+  max-width: none;
+}
+.work-scroll .media-entry img.media-item,
+.work-scroll .media-entry video.media-item {
+  width: auto;
+  height: var(--gallery-height);
+  max-width: none;
+}
+/* 07. PRESS + CREDITS: GROUPED ON RIGHT */
+.project-bottom {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 350px);
+  justify-content: end;
+  gap: 40px;
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+.project-press,
+.project-bottom .project-credits {
+  text-align: left;
+}
+.project-press .project-links,
+.project-bottom .project-credits {
+  margin: 0;
+}
+.project-links h2,
+.project-credits h2 {
+  margin: 0 0 18px;
+}
+.project-link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.project-credits p {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 8px;
+}
+.project-credits p span:first-child {
+  text-align: left;
+}
+.project-credits p span:last-child {
+  text-align: right;
+}
+/* 08. PREVIOUS / NEXT */
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+/* 09. INTERACTIVE LETTERS */
+.interactive-letter {
+  display: inline-block;
+  position: relative;
+  cursor: inherit;
+  transition:
+    color 0.15s ease,
+    transform 0.2s ease;
+}
+.interactive-letter:hover {
+  color: #f43f25;
+  transform: translateY(-2px);
+}
+.interactive-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.interactive-space {
+  white-space: pre-wrap;
+}
+/* 10. MOBILE */
+@media (max-width: 600px) {
+  :root {
+    --type-large: clamp(34px, 8vw, 48px);
+    --type-medium: 16px;
+    --type-small: 14px;
+    --page-gutter: 20px;
+    --gallery-height: 280px;
+  }
+  .site-header {
+    padding: 20px;
+  }
+  .intro {
+    padding: 30px 20px 60px;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    padding: 40px 20px 80px;
+  }
+  .project-card,
+  .project-card.large,
+  .project-card:nth-child(even) {
+    margin-top: 0;
+    transform: none;
+  }
+  .project-card .cover {
+    width: auto;
+    max-width: 100%;
+    max-height: none;
+  }
+  .about {
+    padding: 60px 20px;
+  }
+  .project-detail {
+    padding: 16px 20px 70px;
+  }
+  .project-heading {
+    margin-bottom: 28px;
+  }
+  .project-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 42px;
+  }
+  .work-section {
+    margin-bottom: 38px;
+  }
+  .work-scroll {
+    gap: 12px;
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+  .work-copy {
+    flex-basis: 70vw;
+  }
+  .work-scroll > .media-item,
+  .work-scroll > .media-entry {
+    width: 76vw;
+  }
+  .work-scroll > .media-item.portrait,
+  .work-scroll > .media-item.social,
+  .work-scroll > .media-entry:has(.portrait),
+  .work-scroll > .media-entry:has(.social) {
+    width: 58vw;
+  }
+  .work-scroll > .media-item.tweet,
+  .work-scroll > .media-entry:has(.tweet) {
+    width: 78vw;
+  }
+  .project-bottom {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
+  }
+}
+@media (hover: none) {
+  .project-card .cover {
+    cursor: pointer;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .interactive-letter {
+    transition: none;
+  }
+  .interactive-letter:hover {
+    transform: none;
+  }
+}
