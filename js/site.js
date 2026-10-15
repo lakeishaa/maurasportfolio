@@ -86,6 +86,73 @@
         </figcaption>
       </figure>`;
   }
+
+  function renderHero(p) {
+    // Existing layout for projects without heroBlocks
+    if (!Array.isArray(p.heroBlocks)) {
+      const heroHTML = p.hero
+        ? `<div class="hero-media">${media(p.hero)}</div>`
+        : "";
+
+      return `
+        <div class="project-hero">
+          <p class="project-intro">${p.intro || ""}</p>
+          ${heroHTML}
+        </div>`;
+    }
+
+    // Custom 12-column layout
+    const blocks = p.heroBlocks
+      .map((block) => {
+        const col = Math.min(12, Math.max(1, Number(block.col) || 1));
+        const span = Math.min(13 - col, Math.max(1, Number(block.span) || 4));
+        const row = Math.max(1, Number(block.row) || 1);
+        const order = Number(block.mobileOrder) || 0;
+
+        let content = "";
+
+        if (block.type === "intro") {
+          content = `<p class="project-intro">${p.intro || ""}</p>`;
+        } else if (block.type === "hero" && p.hero) {
+          content = media(p.hero);
+        } else if (block.type === "text") {
+          let text = esc(block.content || "");
+
+          if (block.link?.text && /^https?:\/\//.test(block.link.url || "")) {
+            const linkText = esc(block.link.text);
+
+            const linkHTML = `<a href="${esc(block.link.url)}"
+      target="_blank"
+      rel="noopener noreferrer">${linkText}</a>`;
+
+            text = text.replace(linkText, linkHTML);
+          }
+
+          content = `<p class="project-intro">${text}</p>`;
+        } else if (block.type === "image" || block.type === "video") {
+          content = media(block);
+        }
+
+        if (!content) return "";
+
+        return `
+          <div
+            class="hero-block"
+            style="
+              --col: ${col};
+              --span: ${span};
+              --row: ${row};
+              --mobile-order: ${order};
+            "
+          >
+            ${content}
+          </div>`;
+      })
+      .join("");
+
+    return `<div class="project-hero-grid">${blocks}</div>`;
+  }
+
   function home() {
     const root = document.querySelector("#projects");
     if (!root) return;
@@ -141,9 +208,9 @@
       projects[(currentIndex - 1 + projects.length) % projects.length];
     const next = projects[(currentIndex + 1) % projects.length];
 
-    const heroHTML = p.hero
-      ? `<div class="hero-media">${media(p.hero)}</div>`
-      : "";
+    // const heroHTML = p.hero
+    //   ? `<div class="hero-media">${media(p.hero)}</div>`
+    //   : "";
 
     const sectionsHTML = (p.sections || [])
       .map((section, index) => {
@@ -185,24 +252,26 @@
       <article class="project-detail">
 
         
-    <header class="project-heading-group">
-      <p class="project-brand">${esc(p.brand)}</p>
-      <h1 class="project-heading">${esc(p.tagline)}</h1>
-    </header>
+      <header class="project-heading-group">
+        <p class="project-brand">${esc(p.brand)}</p>
+        <h1 class="project-heading">${esc(p.tagline)}</h1>
+      </header>
 
 
-        <div class="project-hero">
-          <p class="project-intro">${p.intro || ""}</p>
-          ${heroHTML}
-        </div>
+    ${renderHero(p)}
 
         ${sectionsHTML}
 
         <section class="project-bottom">
-
-          <div class="project-press">
-            ${renderLinks(p.press, "Press")}
-          </div>
+          
+        <div class="project-press">
+        ${renderLinks(
+          p.press,
+          p.slug === "baskin"
+            ? "Press (Only for 'Sweet on Sydney' Campaign)"
+            : "Press"
+        )}
+        </div>
 
           ${
             creditsHTML

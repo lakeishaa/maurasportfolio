@@ -62,6 +62,21 @@ window.PORTFOLIO = [
       // controls: true,
     },
 
+    heroBlocks: [
+      {
+        type: "intro",
+        col: 1,
+        span: 3,
+        row: 1,
+      },
+      {
+        type: "hero",
+        col: 4,
+        span: 9,
+        row: 1,
+      },
+    ],
+
     press: [
       {
         title: "Mashed",
@@ -315,6 +330,25 @@ window.PORTFOLIO = [
     intro:
       "Money stress is real for Zillennials. But Venmo believed it didn't have to be.\n\nWe created zesty and playful organic social content that turned Venmo into a destination for feel-good money—no matter what transaction you're making.",
 
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "Money stress is real for Zillennials. But Venmo believed it didn't have to be.",
+        col: 4,
+        span: 3,
+        row: 2,
+      },
+      {
+        type: "text",
+        content:
+          "We created zesty and playful organic social content that turned Venmo into a destination for feel-good money—no matter what transaction you're making.",
+        col: 7,
+        span: 4,
+        row: 1,
+      },
+    ],
+
     sections: [
       {
         title: "IRL Content",
@@ -500,6 +534,25 @@ window.PORTFOLIO = [
     intro:
       "The world is draining online and offline. But Gen Z is still craving ways to tap back into fun. Fanta’s role on social media? To infuse indulgent escapes into the scroll by being undeniably fᶦᶻᶻing delicious.\n\nI created always-on content, jumped on real-time trends, and experimented with new features to keep our fans hooked on everything Fanta.",
 
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "The world is draining online and offline. But Gen Z is still craving ways to tap back into fun. Fanta’s role on social media? To infuse indulgent escapes into the scroll by being undeniably fᶦᶻᶻing delicious.",
+        col: 4,
+        span: 3,
+        row: 1,
+      },
+      {
+        type: "text",
+        content:
+          "I created always-on content, jumped on real-time trends, and experimented with new features to keep our fans hooked on everything Fanta.",
+        col: 7,
+        span: 4,
+        row: 2,
+      },
+    ],
+
     sections: [
       {
         title: "IG Posts",
@@ -676,12 +729,26 @@ window.PORTFOLIO = [
     intro:
       "As a flavor powerhouse, Baskin-Robbins needed flavor campaigns that matched their delicious craft. I developed flavor personas for new flavors every month and created social-first work to reach ice cream fans (and their cravings) nationwide.",
 
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "As a flavor powerhouse, Baskin-Robbins needed flavor campaigns that matched their delicious craft. I developed flavor personas for new flavors every month and created social-first work to reach ice cream fans (and their cravings) nationwide.",
+        col: 5,
+        span: 4,
+        row: 1,
+      },
+      // {
+      //   type: "image",
+      //   src: "assets/your-existing-hero-image.jpg",
+      //   col: 7,
+      //   span: 6,
+      //   row: 1,
+      // },
+    ],
+
     press: [
       // put in
-      {
-        title: "EDIT THIS Only for Sweet on Sydney Campaign",
-        url: "https://",
-      },
       {
         title: "Hollywood Reporter",
         url: "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/sydney-sweeney-baskin-robbins-ice-cream-collaboration-1236300838/",
@@ -871,6 +938,25 @@ window.PORTFOLIO = [
     intro:
       "Good bye winter hermitting. Hello to your next era. \n\n For Walmart’s spring campaign in 2024, we channeled big new year, new me energy through 6 paid social spots—all shot with an iPhone.\n\n Whether you’re becoming a pro pet parent or a proud homebody, we showed how Walmart can be your partner in your next era. ",
 
+    // heroBlocks: [
+    //   {
+    //     type: "text",
+    //     content:
+    //       "Good bye winter hermitting. Hello to your next era.\n\nFor Walmart’s spring campaign in 2024, we channeled big new year, new me energy through 6 paid social spots—all shot with an iPhone.",
+    //     col: 4,
+    //     span: 3,
+    //     row: 2,
+    //   },
+    //   {
+    //     type: "text",
+    //     content:
+    //       "Whether you’re becoming a pro pet parent or a proud homebody, we showed how Walmart can be your partner in your next era. ",
+    //     col: 8,
+    //     span: 5,
+    //     row: 1,
+    //   },
+    // ],
+
     hero: {
       type: "video",
       src: "assets/walmart/video-1.mp4",
@@ -879,6 +965,21 @@ window.PORTFOLIO = [
       autoplay: true,
       loop: true,
     },
+
+    heroBlocks: [
+      {
+        type: "intro",
+        col: 1,
+        span: 3,
+        row: 1,
+      },
+      {
+        type: "hero",
+        col: 4,
+        span: 9,
+        row: 1,
+      },
+    ],
 
     sections: [
       {
@@ -978,6 +1079,25 @@ window.PORTFOLIO = [
     intro:
       "In the sea of shiny investment banks, Merrill might be seen as the stodgy option. But in reality, their digital tools are way ahead of the curve. \n\n To show just how powerful their digital tools are, I wrote three spots that tapped into everyone's habit of being on their phones, yet doing what you least expect—banking.",
 
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "In the sea of shiny investment banks, Merrill might be seen as the stodgy option. But in reality, their digital tools are way ahead of the curve.",
+        col: 4,
+        span: 4,
+        row: 1,
+      },
+      {
+        type: "text",
+        content:
+          "To show just how powerful their digital tools are, I wrote three spots that tapped into everyone’s habit of being on their phones, yet doing what you least expect—banking.",
+        col: 8,
+        span: 3,
+        row: 2,
+      },
+    ],
+
     sections: [
       {
         title: "Campaign Films",
@@ -1055,6 +1175,33 @@ window.PORTFOLIO = [
       "assets/circle/landing/4.png",
       "assets/circle/landing/5.png",
       "assets/circle/landing/6.png",
+    ],
+
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "To build a more inclusive financial future, Circle is the bridge that brings two incompatible things together.",
+        col: 2,
+        span: 3,
+        row: 1,
+      },
+      {
+        type: "text",
+        content:
+          "Between traditional and digital currencies. Between banking and blockchain. Between today and tomorrow.",
+        col: 5,
+        span: 2,
+        row: 1,
+      },
+      {
+        type: "text",
+        content:
+          "I helped build an awareness campaign that took place in the space between, because that's where Circle lives. For entrepreneurs, developers, and creators to build for the future. ",
+        col: 6,
+        span: 6,
+        row: 3,
+      },
     ],
 
     intro:
@@ -1159,6 +1306,28 @@ window.PORTFOLIO = [
 
     intro:
       'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',
+
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet 'selling' the lifestyle that no one would dream of living.\n\nBecause living unhoused is affordable, but unlivable.",
+        col: 5,
+        span: 4,
+        row: 1,
+      },
+      {
+        type: "text",
+        content: "Won a Graphis Silver Award.",
+        link: {
+          text: "Graphis Silver Award",
+          url: "https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf",
+        },
+        col: 9,
+        span: 3,
+        row: 2,
+      },
+    ],
 
     press: [
       {

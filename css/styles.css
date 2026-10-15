@@ -7,7 +7,7 @@
   --type-small: 16px;
   --line-height-main: 1.4;
   --link-color: #a4b51b;
-  --link-hover: #798678;
+  --link-hover: #ff87f4;
   --page-gutter: clamp(22px, 5vw, 72px);
   --gallery-height: 400px;
 }
@@ -288,6 +288,46 @@ a .interactive-word {
   white-space: pre-line;
 }
 
+/* 12-COLUMN PROJECT HERO GRID */
+
+.project-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: start;
+  /* margin: 0 0 40px; */
+  margin: 0 0 60px;
+}
+
+.hero-block {
+  grid-column: var(--col) / span var(--span);
+  grid-row: var(--row);
+  min-width: 0;
+}
+
+.hero-block .project-intro {
+  margin: 0;
+  max-width: none;
+  white-space: pre-line;
+}
+
+.hero-block img.media-item,
+.hero-block video.media-item {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Hero videos maintain their natural proportions */
+.hero-block video.media-item {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Hero: one-third viewport height; width follows natural proportions */
 .hero-media {
   width: 100%;
@@ -310,7 +350,7 @@ a .interactive-word {
 .work-scroll {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 24px;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-inline: contain;
@@ -321,10 +361,12 @@ a .interactive-word {
 .work-scroll::-webkit-scrollbar {
   display: none;
 }
+
 .work-copy {
-  flex: 0 0 clamp(220px, 23vw, 350px);
+  flex: 0 0 calc((100% - 11 * 24px) / 12 * 3 + 2 * 24px);
   padding-right: 14px;
 }
+
 .work-copy h2 {
   margin: 0 0 12px;
   color: #a4b51b;
@@ -448,7 +490,7 @@ iframe.media-item.social {
   gap: 40px;
   margin-top: 100px;
   padding-top: 24px;
-  border-top: 1px solid #ddd;
+  border-top: 1.3px dotted #a4b51b;
 }
 .project-press,
 .project-bottom .project-credits {
@@ -495,7 +537,7 @@ iframe.media-item.social {
   gap: 24px;
   margin-top: 100px;
   padding-top: 24px;
-  border-top: 1px solid #ddd;
+  border-top: 1.3px dotted #a4b51b;
 }
 /* 09. INTERACTIVE LETTERS */
 .interactive-letter {
@@ -517,6 +559,32 @@ iframe.media-item.social {
 .interactive-space {
   white-space: pre-wrap;
 }
+
+/* TABLET: MORE SPACE FOR TEXT */
+@media (min-width: 601px) and (max-width: 800px) {
+  /* @media (min-width: 601px) and (max-width: 1100px) { */
+  .project-hero-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 32px;
+  }
+
+  .hero-block {
+    grid-column: auto;
+    grid-row: auto;
+    min-width: 0;
+  }
+
+  .hero-block:has(.project-intro) {
+    grid-column: span 3;
+  }
+
+  .hero-block:has(img),
+  .hero-block:has(video) {
+    grid-column: span 3;
+  }
+}
+
 /* 10. MOBILE */
 @media (max-width: 600px) {
   :root {
@@ -525,6 +593,21 @@ iframe.media-item.social {
     --type-small: 14px;
     --page-gutter: 20px;
     --gallery-height: 280px;
+  }
+
+  .project-hero-grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .hero-block {
+    grid-column: 1;
+    grid-row: auto;
+    order: var(--mobile-order);
+  }
+
+  .hero-block .project-intro {
+    max-width: 100%;
   }
 
   /* do i need this below? */
@@ -573,6 +656,10 @@ iframe.media-item.social {
     gap: 24px;
     margin-bottom: 42px;
   }
+
+  .hero-block .project-intro {
+    max-width: 550px;
+  }
   .work-section {
     margin-bottom: 38px;
   }
@@ -581,9 +668,16 @@ iframe.media-item.social {
     margin-right: -20px;
     padding-right: 20px;
   }
+
   .work-copy {
-    flex-basis: 70vw;
+    flex: 0 0 40vw;
+    padding-right: 12px;
   }
+
+  .work-copy p {
+    max-width: 100%;
+  }
+
   .work-scroll > .media-item,
   .work-scroll > .media-entry {
     width: 76vw;
