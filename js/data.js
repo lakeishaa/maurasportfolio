@@ -22,6 +22,8 @@ window.PORTFOLIO = [
   {
     slug: "baskin-if",
     brand: "Baskin-Robbins X IF",
+    title: "Treat Your Imagination",
+    heroLayout: "image-right",
     tagline: "Treat Your Imagination",
 
     cover: "assets/baskin-if/cover.gif",
@@ -291,7 +293,9 @@ window.PORTFOLIO = [
   {
     slug: "venmo",
     brand: "Venmo",
+    title: "Social At Venmo",
     tagline: "Social At Venmo",
+    heroLayout: "text-right",
 
     cover: "assets/venmo/cover.jpg",
     shape: "large",
@@ -459,9 +463,9 @@ window.PORTFOLIO = [
 
     credits: [
       { role: "Agency", name: "Swift" },
-      { role: "Creative Directors", name: "Annie Vieira & Kate Gates" },
+      { role: "Creative Directors", name: "Annie Vieira\nKate Gates" },
       { role: "Senior Copywriter", name: "Me!" },
-      { role: "Designers", name: "Ryan Michael & Taylor Franklin " },
+      { role: "Designers", name: "Ryan Michael\nTaylor Franklin " },
     ],
   },
 
@@ -473,6 +477,8 @@ window.PORTFOLIO = [
     slug: "fanta",
     brand: "Fanta",
     tagline: "Undeniably Fᶦᶻᶻing Delicious",
+    title: "Undeniably Fᶦᶻᶻing Delicious",
+    heroLayout: "split-text",
 
     cover: "assets/fanta/cover.gif",
     shape: "portrait",
@@ -482,12 +488,12 @@ window.PORTFOLIO = [
       //   "assets/fanta/landing/1.jpg",
       "assets/fanta/landing/2.png",
       //   "assets/fanta/landing/3.png",
-      "assets/fanta/landing/4.png",
+      "assets/fanta/landing/1.gif",
       //   "assets/fanta/landing/5.jpg",
       "assets/fanta/landing/6.jpg",
       "assets/fanta/landing/7.png",
       "assets/fanta/landing/8.jpg",
-      "assets/fanta/landing/9.jpg",
+      // "assets/fanta/landing/3.png",
       "assets/fanta/landing/10.gif",
     ],
 
@@ -637,10 +643,10 @@ window.PORTFOLIO = [
       { role: "ACD Art", name: "Sofia Rembalsky" },
       { role: "ACD Copy", name: "Allison Macintosh" },
       { role: "Sr. Content Creator (Copy)", name: "Me!" },
-      { role: "Junior Copywriterr", name: "Dana Gross" },
+      { role: "Junior Copywriter", name: "Dana Gross" },
       {
         role: "Sr. Content Creators (Art)",
-        name: "Helen Ratner, Smitee Oberoi, Jamar Callender",
+        name: "Helen Ratner\nSmitee Oberoi\nJamar Callender",
       },
     ],
   },
@@ -938,8 +944,8 @@ window.PORTFOLIO = [
     ],
 
     credits: [
-      { role: "Agency", name: "DeptW (Digitas, Publicis NY)" },
-      { role: "Creative Directors", name: "Mark Snow & Mai Nakamura" },
+      { role: "Agency", name: "DeptW\n(Digitas, Publicis NY)" },
+      { role: "Creative Directors", name: "Mark Snow\nMai Nakamura" },
       { role: "Art Director", name: " Alessandra Divizia" },
       { role: "Copywriter", name: "Me!" },
       { role: "Producer", name: "Peter McCann" },
@@ -1018,12 +1024,12 @@ window.PORTFOLIO = [
     ],
 
     credits: [
-      { role: "Agency", name: "GroupeConnect (A Publicis Company)" },
+      { role: "Agency", name: "GroupeConnect\n(A Publicis Company)" },
       {
         role: "Creative Directors",
-        name: "George Apfelbach & Hache Hernandez",
+        name: "George Apfelbach\nHache Hernandez",
       },
-      { role: "ACDs", name: "Carly Drown, Tanya Saliba" },
+      { role: "ACDs", name: "Carly Drown\nTanya Saliba" },
       { role: "Copywriter", name: "Me!" },
       { role: "Art Director", name: "Aarti Thamma" },
     ],
@@ -1129,7 +1135,7 @@ window.PORTFOLIO = [
       { role: "Agency", name: "Performance Art" },
       {
         role: "Creative Directors",
-        name: "Paul Fung & Omar Dbeis",
+        name: "Paul Fung\nOmar Dbeis",
       },
       { role: "Art Director", name: "Benny Brickner" },
       { role: "Copywriter", name: "Me!" },

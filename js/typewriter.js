@@ -103,6 +103,7 @@
   function createCharacter(character) {
     if (character === " ") {
       currentWord = null;
+
       const space = document.createElement("span");
       space.className = "space";
       space.textContent = " ";
@@ -110,11 +111,13 @@
       lastTyped = space;
       return;
     }
+
     if (!currentWord) {
       currentWord = document.createElement("span");
       currentWord.className = "word";
       demo.insertBefore(currentWord, cursor);
     }
+
     const span = document.createElement("span");
     span.className = "letter";
     span.dataset.original = character;
@@ -122,25 +125,39 @@
     span.dataset.baseColor = specialCharacters[character] || "black";
     span.textContent = character;
     span.style.color = span.dataset.baseColor;
+
     span.addEventListener("mouseenter", () => createTrail(span));
-    currentWord.appendChild(span);
+
+    const target = currentWord.querySelector(".typewriter-link") || currentWord;
+    target.appendChild(span);
+
     lastTyped = span;
   }
 
   function deleteLastCharacter() {
     const last = cursor.previousElementSibling;
     if (!last) return;
+
     if (last.classList.contains("space")) {
       last.remove();
       const prev = cursor.previousElementSibling;
       currentWord = prev?.classList.contains("word") ? prev : null;
       return;
     }
-    const char = last.lastElementChild;
+
+    const container = last.querySelector(".typewriter-link") || last;
+    const char = container.lastElementChild;
+
     if (char) char.remove();
-    if (!last.children.length) {
-      last.remove();
-      currentWord = null;
+
+    if (!container.children.length) {
+      if (container.classList.contains("typewriter-link")) {
+        // Keep the empty link for the corrected word
+        currentWord = last;
+      } else {
+        last.remove();
+        currentWord = null;
+      }
     } else {
       currentWord = last;
     }
@@ -150,24 +167,46 @@
     const letters = Array.from(demo.querySelectorAll(".letter"));
     const old = letters.slice(0, -TYPING_COLOR_TRAIL);
     const newest = letters.slice(-TYPING_COLOR_TRAIL);
+
     old.forEach((letter, index) => {
       setTimeout(
         () => {
-          if (letter.isConnected && letter.dataset.busy !== "true") {
-            letter.style.color = "black";
-            letter.dataset.baseColor = "black";
-          }
+          if (!letter.isConnected || letter.dataset.busy === "true") return;
+
+          const isLink = !!letter.closest(".typewriter-link");
+          const color = isLink ? "#a4b51b" : "black";
+
+          letter.style.color = color;
+          letter.dataset.baseColor = color;
         },
         Math.min(index * 5, TYPING_COLOR_RESET_DELAY)
       );
     });
+
     newest.forEach((letter) => {
-      if (letter.dataset.busy !== "true") {
-        const color = randomColor();
-        letter.style.color = color;
-        letter.dataset.baseColor = color;
-      }
+      if (letter.dataset.busy === "true") return;
+
+      const isLink = !!letter.closest(".typewriter-link");
+      const color = isLink ? "#a4b51b" : randomColor();
+
+      letter.style.color = color;
+      letter.dataset.baseColor = color;
     });
+  }
+
+  function startLinkedWord(word) {
+    currentWord = document.createElement("span");
+    currentWord.className = "word";
+    demo.insertBefore(currentWord, cursor);
+
+    const link = document.createElement("a");
+    link.href = wordLinks[word];
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "typewriter-link";
+    link.setAttribute("aria-label", `Open ${word} link`);
+
+    currentWord.appendChild(link);
   }
 
   async function typeCharacters(text) {
@@ -197,41 +236,45 @@
     await typeCharacters(correct);
   }
 
-  function linkTypedWords() {
-    demo.querySelectorAll(".word").forEach((word) => {
-      const text = word.textContent;
+  // function linkTypedWords() {
+  //   demo.querySelectorAll(".word").forEach((word) => {
+  //     const text = word.textContent;
 
-      // Remove decorative symbols before checking the word
-      const cleanWord = text
-        .replace(/^[^a-zA-Z]+/, "")
-        .replace(/[^a-zA-Z]+$/, "")
-        .toLowerCase();
+  //     // Remove decorative symbols before checking the word
+  //     const cleanWord = text
+  //       .replace(/^[^a-zA-Z]+/, "")
+  //       .replace(/[^a-zA-Z]+$/, "")
+  //       .toLowerCase();
 
-      const url = wordLinks[cleanWord];
-      if (!url || word.querySelector("a")) return;
+  //     const url = wordLinks[cleanWord];
+  //     if (!url || word.querySelector("a")) return;
 
-      const link = document.createElement("a");
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.className = "typewriter-link";
-      link.setAttribute("aria-label", `Open ${cleanWord} link`);
+  //     const link = document.createElement("a");
+  //     link.href = url;
+  //     link.target = "_blank";
+  //     link.rel = "noopener noreferrer";
+  //     link.className = "typewriter-link";
+  //     link.setAttribute("aria-label", `Open ${cleanWord} link`);
 
-      // Move existing letters into the link
-      while (word.firstChild) {
-        link.appendChild(word.firstChild);
-      }
+  //     // Move existing letters into the link
+  //     while (word.firstChild) {
+  //       link.appendChild(word.firstChild);
+  //     }
 
-      word.appendChild(link);
-    });
-  }
+  //     word.appendChild(link);
+  //   });
+  // }
 
   function finishTypingColors() {
     demo.querySelectorAll(".letter").forEach((letter, index) => {
       setTimeout(() => {
         if (!letter.isConnected || letter.dataset.busy === "true") return;
-        letter.style.color = "black";
-        letter.dataset.baseColor = "black";
+
+        const isLink = !!letter.closest(".typewriter-link");
+        const color = isLink ? "#a4b51b" : "black";
+
+        letter.style.color = color;
+        letter.dataset.baseColor = color;
       }, index * 8);
     });
   }
@@ -251,15 +294,23 @@
     await typeCharacters(" magnetic and ");
     await sleep(THINKING_PAUSE_1);
     await typeCharacters("magical ⋆˚stories⋆. A ");
+
+    startLinkedWord("journalist");
     await typo("✎journalist", "✎journlist");
-    await typeCharacters(" and dancer❀ in a past life,");
+
+    await typeCharacters(" and ");
+
+    startLinkedWord("dancer");
+    await typeCharacters("dancer❀");
+
+    await typeCharacters(" in a past life,");
+
     await sleep(THINKING_PAUSE_2);
     await typeCharacters(" a dolphin");
     await sleep(THINKING_PAUSE_3);
     await typeCharacters(" in her next one ✺");
     await sleep(250);
     finishTypingColors();
-    linkTypedWords();
   }
 
   if (document.readyState === "complete") humanType();

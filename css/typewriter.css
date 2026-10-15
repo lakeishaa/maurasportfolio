@@ -18,6 +18,14 @@
   font-family: "Xanh Mono", monospace;
   transition: transform 0.18s ease;
 }
+
+/* Green linked words while typing */
+#demo .typewriter-link,
+#demo .typewriter-link:visited,
+#demo .typewriter-link .letter {
+  color: #a4b51b !important;
+}
+
 #demo .letter.active {
   animation: letterJump 0.45s ease;
 }

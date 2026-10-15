@@ -184,12 +184,12 @@
     root.innerHTML = `
       <article class="project-detail">
 
-        <header class="project-title-block">
-          <h1 class="project-heading">
-            ${esc(p.brand)}<br>
-            ${esc(p.tagline)}
-          </h1>
-        </header>
+        
+    <header class="project-heading-group">
+      <p class="project-brand">${esc(p.brand)}</p>
+      <h1 class="project-heading">${esc(p.tagline)}</h1>
+    </header>
+
 
         <div class="project-hero">
           <p class="project-intro">${p.intro || ""}</p>
@@ -275,4 +275,60 @@
   else detail();
 
   letters();
+
+  function initGalleryCursor() {
+    const galleries = document.querySelectorAll(".work-scroll");
+
+    if (!galleries.length) return;
+
+    const cursor = document.createElement("div");
+    cursor.className = "gallery-cursor";
+    cursor.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    `;
+
+    document.body.appendChild(cursor);
+
+    const path = cursor.querySelector("path");
+
+    galleries.forEach((gallery) => {
+      gallery.addEventListener("pointerenter", () => {
+        cursor.classList.add("visible");
+      });
+
+      gallery.addEventListener("pointermove", (e) => {
+        const rect = gallery.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const isLeft = x < rect.width / 2;
+
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+
+        path.setAttribute(
+          "d",
+          isLeft ? "M19 12H5m7-7-7 7 7 7" : "M5 12h14m-7-7 7 7-7 7"
+        );
+      });
+
+      gallery.addEventListener("pointerleave", () => {
+        cursor.classList.remove("visible");
+      });
+
+      gallery.addEventListener("click", (e) => {
+        if (e.target.closest("a, button")) return;
+
+        const rect = gallery.getBoundingClientRect();
+        const isLeft = e.clientX - rect.left < rect.width / 2;
+
+        gallery.scrollBy({
+          left: isLeft ? -rect.width * 0.7 : rect.width * 0.7,
+          behavior: "smooth",
+        });
+      });
+    });
+  }
+
+  initGalleryCursor();
 })();
