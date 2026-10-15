@@ -171,11 +171,11 @@
       .filter((item) => /^https?:\/\//.test(item.url || ""))
       .map(
         (item) => `
-          <a href="${esc(item.url)}"
-             target="_blank"
-             rel="noopener noreferrer">
-            ${esc(item.title || "View link")} ↗
-          </a>`
+        <a href="${esc(item.url)}"
+          target="_blank"
+          rel="noopener noreferrer">
+          ${esc(item.title || "View link")} ↗
+        </a>`
       )
       .join("");
 
@@ -183,7 +183,7 @@
 
     return `
       <section class="project-links">
-        <h2>${esc(heading)}</h2>
+        <h2 class="interactive-text">${esc(heading)}</h2>
         <div class="project-link-list">${links}</div>
       </section>`;
   }
@@ -220,7 +220,7 @@
           <section class="work-section" aria-label="${esc(section.title)}">
             <div class="work-scroll" tabindex="0">
               <div class="work-copy">
-                <h2>${String(index + 1).padStart(2, "0")}. ${esc(section.title)}</h2>
+              <h2 class="interactive-text">${String(index + 1).padStart(2, "0")}. ${esc(section.title)}</h2>
                 ${section.description ? `<p>${section.description}</p>` : ""}
               </div>
 
@@ -241,8 +241,8 @@
           .map(
             (credit) => `
               <p>
-                <span>${esc(credit.role)}</span>
-                <span>${esc(credit.name)}</span>
+                <span class="interactive-text">${esc(credit.role)}</span>
+                <span class="interactive-text">${esc(credit.name)}</span>
               </p>`
           )
           .join("")
@@ -253,7 +253,7 @@
 
         
       <header class="project-heading-group">
-        <p class="project-brand">${esc(p.brand)}</p>
+        <p class="project-brand interactive-text">${esc(p.brand)}</p>
         <h1 class="project-heading">${esc(p.tagline)}</h1>
       </header>
 
@@ -275,10 +275,7 @@
 
           ${
             creditsHTML
-              ? `<div class="project-credits">
-                  <h2>Credits</h2>
-                  ${creditsHTML}
-                </div>`
+              ? `<div class="project-credits"><h2 class="interactive-text">Credits</h2>${creditsHTML}</div>`
               : ""
           }
         </section>
@@ -298,20 +295,91 @@
   }
 
   function letters() {
-    const colors = ["#d84b36", "#9bae1c", "#2699d2", "#ef78b8"];
+    const colors = ["#F43F25", "#C7DD38", "#32B7FF", "#FF87F4"];
+    const symbols = ["&", "*", "$", "!", "#", "%", "+", "@"];
+
+    // Same trail timing as typewriter.js
+    const TRAIL_CURRENT = 0;
+    const TRAIL_PREV_1 = 120;
+    const TRAIL_PREV_2 = 240;
+    const TRAIL_PREV_3 = 360;
+    const TRAIL_NEXT_1 = 160;
+
+    const HOVER_ACTIVE_DURATION = 700;
+    const SYMBOL_CHANCE = 0.25;
+
+    const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+    const randomSymbol = () =>
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    function activateLetter(letter, delay = 0) {
+      if (!letter || letter.dataset.busy === "true") return;
+
+      letter.dataset.busy = "true";
+
+      setTimeout(() => {
+        if (!letter.isConnected) {
+          letter.dataset.busy = "false";
+          return;
+        }
+
+        const original = letter.dataset.original;
+
+        letter.style.color = randomColor();
+
+        letter.textContent =
+          Math.random() < SYMBOL_CHANCE ? randomSymbol() : original;
+
+        letter.classList.add("active");
+
+        setTimeout(() => {
+          if (!letter.isConnected) return;
+
+          letter.textContent = original;
+          letter.style.color = "";
+          letter.classList.remove("active");
+          letter.dataset.busy = "false";
+        }, HOVER_ACTIVE_DURATION);
+      }, delay);
+    }
+
+    function createTrail(letter, container) {
+      // Only animate letters within the same text element
+      const letters = Array.from(container.querySelectorAll(".letter"));
+
+      const index = letters.indexOf(letter);
+
+      [
+        [0, TRAIL_CURRENT],
+        [-1, TRAIL_PREV_1],
+        [-2, TRAIL_PREV_2],
+        [-3, TRAIL_PREV_3],
+        [1, TRAIL_NEXT_1],
+      ].forEach(([offset, delay]) => {
+        activateLetter(letters[index + offset], delay);
+      });
+    }
 
     document.querySelectorAll(".interactive-text").forEach((el) => {
+      // Prevent initializing the same element twice
+      if (el.dataset.interactiveReady === "true") return;
+      el.dataset.interactiveReady = "true";
+
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+
       const nodes = [];
 
-      while (walker.nextNode()) nodes.push(walker.currentNode);
+      while (walker.nextNode()) {
+        nodes.push(walker.currentNode);
+      }
 
-      nodes.forEach((n) => {
-        if (!n.nodeValue.trim()) return;
+      nodes.forEach((node) => {
+        if (!node.nodeValue.trim()) return;
 
         const frag = document.createDocumentFragment();
 
-        for (const ch of n.nodeValue) {
+        for (const ch of node.nodeValue) {
           if (/\s/.test(ch)) {
             frag.append(ch);
             continue;
@@ -319,29 +387,27 @@
 
           const span = document.createElement("span");
           span.className = "letter";
+          span.dataset.original = ch;
+          span.dataset.busy = "false";
           span.textContent = ch;
 
           span.addEventListener("mouseenter", () => {
-            span.style.color =
-              colors[Math.floor(Math.random() * colors.length)];
-            span.textContent = Math.random() < 0.18 ? "✳" : ch;
-          });
-
-          span.addEventListener("mouseleave", () => {
-            span.textContent = ch;
-            span.style.color = "";
+            createTrail(span, el);
           });
 
           frag.append(span);
         }
 
-        n.replaceWith(frag);
+        node.replaceWith(frag);
       });
     });
   }
 
-  if (document.body.dataset.page === "home") home();
-  else detail();
+  if (document.body.dataset.page === "home") {
+    home();
+  } else {
+    detail();
+  }
 
   letters();
 

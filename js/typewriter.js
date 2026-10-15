@@ -68,18 +68,38 @@
 
   function activateLetter(letter, delay = 0) {
     if (!letter || letter.dataset.busy === "true" || reducedMotion) return;
+
     letter.dataset.busy = "true";
+
     setTimeout(() => {
       if (!letter.isConnected) return;
+
       const original = letter.dataset.original;
-      letter.style.color = randomColor();
+      const link = letter.closest(".typewriter-link");
+
+      // Keep linked letters pink while hovering
+      const isLinkHovered = link && link.matches(":hover");
+
+      letter.style.color = isLinkHovered ? "#FF87F4" : randomColor();
+
+      // Keep the changing-character effect
       letter.textContent =
         Math.random() < SYMBOL_CHANCE ? randomSymbol() : original;
+
       letter.classList.add("active");
+
       setTimeout(() => {
         if (!letter.isConnected) return;
+
         letter.textContent = original;
-        letter.style.color = letter.dataset.baseColor;
+
+        // Check hover again when animation finishes
+        const stillHovered = link && link.matches(":hover");
+
+        letter.style.color = stillHovered
+          ? "#FF87F4"
+          : letter.dataset.baseColor;
+
         letter.classList.remove("active");
         letter.dataset.busy = "false";
       }, HOVER_ACTIVE_DURATION);
@@ -174,7 +194,11 @@
           if (!letter.isConnected || letter.dataset.busy === "true") return;
 
           const isLink = !!letter.closest(".typewriter-link");
-          const color = isLink ? "#a4b51b" : "black";
+          const color = isLink
+            ? letter.closest(".typewriter-link").matches(":hover")
+              ? "#FF87F4"
+              : "#a4b51b"
+            : "black";
 
           letter.style.color = color;
           letter.dataset.baseColor = color;
@@ -187,7 +211,11 @@
       if (letter.dataset.busy === "true") return;
 
       const isLink = !!letter.closest(".typewriter-link");
-      const color = isLink ? "#a4b51b" : randomColor();
+      const color = isLink
+        ? letter.closest(".typewriter-link").matches(":hover")
+          ? "#FF87F4"
+          : "#a4b51b"
+        : randomColor();
 
       letter.style.color = color;
       letter.dataset.baseColor = color;

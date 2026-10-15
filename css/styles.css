@@ -51,6 +51,7 @@ a .interactive-letter,
 a .interactive-word {
   color: inherit;
 }
+
 /* Large: homepage introduction and project title */
 .intro h1,
 #maura-interactive {
@@ -106,6 +107,13 @@ a .interactive-word {
   color: #ff87f4;
   border-bottom-color: #a4b51b;
 }
+
+/* Linked typewriter words turn pink on hover */
+#demo .typewriter-link:hover,
+#demo .typewriter-link:hover .letter {
+  color: #ff87f4 !important;
+}
+
 /* 02. HEADER + HOMEPAGE INTRO */
 .site-header {
   display: flex;
@@ -228,9 +236,16 @@ a .interactive-word {
 .card-caption {
   margin-top: 8px;
 }
+
 .card-caption .brand {
   color: #a4b51b;
+  transition: color 0.2s ease;
 }
+
+.project-card:hover .card-caption .brand {
+  color: #ff87f4;
+}
+
 .placeholder {
   display: grid;
   place-items: center;
@@ -254,6 +269,7 @@ a .interactive-word {
   margin: 0 0 4px;
   color: #a4b51b;
   /* text-decoration: underline dotted #a4b51b; */
+  transition: color 0.2s ease;
 }
 
 .project-heading {
@@ -548,16 +564,87 @@ iframe.media-item.social {
     color 0.15s ease,
     transform 0.2s ease;
 }
+
 .interactive-letter:hover {
   color: #f43f25;
   transform: translateY(-2px);
 }
+
+/* Interactive headings on project pages */
+.project-brand .interactive-letter,
+.work-copy h2 .interactive-letter,
+.project-links h2 .interactive-letter,
+.project-credits h2 .interactive-letter {
+  cursor: crosshair;
+}
+
+/* Keep original heading colors */
+.project-brand .interactive-letter,
+.work-copy h2 .interactive-letter {
+  color: inherit;
+}
+
+/* Letter trail interaction */
+.interactive-text .letter {
+  display: inline;
+  transition: color 0.15s ease;
+}
+
+/* Keep the original green on Press links */
+.project-link-list a.interactive-text {
+  color: #a4b51b;
+}
+
+/* Preserve clickable links */
+.project-link-list a.interactive-text .letter {
+  cursor: pointer;
+}
+
 .interactive-word {
   display: inline-block;
   white-space: nowrap;
 }
 .interactive-space {
   white-space: pre-wrap;
+}
+
+/* PRESS — simple pink hover */
+.project-press .project-link-list a:hover,
+.project-press .project-link-list a:hover .letter {
+  color: #ff87f4 !important;
+}
+
+/* CREDITS — letter trail + jump */
+.project-credits .interactive-text .letter {
+  display: inline-block;
+  position: relative;
+  color: inherit;
+  transition:
+    color 0.15s ease,
+    transform 0.2s ease;
+}
+
+/* Letters jump upward when activated */
+.project-credits .interactive-text .letter.active {
+  transform: translateY(-3px);
+}
+
+/* Keep spaces and line wrapping natural */
+.project-credits .interactive-text {
+  white-space: normal;
+}
+
+/* All interactive letters — color + jump */
+.interactive-text .letter {
+  display: inline-block;
+  position: relative;
+  transition:
+    color 0.15s ease,
+    transform 0.2s ease;
+}
+
+.interactive-text .letter.active {
+  transform: translateY(-3px);
 }
 
 /* TABLET: MORE SPACE FOR TEXT */
