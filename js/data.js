@@ -26,10 +26,11 @@ window.PORTFOLIO = [
     heroLayout: "image-right",
     tagline: "Treat Your Imagination",
 
-    cover: "assets/baskin-if/cover.gif",
+    cover: "assets/baskin-if/cover.png",
     shape: "portrait",
 
     hoverImages: [
+      // "assets/baskin-if/cover.png",
       "assets/baskin-if/cover.gif",
       "assets/baskin-if/landing/1.png",
       "assets/baskin-if/landing/2.png",
@@ -490,8 +491,19 @@ window.PORTFOLIO = [
       },
       {
         title: "Twitter",
-        layout: "social",
-        media: [],
+        layout: "staggered",
+        media: [
+          { type: "image", src: "assets/venmo/twitter/image-1.png" },
+          { type: "image", src: "assets/venmo/twitter/image-2.png" },
+          { type: "image", src: "assets/venmo/twitter/image-3.png" },
+          { type: "image", src: "assets/venmo/twitter/image-4.png" },
+          { type: "image", src: "assets/venmo/twitter/image-5.png" },
+          { type: "image", src: "assets/venmo/twitter/image-6.png" },
+          { type: "image", src: "assets/venmo/twitter/image-7.png" },
+          { type: "image", src: "assets/venmo/twitter/image-8.png" },
+          { type: "image", src: "assets/venmo/twitter/image-9.png" },
+          { type: "image", src: "assets/venmo/twitter/image-10.png" },
+        ],
       },
     ],
 
@@ -514,11 +526,12 @@ window.PORTFOLIO = [
     title: "Undeniably Fᶦᶻᶻing Delicious",
     heroLayout: "split-text",
 
-    cover: "assets/fanta/cover.gif",
+    cover: "assets/fanta/cover-2.gif",
+    // hoverCover: "assets/fanta/landing/2.png",
     shape: "portrait",
 
     hoverImages: [
-      "assets/fanta/cover.gif",
+      "assets/fanta/cover-2.gif",
       //   "assets/fanta/landing/1.jpg",
       "assets/fanta/landing/2.png",
       //   "assets/fanta/landing/3.png",
@@ -641,7 +654,28 @@ window.PORTFOLIO = [
       {
         title: "Threads Posts",
         layout: "social",
-        media: [],
+        media: [
+          {
+            type: "image",
+            src: "assets/fanta/threads/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/threads/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/threads/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/threads/image-4.png",
+            ratio: "portrait",
+          },
+        ],
       },
       {
         title: "IG Broadcast & More",
@@ -923,11 +957,11 @@ window.PORTFOLIO = [
     brand: "Walmart",
     tagline: "Your Next Era",
 
-    cover: "assets/walmart/cover.jpg",
+    cover: "assets/walmart/cover.gif",
     shape: "portrait",
 
     hoverImages: [
-      "assets/walmart/cover.jpg",
+      "assets/walmart/cover.gif",
       "assets/walmart/landing/1.png",
       "assets/walmart/landing/2.png",
       "assets/walmart/landing/3.png",
@@ -957,27 +991,69 @@ window.PORTFOLIO = [
     //   },
     // ],
 
+    // hero: {
+    //   type: "video",
+    //   src: "assets/walmart/video-1.mp4",
+    //   label: "Hero Video",
+    //   ratio: "wide",
+    //   autoplay: true,
+    //   loop: true,
+    // },
+
+    // heroBlocks: [
+    //   {
+    //     type: "intro",
+    //     col: 1,
+    //     span: 3,
+    //     row: 1,
+    //   },
+    //   {
+    //     type: "hero",
+    //     col: 4,
+    //     span: 9,
+    //     row: 1,
+    //   },
+    // ],
+
     hero: {
       type: "video",
       src: "assets/walmart/video-1.mp4",
-      label: "Hero Video",
-      ratio: "wide",
+      ratio: "portrait",
       autoplay: true,
+      muted: true,
       loop: true,
     },
 
     heroBlocks: [
       {
-        type: "intro",
+        type: "text",
+        content: "Good bye winter hermitting. Hello to your next era.",
         col: 1,
-        span: 3,
+        span: 2,
         row: 1,
       },
       {
-        type: "hero",
+        type: "text",
+        content:
+          "For Walmart’s spring campaign in 2024, we channeled big new year, new me energy through 6 paid social spots–all shot with an iPhone.",
         col: 4,
-        span: 9,
+        span: 2,
+        row: 2,
+      },
+      {
+        type: "hero",
+        col: 7,
+        span: 3,
         row: 1,
+        className: "portrait-hero",
+      },
+      {
+        type: "text",
+        content:
+          "Whether you’re becoming a pro pet parent or a proud homebody, we showed how Walmart can be your partner in your next era.",
+        col: 10,
+        span: 3,
+        row: 3,
       },
     ],
 
@@ -989,7 +1065,7 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/walmart/video-1.mp4",
-            label: "Imagination Station Image",
+            label: "Walmart Video 1",
             ratio: "wide",
             autoplay: true,
             muted: true,
@@ -998,7 +1074,7 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/walmart/video-2.mp4",
-            label: "Imagination Station Video",
+            label: "Walmart Video 2",
             ratio: "wide",
             autoplay: true,
             muted: true,
@@ -1007,7 +1083,7 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/walmart/video-3.mp4",
-            label: "Imagination Station Image",
+            label: "Walmart Video 3",
             ratio: "wide",
             autoplay: true,
             muted: true,
@@ -1016,7 +1092,7 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/walmart/video-4.mp4",
-            label: "Imagination Station Image",
+            label: "Walmart Video 4",
             ratio: "wide",
             autoplay: true,
             muted: true,
@@ -1025,7 +1101,7 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/walmart/video-5.mp4",
-            label: "Imagination Station Video",
+            label: "Walmart Video 5",
             ratio: "wide",
             autoplay: true,
             muted: true,
@@ -1034,7 +1110,7 @@ window.PORTFOLIO = [
           {
             type: "video",
             src: "assets/walmart/video-6.mp4",
-            label: "Imagination Station Image",
+            label: "Walmart Video 6",
             ratio: "wide",
             autoplay: true,
             muted: true,
@@ -1064,7 +1140,7 @@ window.PORTFOLIO = [
     brand: "Merrill",
     tagline: "Can't Stop Banking",
 
-    cover: "assets/merrill/cover.jpg",
+    cover: "assets/merrill/cover.gif",
     shape: "landscape",
 
     hoverImages: [
@@ -1130,15 +1206,6 @@ window.PORTFOLIO = [
             muted: true,
             loop: true,
           },
-          {
-            type: "video",
-            src: "assets/merrill/video-4.mp4",
-            label: "Imagination Station Image",
-            ratio: "wide",
-            autoplay: true,
-            muted: true,
-            loop: true,
-          },
         ],
       },
     ],
@@ -1169,12 +1236,13 @@ window.PORTFOLIO = [
 
     hoverImages: [
       "assets/circle/cover.jpg",
-      "assets/circle/landing/1.jpg",
+      "assets/circle/landing/1.png",
       "assets/circle/landing/2.png",
       "assets/circle/landing/3.png",
       "assets/circle/landing/4.png",
       "assets/circle/landing/5.png",
       "assets/circle/landing/6.png",
+      "assets/circle/landing/7.jpg",
     ],
 
     heroBlocks: [
@@ -1302,7 +1370,7 @@ window.PORTFOLIO = [
     cover: "assets/protest/cover.jpg",
     shape: "portrait",
 
-    hoverImages: ["assets/protest/cover.jpg", "assets/protest/landing/1.jpg"],
+    hoverImages: ["assets/protest/cover.jpg", "assets/protest/landing/1.png"],
 
     intro:
       'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',

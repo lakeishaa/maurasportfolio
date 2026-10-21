@@ -108,6 +108,7 @@
         const span = Math.min(13 - col, Math.max(1, Number(block.span) || 4));
         const row = Math.max(1, Number(block.row) || 1);
         const order = Number(block.mobileOrder) || 0;
+        const offsetY = Number(block.offsetY) || 0;
 
         let content = "";
 
@@ -137,12 +138,13 @@
 
         return `
           <div
-            class="hero-block"
+          class="hero-block ${esc(block.className || "")}"
             style="
-              --col: ${col};
-              --span: ${span};
-              --row: ${row};
-              --mobile-order: ${order};
+            --col: ${col};
+            --span: ${span};
+            --row: ${row};
+            --mobile-order: ${order};
+            --offset-y: ${offsetY}px;
             "
           >
             ${content}
@@ -150,7 +152,7 @@
       })
       .join("");
 
-    return `<div class="project-hero-grid">${blocks}</div>`;
+    return `<div class="project-hero-grid ${p.slug === "walmart" ? "walmart-hero-grid" : ""}">${blocks}</div>`;
   }
 
   function home() {
@@ -216,6 +218,47 @@
       .map((section, index) => {
         const assets = section.media || [];
 
+        if (section.layout === "staggered") {
+          const rows = [[], [], []];
+
+          assets.forEach((asset, i) => {
+            rows[i % 3].push(media(asset));
+          });
+
+          const rowsHTML = rows
+            .map(
+              (items) => `
+              <div class="staggered-row-scroll" tabindex="0">
+                <div class="staggered-row">
+                  ${items.join("")}
+                </div>
+              </div>
+            `
+            )
+            .join("");
+
+          return `
+            <section class="work-section staggered-section"
+                     aria-label="${esc(section.title)}">
+        
+              <div class="work-copy">
+                <h2 class="interactive-text">
+                  ${String(index + 1).padStart(2, "0")}. ${esc(section.title)}
+                </h2>
+                ${section.description ? `<p>${section.description}</p>` : ""}
+              </div>
+              
+              <div class="staggered-gallery"
+              aria-label="${esc(section.title)} gallery">
+              <div class="staggered-track">
+              ${rowsHTML}
+              </div>
+              </div>
+        
+            </section>
+          `;
+        }
+
         return `
           <section class="work-section" aria-label="${esc(section.title)}">
             <div class="work-scroll" tabindex="0">
@@ -267,9 +310,7 @@
         <div class="project-press">
         ${renderLinks(
           p.press,
-          p.slug === "baskin"
-            ? "Press (Only for 'Sweet on Sydney' Campaign)"
-            : "Press"
+          p.slug === "baskin" ? "Press ('Sweet on Sydney' Campaign)" : "Press"
         )}
         </div>
 
@@ -466,4 +507,141 @@
   }
 
   initGalleryCursor();
+
+  function initStaggeredGalleries() {
+    document.querySelectorAll(".staggered-row-scroll").forEach((row) => {
+      let targetScroll = row.scrollLeft;
+      let currentScroll = row.scrollLeft;
+      let animationFrame = null;
+      let isHovering = false;
+
+      // Lower = smoother/slower, higher = faster
+      const smoothness = 0.06;
+
+      function animate() {
+        currentScroll += (targetScroll - currentScroll) * smoothness;
+
+        if (Math.abs(targetScroll - currentScroll) < 0.5) {
+          currentScroll = targetScroll;
+        }
+
+        row.scrollLeft = currentScroll;
+
+        if (Math.abs(targetScroll - currentScroll) >= 0.5) {
+          animationFrame = requestAnimationFrame(animate);
+        } else {
+          animationFrame = null;
+        }
+      }
+
+      function startAnimation() {
+        if (animationFrame === null) {
+          animationFrame = requestAnimationFrame(animate);
+        }
+      }
+
+      row.addEventListener("pointerenter", (e) => {
+        if (e.pointerType !== "mouse") return;
+        isHovering = true;
+        currentScroll = row.scrollLeft;
+      });
+
+      row.addEventListener("pointermove", (e) => {
+        if (e.pointerType !== "mouse" || !isHovering) return;
+
+        const rect = row.getBoundingClientRect();
+        const maxScroll = row.scrollWidth - row.clientWidth;
+
+        if (maxScroll <= 0) return;
+
+        const position = Math.max(
+          0,
+          Math.min(1, (e.clientX - rect.left) / rect.width)
+        );
+
+        targetScroll = position * maxScroll;
+        startAnimation();
+      });
+
+      row.addEventListener("pointerleave", () => {
+        isHovering = false;
+      });
+
+      // Keep Shift + wheel scrolling
+      row.addEventListener(
+        "wheel",
+        (e) => {
+          if (!e.shiftKey) return;
+
+          e.preventDefault();
+
+          const delta =
+            Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+
+          targetScroll = Math.max(
+            0,
+            Math.min(row.scrollWidth - row.clientWidth, targetScroll + delta)
+          );
+
+          startAnimation();
+        },
+        { passive: false }
+      );
+    });
+  }
+
+  initStaggeredGalleries();
+
+  function initGalleryHoverNudge() {
+    const galleries = document.querySelectorAll(
+      ".work-scroll, .staggered-row-scroll"
+    );
+
+    galleries.forEach((gallery) => {
+      let animationFrame = null;
+      let lastTime = null;
+
+      // Adjust speed here (pixels per second)
+      const speed = 35;
+
+      function animate(time) {
+        if (lastTime === null) lastTime = time;
+
+        const delta = (time - lastTime) / 1000;
+        lastTime = time;
+
+        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+        if (maxScroll > 0) {
+          gallery.scrollLeft = Math.min(
+            gallery.scrollLeft + speed * delta,
+            maxScroll
+          );
+        }
+
+        animationFrame = requestAnimationFrame(animate);
+      }
+
+      gallery.addEventListener("pointerenter", (e) => {
+        if (e.pointerType !== "mouse") return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
+
+        if (animationFrame !== null) return;
+
+        lastTime = null;
+        animationFrame = requestAnimationFrame(animate);
+      });
+
+      gallery.addEventListener("pointerleave", () => {
+        if (animationFrame !== null) {
+          cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+        }
+        lastTime = null;
+      });
+    });
+  }
+
+  initGalleryHoverNudge();
 })();

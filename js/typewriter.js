@@ -40,8 +40,10 @@
   const symbols = ["&", "*", "$", "!", "#", "%", "+", "@"];
   const specialCharacters = {};
   const wordLinks = {
-    journalist: "https://example.com/journalist",
-    dancer: "https://example.com/dancer",
+    journalist:
+      "https://docs.google.com/spreadsheets/d/1Dmp2cSqLhPTW8UnpUvJse67bP00qQ-QeH2lBWXlPUS0/edit?gid=0#gid=0",
+    dancer:
+      "https://www.instagram.com/p/BFO7nAYmOPG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   };
   const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
   const randomSymbol = () =>
