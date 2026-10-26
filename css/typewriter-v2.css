@@ -1,0 +1,77 @@
+/* Homepage typewriter — Xanh Mono */
+#demo {
+  font-family: "Timezone";
+  src: url("../assets/font/HALTimezoneMonoUnlicensed-Regular.otf")
+    format("opentype");
+  font-style: normal;
+  font-size: clamp(30px, 4.5vw, 60px);
+  font-weight: 400;
+  line-height: 1;
+  max-width: 1200px;
+  margin: 0;
+  min-height: 3.69em;
+}
+
+#demo .word {
+  display: inline-block;
+  white-space: nowrap;
+}
+#demo .letter {
+  display: inline-block;
+  font-family: "Timezone", monospace;
+  transition: transform 0.18s ease;
+}
+
+/* Green linked words while typing */
+#demo .typewriter-link,
+#demo .typewriter-link:visited,
+#demo .typewriter-link .letter {
+  color: #a4b51b !important;
+}
+
+#demo .letter.active {
+  animation: letterJump 0.45s ease;
+}
+#demo .space {
+  display: inline;
+  white-space: normal;
+}
+#demo .cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #0058dd;
+  animation: blink 0.8s steps(1) infinite;
+}
+@keyframes letterJump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(2px);
+  }
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 600px) {
+  #demo {
+    min-height: 8em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #demo .letter.active,
+  #demo .cursor {
+    animation: none;
+  }
+}
