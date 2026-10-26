@@ -1075,6 +1075,20 @@ iframe.media-item.social {
   }
 }
 
+/* MOBILE + TABLET: Hide custom gallery cursor */
+@media (max-width: 1100px), (hover: none) {
+  .gallery-cursor {
+    display: none !important;
+  }
+
+  .work-scroll,
+  .work-scroll *,
+  .staggered-row-scroll,
+  .staggered-row-scroll * {
+    cursor: auto !important;
+  }
+}
+
 /* PROJECT GALLERY — SUBTLE HOVER PUSH */
 
 /* .work-scroll img.media-item,

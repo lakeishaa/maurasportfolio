@@ -643,5 +643,52 @@
     });
   }
 
+  function initMobileSwipeHint() {
+    if (!window.matchMedia("(max-width: 1100px)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const galleries = document.querySelectorAll(
+      ".work-scroll, .staggered-row-scroll"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const gallery = entry.target;
+          observer.unobserve(gallery);
+
+          const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+          if (maxScroll <= 0) return;
+
+          const start = gallery.scrollLeft;
+          const distance = Math.min(55, maxScroll - start);
+
+          // Gently move forward
+          gallery.scrollTo({
+            left: start + distance,
+            behavior: "smooth",
+          });
+
+          // Return to original position
+          setTimeout(() => {
+            gallery.scrollTo({
+              left: start,
+              behavior: "smooth",
+            });
+          }, 700);
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    galleries.forEach((gallery) => observer.observe(gallery));
+  }
+
+  initMobileSwipeHint();
+
   initGalleryHoverNudge();
 })();
