@@ -671,7 +671,7 @@
           gallery.dataset.hintPlayed = "true";
 
           const start = gallery.scrollLeft;
-          const distance = Math.min(55, maxScroll - start);
+          const distance = Math.min(80, maxScroll - start);
 
           // Slide left
           gallery.scrollTo({
