@@ -291,8 +291,10 @@
           .join("")
       : esc(p.credits || "");
 
+    root.dataset.project = p.slug;
+
     root.innerHTML = `
-      <article class="project-detail">
+      <article class="project-detail" data-project="${esc(p.slug)}">
 
         
       <header class="project-heading-group">
@@ -420,24 +422,36 @@
 
         const frag = document.createDocumentFragment();
 
-        for (const ch of node.nodeValue) {
-          if (/\s/.test(ch)) {
-            frag.append(ch);
-            continue;
+        // Separate words and whitespace
+        const parts = node.nodeValue.match(/\S+|\s+/g) || [];
+
+        parts.forEach((part) => {
+          // Keep spaces as normal text so wrapping works naturally
+          if (/^\s+$/.test(part)) {
+            frag.append(document.createTextNode(part));
+            return;
           }
 
-          const span = document.createElement("span");
-          span.className = "letter";
-          span.dataset.original = ch;
-          span.dataset.busy = "false";
-          span.textContent = ch;
+          // Group each word so it cannot break between letters
+          const word = document.createElement("span");
+          word.className = "interactive-word";
 
-          span.addEventListener("mouseenter", () => {
-            createTrail(span, el);
-          });
+          for (const ch of part) {
+            const span = document.createElement("span");
+            span.className = "letter";
+            span.dataset.original = ch;
+            span.dataset.busy = "false";
+            span.textContent = ch;
 
-          frag.append(span);
-        }
+            span.addEventListener("mouseenter", () => {
+              createTrail(span, el);
+            });
+
+            word.appendChild(span);
+          }
+
+          frag.appendChild(word);
+        });
 
         node.replaceWith(frag);
       });
