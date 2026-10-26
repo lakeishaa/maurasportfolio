@@ -654,24 +654,32 @@
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
           const gallery = entry.target;
-          observer.unobserve(gallery);
+
+          // Reset when gallery leaves the screen
+          if (!entry.isIntersecting) {
+            gallery.dataset.hintPlayed = "false";
+            return;
+          }
+
+          // Only animate once per appearance
+          if (gallery.dataset.hintPlayed === "true") return;
 
           const maxScroll = gallery.scrollWidth - gallery.clientWidth;
           if (maxScroll <= 0) return;
 
+          gallery.dataset.hintPlayed = "true";
+
           const start = gallery.scrollLeft;
           const distance = Math.min(55, maxScroll - start);
 
-          // Gently move forward
+          // Slide left
           gallery.scrollTo({
             left: start + distance,
             behavior: "smooth",
           });
 
-          // Return to original position
+          // Slide back
           setTimeout(() => {
             gallery.scrollTo({
               left: start,
