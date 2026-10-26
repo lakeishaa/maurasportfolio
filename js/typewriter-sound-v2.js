@@ -2,9 +2,9 @@
   "use strict";
 
   const soundFiles = [
-    "../assets/sound/typewriter-1.mov",
-    "../assets/sound/typewriter-2.mov",
-    "../assets/sound/typewriter-3.mov",
+    "assets/sound/typewriter-1.mov",
+    "assets/sound/typewriter-2.mov",
+    "assets/sound/typewriter-3.mov",
   ];
 
   const VOLUME = 0.25;
