@@ -99,7 +99,7 @@ a .interactive-word {
 #demo .typewriter-link:visited {
   color: #a4b51b;
   text-decoration: none;
-  border-bottom: 2px dotted #4c9a42;
+  border-bottom: 2px dotted #a4b51b;
 }
 #demo .typewriter-link .letter {
   color: inherit !important;
@@ -1160,6 +1160,26 @@ iframe.media-item.social {
     touch-action: pan-y;
     user-select: none;
     -webkit-user-drag: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card .cover {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  /* Fanta: portrait */
+  .project-card:nth-child(3) .cover {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Baskin-Robbins: landscape */
+  .project-card:nth-child(4) .cover {
+    aspect-ratio: 16 / 9;
   }
 }
 
