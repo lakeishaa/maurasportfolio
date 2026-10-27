@@ -1154,6 +1154,15 @@ iframe.media-item.social {
   }
 }
 
+/* MOBILE: Swipe homepage covers */
+@media (max-width: 600px) {
+  #projects .project-card .cover {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
 /* @media (max-width: 600px) {
   body.is-baskin .work-scroll > .work-copy {
     flex: 0 0 45%;
