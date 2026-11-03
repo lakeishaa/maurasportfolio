@@ -35,15 +35,22 @@
         ></iframe>`;
     } else if (m.type === "video" && url(m.src)) {
       const autoplay = m.autoplay === true;
+      const muted = m.muted === true || (autoplay && m.muted !== false);
+      const loop = m.loop === true;
+      const controls = m.controls === true || !autoplay;
+
       content = `
-        <video
-          class="${cls}"
-          src="${esc(url(m.src))}"
-          ${autoplay ? "autoplay muted loop" : "controls"}
-          playsinline
-          preload="${autoplay ? "auto" : "metadata"}"
-          ${m.poster && url(m.poster) ? `poster="${esc(url(m.poster))}"` : ""}
-          ></video>`;
+    <video
+      class="${cls}"
+      src="${esc(url(m.src))}"
+      ${autoplay ? "autoplay" : ""}
+      ${muted ? "muted" : ""}
+      ${loop ? "loop" : ""}
+      ${controls ? "controls" : ""}
+      playsinline
+      preload="${autoplay ? "auto" : "metadata"}"
+      ${m.poster && url(m.poster) ? `poster="${esc(url(m.poster))}"` : ""}
+    ></video>`;
     } else if (m.type === "image" && url(m.src)) {
       content = `
         <img
@@ -281,16 +288,16 @@
         const assets = section.media || [];
 
         if (section.layout === "staggered") {
-          const rows = [[], [], []];
+          const rows = [[], []];
 
           assets.forEach((asset, i) => {
-            rows[i % 3].push(media(asset));
+            rows[i % 2].push(media(asset));
           });
 
           const rowsHTML = rows
             .map(
               (items) => `
-              <div class="staggered-row-scroll" tabindex="0">
+              <div class="staggered-row-scroll work-scroll" tabindex="0">
                 <div class="staggered-row">
                   ${items.join("")}
                 </div>
@@ -530,7 +537,6 @@
 
   function initGalleryCursor() {
     const galleries = document.querySelectorAll(".work-scroll");
-
     if (!galleries.length) return;
 
     const cursor = document.createElement("div");
@@ -545,29 +551,35 @@
 
     const path = cursor.querySelector("path");
 
-    galleries.forEach((gallery) => {
-      gallery.addEventListener("pointerenter", () => {
-        cursor.classList.add("visible");
-      });
+    document.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
 
-      gallery.addEventListener("pointermove", (e) => {
-        const rect = gallery.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const isLeft = x < rect.width / 2;
+      const gallery = e.target.closest(".work-scroll");
 
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-
-        path.setAttribute(
-          "d",
-          isLeft ? "M19 12H5m7-7-7 7 7 7" : "M5 12h14m-7-7 7 7-7 7"
-        );
-      });
-
-      gallery.addEventListener("pointerleave", () => {
+      if (!gallery) {
         cursor.classList.remove("visible");
-      });
+        return;
+      }
 
+      const rect = gallery.getBoundingClientRect();
+      const isLeft = e.clientX - rect.left < rect.width / 2;
+
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+
+      path.setAttribute(
+        "d",
+        isLeft ? "M19 12H5m7-7-7 7 7 7" : "M5 12h14m-7-7 7 7-7 7"
+      );
+
+      cursor.classList.add("visible");
+    });
+
+    document.addEventListener("pointerleave", () => {
+      cursor.classList.remove("visible");
+    });
+
+    galleries.forEach((gallery) => {
       gallery.addEventListener("click", (e) => {
         if (e.target.closest("a, button")) return;
 
@@ -584,94 +596,8 @@
 
   initGalleryCursor();
 
-  function initStaggeredGalleries() {
-    document.querySelectorAll(".staggered-row-scroll").forEach((row) => {
-      let targetScroll = row.scrollLeft;
-      let currentScroll = row.scrollLeft;
-      let animationFrame = null;
-      let isHovering = false;
-
-      // Lower = smoother/slower, higher = faster
-      const smoothness = 0.06;
-
-      function animate() {
-        currentScroll += (targetScroll - currentScroll) * smoothness;
-
-        if (Math.abs(targetScroll - currentScroll) < 0.5) {
-          currentScroll = targetScroll;
-        }
-
-        row.scrollLeft = currentScroll;
-
-        if (Math.abs(targetScroll - currentScroll) >= 0.5) {
-          animationFrame = requestAnimationFrame(animate);
-        } else {
-          animationFrame = null;
-        }
-      }
-
-      function startAnimation() {
-        if (animationFrame === null) {
-          animationFrame = requestAnimationFrame(animate);
-        }
-      }
-
-      row.addEventListener("pointerenter", (e) => {
-        if (e.pointerType !== "mouse") return;
-        isHovering = true;
-        currentScroll = row.scrollLeft;
-      });
-
-      row.addEventListener("pointermove", (e) => {
-        if (e.pointerType !== "mouse" || !isHovering) return;
-
-        const rect = row.getBoundingClientRect();
-        const maxScroll = row.scrollWidth - row.clientWidth;
-
-        if (maxScroll <= 0) return;
-
-        const position = Math.max(
-          0,
-          Math.min(1, (e.clientX - rect.left) / rect.width)
-        );
-
-        targetScroll = position * maxScroll;
-        startAnimation();
-      });
-
-      row.addEventListener("pointerleave", () => {
-        isHovering = false;
-      });
-
-      // Keep Shift + wheel scrolling
-      row.addEventListener(
-        "wheel",
-        (e) => {
-          if (!e.shiftKey) return;
-
-          e.preventDefault();
-
-          const delta =
-            Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-
-          targetScroll = Math.max(
-            0,
-            Math.min(row.scrollWidth - row.clientWidth, targetScroll + delta)
-          );
-
-          startAnimation();
-        },
-        { passive: false }
-      );
-    });
-  }
-
-  initStaggeredGalleries();
-
   function initGalleryHoverNudge() {
-    const galleries = document.querySelectorAll(
-      ".work-scroll, .staggered-row-scroll"
-    );
+    const galleries = document.querySelectorAll(".work-scroll");
 
     galleries.forEach((gallery) => {
       let animationFrame = null;

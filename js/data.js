@@ -47,20 +47,13 @@ window.PORTFOLIO = [
     In partnership with Paramount Pictures and John Krasinski's <a href="https://www.imdb.com/title/tt11152168/" target="_blank" rel="noopener noreferrer">IF</a>, I helped create an integrated campaign that brought imaginary friends (or IFs) into the real world—all with the help of Baskin-Robbins ice cream.`,
 
     hero: {
-      // type: "youtube",
-      // id: "2yj6B2XVt7M", // Main campaign YouTube video ID
-      // autoplay: true,
-      // muted: true,
-      // loop: true,
-
       type: "video",
       src: "assets/baskin-if/video-1.mp4",
       label: "",
-      // ratio: "wide",
       autoplay: true,
-      // muted: true,
-      loop: true,
-      // controls: true,
+      muted: true,
+      loop: false,
+      controls: true,
     },
 
     heroBlocks: [
@@ -657,7 +650,17 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
+            src: "assets/fanta/threads/image-5.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
             src: "assets/fanta/threads/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/threads/image-6.png",
             ratio: "portrait",
           },
           {
@@ -667,7 +670,17 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
+            src: "assets/fanta/threads/image-7.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
             src: "assets/fanta/threads/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/fanta/threads/image-8.png",
             ratio: "portrait",
           },
           {
@@ -677,51 +690,51 @@ window.PORTFOLIO = [
           },
         ],
       },
-      {
-        title: "IG Broadcast & More",
-        layout: "social",
-        media: [
-          {
-            type: "image",
-            src: "assets/fanta/more/image-1.png",
-            ratio: "portrait",
-          },
-          {
-            type: "video",
-            src: "assets/fanta/more/video-1.mov",
-            label: "Fanta Video",
-            ratio: "portrait",
-            autoplay: true,
-            muted: true,
-            loop: true,
-          },
-          {
-            type: "image",
-            src: "assets/fanta/more/image-2.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/fanta/landing/7.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/fanta/more/image-3.gif",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/fanta/more/image-5.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/fanta/more/image-4.png",
-            ratio: "portrait",
-          },
-        ],
-      },
+      // {
+      //   title: "IG Broadcast & More",
+      //   layout: "social",
+      //   media: [
+      //     {
+      //       type: "image",
+      //       src: "assets/fanta/more/image-1.png",
+      //       ratio: "portrait",
+      //     },
+      //     {
+      //       type: "video",
+      //       src: "assets/fanta/more/video-1.mov",
+      //       label: "Fanta Video",
+      //       ratio: "portrait",
+      //       autoplay: true,
+      //       muted: true,
+      //       loop: true,
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "assets/fanta/more/image-2.png",
+      //       ratio: "portrait",
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "assets/fanta/landing/7.png",
+      //       ratio: "portrait",
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "assets/fanta/more/image-3.gif",
+      //       ratio: "portrait",
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "assets/fanta/more/image-5.png",
+      //       ratio: "portrait",
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "assets/fanta/more/image-4.png",
+      //       ratio: "portrait",
+      //     },
+      //   ],
+      // },
     ],
 
     credits: [
@@ -815,6 +828,14 @@ window.PORTFOLIO = [
             ratio: "portrait",
           },
           {
+            type: "video",
+            src: "assets/baskin//trolli/video-1.mov",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
             type: "image",
             src: "assets/baskin/trolli/image-2.png",
             ratio: "portrait",
@@ -862,9 +883,25 @@ window.PORTFOLIO = [
         layout: "editorial",
         media: [
           {
+            type: "video",
+            src: "assets/baskin//island/video-1.mov",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
             type: "image",
             src: "assets/baskin/island/image-1.png",
             ratio: "portrait",
+          },
+          {
+            type: "video",
+            src: "assets/baskin//island/video-2.mov",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "image",
@@ -1022,6 +1059,7 @@ window.PORTFOLIO = [
       autoplay: true,
       muted: true,
       loop: true,
+      controls: true,
     },
 
     heroBlocks: [
@@ -1281,9 +1319,27 @@ window.PORTFOLIO = [
         layout: "editorial",
         media: [
           {
+            type: "video",
+            src: "assets/circle/main/video-1.mov",
+            label: "",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
             type: "image",
             src: "assets/circle/main/image-1.png",
             ratio: "portrait",
+          },
+          {
+            type: "video",
+            src: "assets/circle/main/video-2.mov",
+            label: "",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
           {
             type: "image",
@@ -1291,9 +1347,27 @@ window.PORTFOLIO = [
             ratio: "portrait",
           },
           {
+            type: "video",
+            src: "assets/circle/main/video-3.mov",
+            label: "",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
             type: "image",
             src: "assets/circle/main/image-3.png",
             ratio: "portrait",
+          },
+          {
+            type: "video",
+            src: "assets/circle/main/video-4.mov",
+            label: "",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
         ],
       },
@@ -1438,5 +1512,49 @@ window.PORTFOLIO = [
       { role: "Art Director", name: "Allie Phelan" },
       { role: "Copywriter", name: "Me!" },
     ],
+  },
+  /* ======================================
+       09. COLOR OF CHANGE
+    ====================================== */
+  {
+    slug: "color-of-change",
+    brand: "Color of Change",
+    tagline: "Shame On U",
+    shape: "landscape",
+
+    cover: "assets/baskin/cover.gif",
+
+    hoverImages: [
+      "assets/new-project/cover.jpg",
+      "assets/new-project/cover-2.jpg",
+      "assets/new-project/cover-3.jpg",
+    ],
+
+    intro:
+      "Hate crimes on college campuses are rising, but administrators are not acting enough to fight against it. Color of Change asked us to find a solution in a two-week competition, Indoor Recess. \n\nOur response as Team 9? To say Shame On U to universities who have sheltered hate crimes, and expose their true colors.\n\nAwarded Overall Winning Campaign, Best Creative, and Recess Monitor’s Pick.",
+
+    hero: {
+      type: "image",
+      src: "assets/new-project/hero.jpg",
+    },
+
+    sections: [
+      {
+        title: "Campaign",
+        description: "A short description of the work.",
+        media: [
+          {
+            type: "image",
+            src: "assets/new-project/01.jpg",
+          },
+          {
+            type: "image",
+            src: "assets/new-project/02.jpg",
+          },
+        ],
+      },
+    ],
+
+    credits: [],
   },
 ];

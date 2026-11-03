@@ -1,0 +1,512 @@
+/* MAURA PORTFOLIO â€” CLEAN STYLESHEET */
+
+/* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
+:root {
+  --font-main: "Xanh Mono", monospace;
+  --font-body: "Inter Tight", sans-serif;
+  --type-large: clamp(40px, 4.5vw, 80px);
+  --type-medium: 18px;
+  --type-small: 13.5px;
+  --line-height-main: 1.4;
+  --link-color: #a4b51b;
+  --link-hover: #ff87f4;
+  --page-gutter: clamp(22px, 5vw, 72px);
+  --gallery-height: 400px;
+}
+* {
+  box-sizing: border-box;
+  /* cursor: text !important; */
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Medium: all headings and navigational labels */
+.site-header,
+.site-header a,
+.project-number,
+.card-caption,
+.card-caption .brand,
+.work-copy h2,
+.project-links h2,
+.project-credits h2,
+.project-navigation,
+.project-navigation a {
+  font-size: var(--type-medium);
+  line-height: var(--line-height-main);
+  font-weight: 400;
+}
+
+/* Homepage typewriter hyperlinks */
+#demo {
+    line-height: 1.15 !important;
+  }
+  #demo .typewriter-link,
+  #demo .typewriter-link:visited {
+    color: #a4b51b;
+    text-decoration: none;
+    border-bottom: 2px dotted #a4b51b;
+  }
+  #demo .typewriter-link .letter {
+    color: inherit !important;
+  }
+  #demo .typewriter-link:hover {
+    color: #ff87f4;
+    border-bottom-color: #a4b51b;
+}
+
+/* 02. HEADER + HOMEPAGE INTRO */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px var(--page-gutter);
+}
+
+
+
+
+
+/* BODY COPY — INTER TIGHT */
+.project-intro,
+.work-copy p,
+.media-caption p,
+.project-credits p,
+.project-link-list a {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.project-credits .interactive-text {
+  font-family: var(--font-body);
+}
+
+/* Credits heading */
+.project-credits h2,
+.project-credits h3 {
+  font-family: var(--font-main);
+}
+
+/* Credits list only */
+.project-credits p,
+.project-credits p .letter {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Links: one consistent dotted style */
+a:not(.project-card),
+a:not(.project-card):visited {
+  color: var(--link-color);
+  text-decoration: underline dotted currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+a:not(.project-card):hover {
+  color: var(--link-hover);
+}
+a .interactive-letter,
+a .interactive-word {
+  color: inherit;
+}
+
+/* Large: homepage introduction and project title */
+.intro h1,
+#maura-interactive {
+  font-size: var(--type-large);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* Homepage typewriter hyperlinks */
+#demo {
+  line-height: 1.15 !important;
+}
+#demo .typewriter-link,
+#demo .typewriter-link:visited {
+  color: #a4b51b;
+  text-decoration: none;
+  border-bottom: 2px dotted #a4b51b;
+}
+#demo .typewriter-link .letter {
+  color: inherit !important;
+}
+#demo .typewriter-link:hover {
+  color: #ff87f4;
+  border-bottom-color: #a4b51b;
+}
+
+/* Linked typewriter words turn pink on hover */
+#demo .typewriter-link:hover,
+#demo .typewriter-link:hover .letter {
+  color: #ff87f4 !important;
+
+
+/* DESKTOP — 12 COLUMNS */
+
+@media (min-width: 601px) {
+  .project-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(8px, 1.5vw, 24px);
+    /* row-gap: clamp(40px, 6vw, 100px); */
+  }
+}
+
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #d9e3d0, #efb6cb 55%, #9c94c4);
+  color: #39333a;
+  text-align: center;
+  padding: 20px;
+}
+.about {
+  padding: 80px var(--page-gutter);
+}
+
+
+/* 08. PREVIOUS / NEXT */
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1.3px dotted #a4b51b;
+}
+/* 09. INTERACTIVE LETTERS */
+.interactive-letter {
+  display: inline-block;
+  position: relative;
+  cursor: inherit;
+  transition:
+    color 0.15s ease,
+    transform 0.2s ease;
+}
+
+.interactive-letter:hover {
+  color: #f43f25;
+  transform: translateY(-2px);
+}
+
+/* Interactive headings on project pages */
+.project-brand .interactive-letter,
+.work-copy h2 .interactive-letter,
+.project-links h2 .interactive-letter,
+.project-credits h2 .interactive-letter {
+  cursor: crosshair;
+}
+
+/* Keep original heading colors */
+.project-brand .interactive-letter,
+.work-copy h2 .interactive-letter {
+  color: inherit;
+}
+
+/* Letter trail interaction */
+.interactive-text .letter {
+  display: inline;
+  transition: color 0.15s ease;
+}
+
+/* Keep the original green on Press links */
+.project-link-list a.interactive-text {
+  color: #a4b51b;
+}
+
+/* Preserve clickable links */
+.project-link-list a.interactive-text .letter {
+  cursor: pointer;
+}
+
+.interactive-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.interactive-space {
+  white-space: pre-wrap;
+}
+
+/* PRESS — simple pink hover */
+.project-press .project-link-list a:hover,
+.project-press .project-link-list a:hover .letter {
+  color: #ff87f4 !important;
+}
+
+/* Keep spaces and line wrapping natural */
+.project-credits .interactive-text {
+  white-space: normal;
+}
+
+/* TABLET: MORE SPACE FOR TEXT */
+@media (min-width: 601px) and (max-width: 800px) {
+  /* @media (min-width: 601px) and (max-width: 1100px) { */
+  .project-hero-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 32px;
+  }
+
+  .hero-block {
+    grid-column: auto;
+    grid-row: auto;
+    min-width: 0;
+  }
+
+  .hero-block:has(.project-intro) {
+    grid-column: span 3;
+  }
+
+  .hero-block:has(img),
+  .hero-block:has(video) {
+    grid-column: span 3;
+  }
+
+  /* new added with rows columns */
+  .walmart-hero-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto;
+    row-gap: 24px;
+  }
+
+  .walmart-hero-grid .hero-block {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    transform: none;
+  }
+
+  .walmart-hero-grid .portrait-hero video {
+    width: min(100%, 340px);
+    height: auto;
+  }
+}
+
+/* 10. MOBILE */
+@media (max-width: 600px) {
+  :root {
+    --type-large: clamp(34px, 8vw, 48px);
+    --type-medium: 16px;
+    --type-small: 14px;
+    --page-gutter: 20px;
+    --gallery-height: 280px;
+  }
+
+  .project-hero-grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .hero-block {
+    grid-column: 1;
+    grid-row: auto;
+    order: var(--mobile-order);
+  }
+
+  .site-header {
+    padding: 20px;
+  }
+  .intro {
+    padding: 30px 20px 60px;
+  }
+
+  .hero-block .project-intro {
+    max-width: 100%;
+  }
+
+  /* do i need this below? */
+  .project-card {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
+  .site-header {
+    padding: 20px;
+  }
+  .intro {
+    padding: 30px 20px 60px;
+  }
+
+  .about {
+    padding: 60px 20px;
+  }
+}
+
+@media (hover: none) {
+  .project-card .cover {
+    cursor: pointer;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .interactive-letter {
+    transition: none;
+  }
+  .interactive-letter:hover {
+    transform: none;
+  }
+}
+
+
+.gallery-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  color: #a4b51b;
+}
+
+.gallery-cursor.visible {
+  opacity: 1;
+}
+
+.gallery-cursor svg {
+  width: 60px;
+  height: 60px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* INTERACTIVE TEXT — SAME ANIMATION AS TYPEWRITER */
+
+.project-credits .interactive-text {
+  white-space: normal;
+}
+
+.interactive-text .letter {
+  display: inline-block;
+  position: relative;
+  font-family: "Xanh Mono", monospace;
+  transition: transform 0.18s ease;
+}
+
+.interactive-text .letter.active {
+  animation: letterJump 0.45s ease;
+}
+
+/* Same bounce as landing page */
+@keyframes letterJump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-8px);
+  }
+
+  70% {
+    transform: translateY(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-text .letter.active {
+    animation: none;
+  }
+}
+
+/* Hide gallery arrow only on touch devices */
+@media (hover: none), (pointer: coarse) {
+  .gallery-cursor {
+    display: none !important;
+  }
+
+  .work-scroll,
+  .work-scroll *,
+  .staggered-row-scroll,
+  .staggered-row-scroll * {
+    cursor: auto !important;
+  }
+}
+
+.cursor-sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+.cursor-sparkle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-sparkles {
+    display: none;
+  }
+}
+
+.gallery-cursor {
+  position: fixed;
+  pointer-events: none !important;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-cursor {
+  pointer-events: none !important;
+  z-index: 99999;
+  transition: none !important;
+}
+
+.gallery-cursor {
+  pointer-events: none !important;
+  transition: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor:
+      url("../assets/cursor-24.png") 0 20,
+      auto;
+  }
+
+}
+
+.gallery-cursor {
+  pointer-events: none !important;
+  z-index: 99999;
+  transition: none !important;
+}

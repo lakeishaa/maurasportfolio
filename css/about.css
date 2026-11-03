@@ -1,0 +1,540 @@
+/* ABOUT PAGE */
+
+/* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
+:root {
+  --font-main: "Xanh Mono", monospace;
+  --font-body: "Inter Tight", sans-serif;
+  --type-large: clamp(40px, 4.5vw, 80px);
+  --type-medium: 18px;
+  --type-small: 13.5px;
+  --line-height-main: 1.4;
+  --link-color: #a4b51b;
+  --link-hover: #ff87f4;
+  --page-gutter: clamp(22px, 5vw, 72px);
+  --gallery-height: 400px;
+}
+
+.about-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  min-height: 766px;
+  margin: 0 auto;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-body);
+}
+
+/* Medium: all headings and navigational labels */
+.site-header,
+.site-header a,
+.project-number,
+.card-caption,
+.card-caption .brand,
+.work-copy h2,
+.project-links h2,
+.project-credits h2,
+.project-navigation,
+.project-navigation a {
+  font-size: var(--type-medium);
+  line-height: var(--line-height-main);
+  font-weight: 400;
+}
+
+/* 02. HEADER + HOMEPAGE INTRO */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px var(--page-gutter);
+}
+
+/* link fix */
+/* Links: one consistent dotted style */
+a:not(.project-card),
+a:not(.project-card):visited {
+  color: var(--link-color);
+  text-decoration: underline dotted currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+a:not(.project-card):hover {
+  color: var(--link-hover);
+}
+a .interactive-letter,
+a .interactive-word {
+  color: inherit;
+}
+
+/* demo */
+
+#demo {
+  line-height: 1.15 !important;
+}
+#demo .typewriter-link,
+#demo .typewriter-link:visited {
+  color: #a4b51b;
+  text-decoration: none;
+  border-bottom: 2px dotted #a4b51b;
+}
+#demo .typewriter-link .letter {
+  color: inherit !important;
+}
+#demo .typewriter-link:hover {
+  color: #ff87f4;
+  border-bottom-color: #a4b51b;
+}
+
+/* ABOUT BODY COPY — SAME AS REST OF WEBSITE */
+
+.about-bio,
+.about-bio p,
+.about-experience,
+.about-experience p,
+.about-experience a,
+.about-contact a {
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+/* CONTACT HEADING */
+.about-contact h2 {
+  font-family: var(--font-main);
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+  color: var(--link-color);
+}
+
+/* MAIN ABOUT HEADING */
+.about-heading {
+  font-family: var(--font-main);
+  font-size: var(--type-large);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* INTERACTIVE BODY LETTERS */
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text .letter,
+.about-contact a .interactive-text .letter {
+  font-family: var(--font-body);
+}
+/* 02. NAVIGATION */
+
+.about-nav {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px var(--page-gutter);
+
+  font-family: var(--font-main);
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+.about-nav a,
+.about-nav a:visited {
+  font-family: var(--font-main);
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.about-nav a:hover {
+  color: var(--link-hover);
+}
+
+/* 03. MAIN HEADING */
+
+.about-heading {
+  position: absolute;
+  top: 120px;
+  left: 8%;
+  margin: 0;
+
+  font-family: var(--font-main);
+  font-size: clamp(36px, 4vw, 46px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+/* Small HI annotation */
+
+.about-hi {
+  position: absolute;
+  top: 178px;
+  left: 32%;
+
+  font-family: var(--font-main);
+  /* font-size: 12px; */
+  font-weight: 400;
+  color: var(--link-color);
+}
+
+/* 04. BIO */
+
+.about-bio {
+  position: absolute;
+  top: 285px;
+  left: 8%;
+  width: 355px;
+  max-width: 100%;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.about-bio p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+/* Bio handwritten decorations */
+
+.about-bio-doodles {
+  position: absolute;
+  top: 225px;
+  left: 7%;
+  width: 450px;
+  height: 255px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 05. PORTRAIT */
+
+.about-portrait {
+  position: absolute;
+  top: 141px;
+  left: 62.2%;
+  width: 24.6%;
+  aspect-ratio: 289 / 319;
+  margin: 0;
+  background: #936565;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Portrait flourishes */
+
+.about-portrait-doodles {
+  position: absolute;
+  top: 105px;
+  left: 58%;
+  width: 33%;
+  height: 410px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 06. EXPERIENCE */
+
+.about-experience {
+  position: absolute;
+  top: 593px;
+  left: 16.3%;
+  width: 360px;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.about-experience p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: inherit;
+}
+
+.about-experience a,
+.about-experience a:visited {
+  font-family: var(--font-body);
+  color: #111;
+  text-decoration: none;
+}
+
+.about-experience a:hover {
+  color: var(--link-hover);
+}
+
+/* 07. CONTACT */
+
+.about-contact {
+  position: absolute;
+  top: 544px;
+  left: 62%;
+  width: max-content;
+  max-width: 35%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin: 0;
+  font-family: var(--font-body);
+  color: #a4b51b;
+}
+
+.about-contact h2 {
+  margin: 0 0 5px;
+
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--link-color);
+}
+
+.about-contact a,
+.about-contact a:visited {
+  display: block;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.3;
+
+  color: #a4b51b;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.about-contact a:hover {
+  color: var(--link-hover);
+}
+
+/* Contact handwritten decorations */
+
+.about-contact-doodles {
+  position: absolute;
+  top: 560px;
+  left: 59%;
+  width: 28%;
+  height: 105px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 08. INTERACTIVE TEXT FONT FIX */
+
+/* Preserve Inter Tight even when JS wraps
+   individual characters in .letter spans */
+
+.about-bio .interactive-text,
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text,
+.about-experience .interactive-text .letter,
+.about-contact .interactive-text,
+.about-contact .interactive-text .letter {
+  font-family: var(--font-body);
+}
+
+/* Preserve Xanh Mono for headings */
+
+.about-heading .interactive-text,
+.about-heading .interactive-text .letter,
+.about-contact h2 .interactive-text,
+.about-contact h2 .interactive-text .letter,
+.about-nav .interactive-text,
+.about-nav .interactive-text .letter {
+  font-family: var(--font-main);
+}
+
+/* 09. TABLET */
+
+@media (min-width: 769px) and (max-width: 1000px) {
+  .about-heading {
+    font-size: clamp(32px, 4vw, 42px);
+  }
+
+  .about-bio {
+    left: 6%;
+    width: 34%;
+  }
+
+  .about-bio-doodles {
+    left: 5%;
+    width: 42%;
+  }
+
+  .about-experience {
+    left: 12%;
+    width: 35%;
+  }
+
+  .about-portrait {
+    left: 62%;
+    width: 29%;
+  }
+
+  .about-contact {
+    left: 62%;
+  }
+
+  .about-portrait-doodles {
+    left: 58%;
+    width: 38%;
+  }
+}
+
+/* 10. MOBILE */
+
+@media (max-width: 768px) {
+  .about-canvas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+    padding: 110px var(--page-gutter) 80px;
+  }
+
+  /* Navigation stays at top */
+
+  .about-nav {
+    position: absolute;
+    top: 24px;
+    left: var(--page-gutter);
+    right: var(--page-gutter);
+
+    font-size: var(--type-medium);
+  }
+
+  /* Heading */
+
+  .about-heading {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    margin: 0;
+
+    font-size: clamp(32px, 8vw, 46px);
+    white-space: normal;
+  }
+
+  .about-hi {
+    display: none;
+  }
+
+  /* Bio */
+
+  .about-bio {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: 390px;
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  /* Portrait */
+
+  .about-portrait {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 75%;
+    max-width: 320px;
+    margin: 20px auto 0;
+    align-self: center;
+  }
+
+  /* Experience */
+
+  .about-experience {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Contact */
+
+  .about-contact {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .about-contact h2 {
+    font-size: var(--type-medium);
+  }
+
+  .about-contact a {
+    font-size: 14px;
+  }
+
+  /* Decorations hidden on mobile */
+
+  .about-bio-doodles,
+  .about-portrait-doodles,
+  .about-contact-doodles {
+    display: none;
+  }
+}
+
+/* 11. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-canvas .interactive-text .letter {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* 10. MOBILE */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 20px;
+  }
+}

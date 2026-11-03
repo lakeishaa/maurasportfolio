@@ -1,3 +1,5 @@
+// typewriter-v2.js
+
 (() => {
   "use strict";
 

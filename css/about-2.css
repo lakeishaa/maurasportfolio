@@ -1,0 +1,284 @@
+/* ABOUT PAGE — uses global variables and navigation from styles.css */
+
+/* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
+:root {
+  --font-main: "Xanh Mono", monospace;
+  --font-body: "Inter Tight", sans-serif;
+  --type-large: clamp(40px, 4.5vw, 80px);
+  --type-medium: 18px;
+  --type-small: 13.5px;
+  --line-height-main: 1.4;
+  --link-color: #a4b51b;
+  --link-hover: #ff87f4;
+  --page-gutter: clamp(22px, 5vw, 72px);
+  --gallery-height: 400px;
+}
+* {
+  box-sizing: border-box;
+  /* cursor: text !important; */
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Keep .site-header outside .about-canvas for identical navigation alignment. */
+.about-nav.site-header {
+  width: 100%;
+}
+
+.about-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  min-height: 766px;
+  margin: 0 auto;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-body);
+}
+
+.about-heading {
+  position: absolute;
+  top: 65px;
+  left: 8%;
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: clamp(36px, 4vw, 46px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.about-hi {
+  position: absolute;
+  top: 123px;
+  left: 32%;
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  color: var(--link-color);
+}
+
+.about-bio {
+  position: absolute;
+  top: 230px;
+  left: 8%;
+  width: 355px;
+  max-width: 38%;
+}
+
+.about-bio,
+.about-bio p,
+.about-experience,
+.about-experience p,
+.about-experience a,
+.about-contact a {
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+.about-bio p,
+.about-experience p {
+  margin: 0;
+}
+
+.about-bio-doodles {
+  position: absolute;
+  top: 170px;
+  left: 7%;
+  width: 450px;
+  max-width: 42%;
+  height: 255px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-portrait {
+  position: absolute;
+  top: 86px;
+  left: 62.2%;
+  width: 24.6%;
+  aspect-ratio: 289 / 319;
+  margin: 0;
+  background: #936565;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-portrait-doodles {
+  position: absolute;
+  top: 50px;
+  left: 58%;
+  width: 33%;
+  height: 410px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-experience {
+  position: absolute;
+  top: 538px;
+  left: 16.3%;
+  width: 360px;
+  max-width: 36%;
+}
+
+.about-contact {
+  position: absolute;
+  top: 489px;
+  left: 62%;
+  width: max-content;
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.about-contact h2 {
+  margin: 0 0 5px;
+  font-family: var(--font-main);
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+  color: var(--link-color);
+}
+
+/* Preserve global dotted-link treatment from styles.css. */
+.about-contact a {
+  display: block;
+}
+
+.about-contact-doodles {
+  position: absolute;
+  top: 505px;
+  left: 59%;
+  width: 28%;
+  height: 105px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Interactive letter spans otherwise default to Xanh Mono globally. */
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text .letter,
+.about-contact a .interactive-text .letter {
+  font-family: var(--font-body);
+}
+
+.about-heading .interactive-text .letter,
+.about-contact h2 .interactive-text .letter {
+  font-family: var(--font-main);
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .about-heading {
+    font-size: clamp(32px, 4vw, 42px);
+  }
+  .about-bio {
+    left: 6%;
+    width: 36%;
+    max-width: 36%;
+  }
+  .about-bio-doodles {
+    left: 5%;
+    width: 42%;
+  }
+  .about-experience {
+    left: 12%;
+    width: 36%;
+    max-width: 36%;
+  }
+  .about-portrait {
+    left: 62%;
+    width: 29%;
+  }
+  .about-portrait-doodles {
+    left: 58%;
+    width: 38%;
+  }
+}
+
+/* Match styles.css mobile breakpoint and font variables. */
+@media (max-width: 600px) {
+  .about-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: none;
+    min-height: 0;
+    padding: 30px var(--page-gutter) 80px;
+  }
+
+  .about-heading,
+  .about-bio,
+  .about-portrait,
+  .about-experience,
+  .about-contact {
+    position: relative;
+    top: auto;
+    left: auto;
+    max-width: 100%;
+  }
+
+  .about-heading {
+    width: 100%;
+    font-size: var(--type-large);
+    white-space: normal;
+  }
+
+  .about-bio,
+  .about-experience,
+  .about-contact {
+    width: 100%;
+  }
+
+  .about-portrait {
+    width: 75%;
+    max-width: 320px;
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  .about-hi,
+  .about-bio-doodles,
+  .about-portrait-doodles,
+  .about-contact-doodles {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-canvas .interactive-text .letter.active {
+    animation: none;
+  }
+}

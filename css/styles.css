@@ -1,10 +1,12 @@
 /* MAURA PORTFOLIO â€” CLEAN STYLESHEET */
+
 /* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
 :root {
   --font-main: "Xanh Mono", monospace;
+  --font-body: "Inter Tight", sans-serif;
   --type-large: clamp(40px, 4.5vw, 80px);
   --type-medium: 18px;
-  --type-small: 16px;
+  --type-small: 13.5px;
   --line-height-main: 1.4;
   --link-color: #a4b51b;
   --link-hover: #ff87f4;
@@ -37,6 +39,34 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* BODY COPY — INTER TIGHT */
+.project-intro,
+.work-copy p,
+.media-caption p,
+.project-credits p,
+.project-link-list a {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.project-credits .interactive-text {
+  font-family: var(--font-body);
+}
+
+/* Credits heading */
+.project-credits h2,
+.project-credits h3 {
+  font-family: var(--font-main);
+}
+
+/* Credits list only */
+.project-credits p,
+.project-credits p .letter {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
 /* Links: one consistent dotted style */
 a:not(.project-card),
 a:not(.project-card):visited {
@@ -238,6 +268,11 @@ a .interactive-word {
   .project-card:nth-child(8) {
     grid-column: 9 / span 3;
     margin-top: 60px;
+  }
+
+  .project-card:nth-child(9) {
+    grid-column: 3 / span 5;
+    margin-top: -100px;
   }
 }
 
@@ -947,6 +982,7 @@ iframe.media-item.social {
 }
 
 .staggered-row-scroll {
+  display: block;
   width: 100%;
   min-width: 0;
   overflow-x: auto;
@@ -954,15 +990,12 @@ iframe.media-item.social {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  cursor: grab;
+  padding-bottom: 0;
+  cursor: none;
 }
 
 .staggered-row-scroll::-webkit-scrollbar {
   display: none;
-}
-
-.staggered-row-scroll:active {
-  cursor: grabbing;
 }
 
 .staggered-row {
@@ -991,6 +1024,23 @@ iframe.media-item.social {
   flex: none;
   width: max-content;
   max-width: none;
+}
+
+.staggered-row-scroll:active {
+  cursor: grabbing;
+}
+
+.staggered-row img.media-item {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Twitter uses the same custom arrow cursor as other galleries */
+.staggered-row-scroll.work-scroll {
+  display: block;
+  gap: 0;
+  padding-bottom: 0;
 }
 
 @media (min-width: 601px) and (max-width: 1100px) {
@@ -1032,7 +1082,7 @@ iframe.media-item.social {
   }
 
   .staggered-row-scroll {
-    touch-action: pan-x;
+    touch-action: auto;
   }
 }
 
@@ -1075,8 +1125,8 @@ iframe.media-item.social {
   }
 }
 
-/* MOBILE + TABLET: Hide custom gallery cursor */
-@media (max-width: 1100px), (hover: none) {
+/* Hide gallery arrow only on touch devices */
+@media (hover: none), (pointer: coarse) {
   .gallery-cursor {
     display: none !important;
   }
@@ -1220,3 +1270,79 @@ iframe.media-item.social {
   }
 } */
 /* changed fieldset */
+
+/* CUSTOM CURSOR SYMBOL TRAIL */
+
+.cursor-sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+.cursor-sparkle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-sparkles {
+    display: none;
+  }
+}
+
+.gallery-cursor {
+  position: fixed;
+  pointer-events: none !important;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-cursor {
+  pointer-events: none !important;
+  z-index: 99999;
+  transition: none !important;
+}
+
+.gallery-cursor {
+  pointer-events: none !important;
+  transition: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor:
+      url("../assets/cursor-24.png") 0 20,
+      auto;
+  }
+
+  /* Hide PNG cursor throughout the galleries */
+  .work-scroll,
+  .work-scroll *,
+  .staggered-row-scroll,
+  .staggered-row-scroll * {
+    cursor: none !important;
+  }
+
+  /* Prevent embedded media from intercepting mouse events */
+  .work-scroll iframe {
+    pointer-events: none;
+  }
+}
+
+.gallery-cursor {
+  pointer-events: none !important;
+  z-index: 99999;
+  transition: none !important;
+}
