@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Maura Munaf</title>
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/about.css" />
     <!-- <link rel="stylesheet" href="css/about-2-delete.css" /> -->
 
@@ -21,15 +22,13 @@
     />
     <link rel="stylesheet" href="css/typewriter.css" />
   </head>
-  <body>
+  <body data-page="about">
     <header class="site-header">
-      <a href="index.html">Home ⌂</a><a href="about.html">About ⍰</a>
+      <a href="index.html">Home ⌂</a>
+      <a href="about.html">About ⍰</a>
     </header>
-    <!-- <header class="site-header">
-      <a href="index.html">HOME ⌂</a>
-      <a href="about.html">ABOUT ?</a>
-    </header> -->
 
+    <!-- <main class="about-canvas">
       <h1 class="about-heading">Nice To Meet You!</h1>
       <span class="about-hi">Salam kenal!</span>
 
@@ -42,25 +41,28 @@
         </p>
       </div>
 
-      <!-- <img
-        class="about-bio-doodles"
-        src="assets/about/bio-doodles.svg"
-        alt=""
-      /> -->
-
       <div class="about-portrait">
-        <img src="./assets/portrait.png" alt="Portrait" />
+        <img src="./assets/about/portrait.png" alt="Portrait" />
       </div>
 
-      <!-- <img
-        class="about-portrait-doodles"
-        src="assets/about/portrait-doodles.svg"
-        alt=""
-      /> -->
-
       <div class="about-experience">
-        <p>Currently at <a href="#">.</a></p>
-        <p>Before that, at <a href="#">.</a> and <a href="#">.</a></p>
+        <p>
+          Currently at
+          <a href="#" class="experience-logo">
+            <img src="assets/about/company-1.png" alt="Company 1" /> </a
+          >.
+        </p>
+
+        <p>
+          Before that, at
+          <a href="#" class="experience-logo experience-logo-wide">
+            <img src="assets/about/company-2.png" alt="Company 2" />
+          </a>
+          and
+          <a href="#" class="experience-logo">
+            <img src="assets/about/company-3.png" alt="Company 3" /> </a
+          >.
+        </p>
       </div>
 
       <div class="about-contact">
@@ -70,12 +72,75 @@
         <a href="https://linkedin.com/">▣ linkedin.com/in/mauramunaf/ ↗</a>
       </div>
 
-      <!-- <img
-        class="about-contact-doodles"
-        src="assets/about/contact-doodles.svg"
-        alt=""
-      /> -->
+    </main> -->
+
+    <main class="about-canvas">
+      <!-- LEFT COLUMN -->
+      <div class="about-left">
+        <div class="about-heading-group">
+          <h1 class="about-heading">Nice To Meet You!</h1>
+          <span class="about-hi">Salam kenal!</span>
+        </div>
+
+        <div class="about-bio">
+          <p>
+            Maura Munaf is a Senior Copywriter based in New York City, but born
+            and raised in Jakarta, Indonesia. She despises anything bland, so
+            she chases full-body flavor and playfulness in everything she
+            writes. Come to her with your skincare haul and favorite movie line.
+          </p>
+        </div>
+
+        <div class="about-experience">
+          <p>
+            Currently at
+            <a href="#" class="experience-logo">
+              <img src="assets/about/company-1.png" alt="Company 1" /> </a
+            >.
+          </p>
+
+          <p>
+            Before that, at
+            <a href="#" class="experience-logo experience-logo-wide">
+              <img src="assets/about/company-2.png" alt="Company 2" />
+            </a>
+            and
+            <a href="#" class="experience-logo">
+              <img src="assets/about/company-3.png" alt="Company 3" /> </a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="about-right">
+        <div class="about-portrait">
+          <img src="./assets/portrait.png" alt="Portrait" />
+        </div>
+
+        <div class="about-contact">
+          <h2>CONTACT</h2>
+          <a href="https://instagram.com/">◎ mayzurstla ↗</a>
+          <a href="mailto:email.m@gmail.com">✉ mayzura.m@gmail.com ↗</a>
+          <a href="https://linkedin.com/">▣ linkedin.com/in/mauramunaf/ ↗</a>
+        </div>
+      </div>
     </main>
+
+    <img
+      id="gif-cursor"
+      src="./assets/cursor/cursor-5.gif"
+      alt=""
+      aria-hidden="true"
+    />
+    <script src="js/gif-cursor.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/site.js"></script>
+    <!-- <script src="js/typewriter.js"></script> -->
+    <script src="js/interactive-text.js" defer></script>
+    <script src="js/image-hover.js"></script>
     <script src="js/cursor.js" defer></script>
+    <script src="js/typewriter-sound.js" defer></script>
+    <script src="js/typewriter-v2.js" defer></script>
   </body>
 </html>

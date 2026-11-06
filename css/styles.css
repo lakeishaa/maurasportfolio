@@ -1,5 +1,7 @@
 /* MAURA PORTFOLIO â€” CLEAN STYLESHEET */
 
+/* styles.css */
+
 /* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
 :root {
   --font-main: "Xanh Mono", monospace;
@@ -1321,13 +1323,11 @@ iframe.media-item.social {
 
 @media (hover: hover) and (pointer: fine) {
   html,
-  body {
-    cursor:
-      url("../assets/cursor-24.png") 0 20,
-      auto;
+  body,
+  body * {
+    cursor: none !important;
   }
 
-  /* Hide PNG cursor throughout the galleries */
   .work-scroll,
   .work-scroll *,
   .staggered-row-scroll,
@@ -1335,14 +1335,62 @@ iframe.media-item.social {
     cursor: none !important;
   }
 
-  /* Prevent embedded media from intercepting mouse events */
   .work-scroll iframe {
     pointer-events: none;
   }
 }
 
-.gallery-cursor {
-  pointer-events: none !important;
-  z-index: 99999;
-  transition: none !important;
+/* ========================================
+   ANIMATED BUTTERFLY GIF CURSOR
+   ======================================== */
+
+#gif-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 999999;
+
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Hide default cursor on desktop */
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+  /* Keep custom gallery cursor */
+  .work-scroll,
+  .work-scroll *,
+  .staggered-row-scroll,
+  .staggered-row-scroll * {
+    cursor: none !important;
+  }
+}
+
+/* Hide butterfly when hovering galleries */
+
+body:has(.work-scroll:hover) #gif-cursor,
+body:has(.staggered-row-scroll:hover) #gif-cursor {
+  opacity: 0 !important;
+}
+
+/* Hide GIF cursor on mobile */
+
+@media (hover: none), (pointer: coarse) {
+  #gif-cursor {
+    display: none;
+  }
 }

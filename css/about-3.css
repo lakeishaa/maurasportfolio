@@ -1,0 +1,383 @@
+/* ABOUT PAGE â€” load AFTER styles.css. Shared typography, links and header
+   are intentionally inherited from styles.css. */
+
+/* The header must be outside .about-canvas to align with the homepage. */
+.about-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  min-height: 766px;
+  margin: 0 auto;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* Only an optional additional nav class; do not reposition the header. */
+.site-header.about-nav,
+.about-nav.site-header {
+  font-family: var(--font-main);
+}
+
+/* Match original homepage type hierarchy. */
+.about-heading {
+  position: absolute;
+  top: 120px;
+  left: 8%;
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: var(--type-large);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  max-width: 85%;
+}
+.about-hi {
+  position: absolute;
+  top: 178px;
+  left: 32%;
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  font-weight: 400;
+  color: var(--link-color);
+}
+
+.about-bio {
+  position: absolute;
+  top: 285px;
+  left: 8%;
+  width: 355px;
+  max-width: 100%;
+}
+.about-bio p,
+.about-experience p {
+  margin: 0;
+}
+
+.about-bio,
+.about-bio p,
+.about-experience,
+.about-experience p,
+.about-experience a,
+.about-contact a {
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+.about-bio-doodles {
+  position: absolute;
+  top: 225px;
+  left: 7%;
+  width: 450px;
+  height: 255px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+.about-portrait {
+  position: absolute;
+  top: 141px;
+  left: 62.2%;
+  width: 24.6%;
+  aspect-ratio: 289 / 319;
+  margin: 0;
+  background: #936565;
+}
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-portrait-doodles {
+  position: absolute;
+  top: 105px;
+  left: 58%;
+  width: 33%;
+  height: 410px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-experience {
+  position: absolute;
+  top: 300px;
+  left: 16.3%;
+  width: 360px;
+  max-width: 100%;
+}
+.about-contact {
+  position: absolute;
+  top: 544px;
+  left: 62%;
+  width: max-content;
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  color: var(--link-color);
+}
+.about-contact h2 {
+  margin: 0 0 5px;
+  font-family: var(--font-main);
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+  color: var(--link-color);
+}
+.about-contact a {
+  display: block;
+}
+.about-contact-doodles {
+  position: absolute;
+  top: 560px;
+  left: 59%;
+  width: 28%;
+  height: 105px;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* styles.css assigns Xanh Mono to animated .letter spans; restore Inter Tight
+   only inside About body copy, not navigation or headings. */
+.about-bio .interactive-text,
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text,
+.about-experience .interactive-text .letter,
+.about-contact a .interactive-text,
+.about-contact a .interactive-text .letter {
+  font-family: var(--font-body);
+}
+.about-heading .interactive-text,
+.about-heading .interactive-text .letter,
+.about-contact h2 .interactive-text,
+.about-contact h2 .interactive-text .letter {
+  font-family: var(--font-main);
+}
+
+/* EXPERIENCE SECTION */
+
+.about-experience {
+  position: absolute;
+  top: 593px;
+  left: 16.3%;
+  width: 360px;
+  max-width: 100%;
+
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+/* TEXT ROWS */
+
+.about-experience p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* INLINE COMPANY IMAGES */
+
+.about-experience .experience-logo {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: inherit;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.about-experience .experience-logo img {
+  display: block;
+  width: auto;
+  height: 1.5em;
+  max-width: 6em;
+  object-fit: contain;
+}
+
+/* ABOUT PAGE — DESKTOP POSITIONING */
+
+@media (min-width: 1001px) {
+  /* Main canvas */
+  .about-canvas {
+    max-width: 1530px;
+    min-height: 920px;
+  }
+
+  /* Nice To Meet You */
+  .about-heading {
+    top: 90px;
+    left: 8.7%;
+  }
+
+  /* Salam kenal / HI */
+  .about-hi {
+    top: 155px;
+    left: 32.5%;
+  }
+
+  /* Biography — middle left */
+  .about-bio {
+    top: 290px;
+    left: 8.7%;
+    width: 450px;
+  }
+
+  /* Portrait — upper right */
+  .about-portrait {
+    top: 110px;
+    left: 62.4%;
+    width: 24.3%;
+  }
+
+  /* Experience — bottom left */
+  .about-experience {
+    top: 690px;
+    left: 16.9%;
+    width: 400px;
+  }
+
+  /* Contact — bottom right */
+  .about-contact {
+    top: 625px;
+    left: 62.1%;
+    width: max-content;
+    max-width: 35%;
+  }
+
+  /* Decorative illustrations */
+  .about-bio-doodles {
+    top: 225px;
+    left: 7%;
+  }
+
+  .about-portrait-doodles {
+    top: 80px;
+    left: 58%;
+  }
+
+  .about-contact-doodles {
+    top: 645px;
+    left: 59%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .about-experience {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+  }
+}
+
+/* experience done */
+
+/* TABLET: retain the artwork arrangement with narrower text columns. */
+@media (min-width: 769px) and (max-width: 1000px) {
+  .about-heading {
+    max-width: 90%;
+  }
+  .about-bio {
+    left: 6%;
+    width: 34%;
+  }
+  .about-bio-doodles {
+    left: 5%;
+    width: 42%;
+  }
+  .about-experience {
+    left: 12%;
+    width: 35%;
+  }
+  .about-portrait {
+    left: 62%;
+    width: 29%;
+  }
+  .about-contact {
+    left: 62%;
+  }
+  .about-portrait-doodles {
+    left: 58%;
+    width: 38%;
+  }
+}
+
+/* TABLET + MOBILE: stack the page, without moving the global header. */
+@media (max-width: 768px) {
+  .about-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    max-width: none;
+    min-height: 0;
+    padding: 30px var(--page-gutter) 80px;
+  }
+  .about-heading,
+  .about-bio,
+  .about-portrait,
+  .about-experience,
+  .about-contact {
+    position: relative;
+    top: auto;
+    left: auto;
+    max-width: 100%;
+  }
+  .about-heading {
+    width: 100%;
+    margin: 0;
+  }
+  .about-hi {
+    display: none;
+  }
+  .about-bio {
+    width: 100%;
+    max-width: 390px;
+    margin: 0;
+  }
+  .about-portrait {
+    width: 75%;
+    max-width: 320px;
+    margin: 20px auto 0;
+    align-self: center;
+  }
+  .about-experience {
+    width: 100%;
+    margin: 0;
+  }
+  .about-contact {
+    width: 100%;
+    margin: 0;
+  }
+  .about-bio-doodles,
+  .about-portrait-doodles,
+  .about-contact-doodles {
+    display: none;
+  }
+}
+
+/* Same mobile breakpoint and variables as styles.css (defined there). */
+@media (max-width: 600px) {
+  .about-canvas {
+    padding: 30px var(--page-gutter) 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-canvas .interactive-text .letter {
+    animation: none;
+    transition: none;
+  }
+}

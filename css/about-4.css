@@ -1,0 +1,342 @@
+/* ABOUT PAGE — load AFTER styles.css.
+   The global header, fonts, font sizes, link colors, and mobile variables
+   all come from styles.css. This file controls only the About layout. */
+
+/* Fill the screen when possible; grow naturally if content needs room. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.site-header {
+  flex-shrink: 0;
+  /* Padding, alignment, and typography come from styles.css. */
+}
+
+/* 01. DESKTOP EDITORIAL LAYOUT: content-sized tracks, no 1fr gap. */
+.about-canvas {
+  position: relative;
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto auto;
+  column-gap: clamp(8px, 1.5vw, 24px);
+  row-gap: clamp(18px, 3svh, 36px);
+  align-items: start;
+  align-content: start;
+
+  width: 100%;
+  max-width: 1530px;
+  min-height: 0;
+  margin: 0 auto;
+  padding: clamp(24px, 5svh, 55px) 0 clamp(30px, 6svh, 70px);
+
+  background: #fff;
+  color: #111;
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* 02. HEADING — UPPER LEFT */
+.about-heading {
+  grid-column: 2 / 8;
+  grid-row: 1;
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-main);
+  font-size: var(--type-large);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.about-hi {
+  grid-column: 5 / 7;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
+  margin-top: clamp(55px, 5.5vw, 85px);
+  transform: translateX(-16px);
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  font-weight: 400;
+  color: var(--link-color);
+}
+
+/* 03. BIO — CENTER LEFT */
+.about-bio {
+  grid-column: 2 / 5;
+  grid-row: 2;
+  width: 100%;
+  max-width: 450px;
+  min-width: 0;
+  margin-top: clamp(12px, 3svh, 30px);
+}
+
+.about-bio p,
+.about-experience p {
+  margin: 0;
+}
+
+/* Keep body copy identical to the site's small text. */
+.about-bio,
+.about-bio p,
+.about-experience,
+.about-experience p,
+.about-experience a,
+.about-contact a {
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+/* 04. PORTRAIT — UPPER RIGHT */
+.about-portrait {
+  grid-column: 7 / 13;
+  grid-row: 1 / 3;
+  justify-self: center;
+  align-self: start;
+  width: min(100%, 40svh, 380px);
+  aspect-ratio: 289 / 319;
+  margin: clamp(0px, 2svh, 22px) 0 0;
+  background: #936565;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 05. EXPERIENCE — BOTTOM LEFT */
+.about-experience {
+  grid-column: 2 / 7;
+  grid-row: 3;
+  align-self: end;
+  width: 100%;
+  max-width: 430px;
+  min-width: 0;
+  margin-top: clamp(20px, 6svh, 60px);
+}
+
+.about-experience p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Company images stay inline with the words. */
+.about-experience .experience-logo {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.about-experience .experience-logo img {
+  display: block;
+  width: auto;
+  height: 3em;
+  max-width: 6em;
+  object-fit: contain;
+}
+
+/* Optional larger/wider company logo. */
+.about-experience .experience-logo-wide img {
+  height: 2.5em;
+  max-width: 9em;
+}
+
+/* 06. CONTACT — BOTTOM RIGHT */
+.about-contact {
+  grid-column: 8 / 12;
+  grid-row: 3;
+  align-self: end;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  margin: clamp(20px, 6svh, 60px) 0 0 clamp(12px, 3vw, 50px);
+  color: var(--link-color);
+}
+
+.about-contact h2 {
+  margin: 0 0 5px;
+  font-family: var(--font-main);
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+  color: var(--link-color);
+}
+
+.about-contact a {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* 07. DECORATIONS — absolute positioning is fine for artwork. */
+.about-bio-doodles,
+.about-portrait-doodles,
+.about-contact-doodles {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-bio-doodles {
+  top: 26%;
+  left: 7%;
+  width: min(34%, 450px);
+}
+
+.about-portrait-doodles {
+  top: 8%;
+  left: 58%;
+  width: min(33%, 450px);
+}
+
+.about-contact-doodles {
+  top: 72%;
+  left: 59%;
+  width: min(28%, 370px);
+}
+
+/* 08. INTERACTIVE TEXT FONT FIX */
+.about-bio .interactive-text,
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text,
+.about-experience .interactive-text .letter,
+.about-contact a .interactive-text,
+.about-contact a .interactive-text .letter {
+  font-family: var(--font-body);
+}
+
+.about-heading .interactive-text,
+.about-heading .interactive-text .letter,
+.about-contact h2 .interactive-text,
+.about-contact h2 .interactive-text .letter {
+  font-family: var(--font-main);
+}
+
+/* 09. SMALLER LAPTOPS — retain editorial layout, shrink portrait. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .about-bio {
+    max-width: 350px;
+  }
+  .about-portrait {
+    width: min(100%, 35svh, 310px);
+  }
+  .about-contact {
+    margin-left: 0;
+  }
+}
+
+/* Compact laptop windows: fit a little tighter without shrinking the type. */
+@media (min-width: 901px) and (min-height: 701px) and (max-height: 760px) {
+  .about-canvas {
+    row-gap: clamp(24px, 4.5svh, 40px);
+    padding-top: clamp(30px, 6svh, 50px);
+    padding-bottom: clamp(55px, 11svh, 80px);
+  }
+
+  .about-bio {
+    margin-top: clamp(12px, 4svh, 32px);
+  }
+}
+
+/* Short desktop windows can still scroll; reduce space where possible. */
+@media (min-width: 901px) and (max-height: 700px) {
+  .about-canvas {
+    row-gap: clamp(18px, 3svh, 34px);
+    padding-top: clamp(18px, 3svh, 32px);
+    padding-bottom: clamp(22px, 4svh, 36px);
+  }
+  .about-bio {
+    margin-top: 10px;
+  }
+  .about-portrait {
+    width: min(100%, 36svh, 320px);
+  }
+}
+
+/* 10. TABLETS + MOBILE — normal flow, no overlap or clipped text. */
+@media (max-width: 900px) {
+  .about-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 5vw, 44px);
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    padding: 30px var(--page-gutter) 80px;
+  }
+
+  .about-heading,
+  .about-bio,
+  .about-portrait,
+  .about-experience,
+  .about-contact {
+    position: static;
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .about-heading {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .about-hi {
+    display: none;
+  }
+
+  .about-bio {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .about-portrait {
+    width: min(75%, 320px);
+    align-self: center;
+    aspect-ratio: 289 / 319;
+  }
+
+  .about-experience,
+  .about-contact {
+    width: 100%;
+  }
+
+  .about-bio-doodles,
+  .about-portrait-doodles,
+  .about-contact-doodles {
+    display: none;
+  }
+}
+
+/* styles.css already changes font sizes and page gutters at 600px. */
+@media (max-width: 600px) {
+  .about-canvas {
+    padding: 30px var(--page-gutter) 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-canvas .interactive-text .letter {
+    animation: none;
+    transition: none;
+  }
+}

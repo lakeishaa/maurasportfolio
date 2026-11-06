@@ -1,521 +1,374 @@
-/* ABOUT PAGE */
+/* ABOUT PAGE — TWO INDEPENDENT COLUMNS
+   Load AFTER styles.css. Header, fonts, links and type variables come from styles.css.
 
-/* 01. GLOBAL + THREE-SIZE TYPOGRAPHY */
-:root {
-  --font-main: "Xanh Mono", monospace;
-  --font-body: "Inter Tight", sans-serif;
-  --type-large: clamp(40px, 4.5vw, 80px);
-  --type-medium: 18px;
-  --type-small: 13.5px;
-  --line-height-main: 1.4;
-  --link-color: #a4b51b;
-  --link-hover: #ff87f4;
-  --page-gutter: clamp(22px, 5vw, 72px);
-  --gallery-height: 400px;
+   Required structure:
+   <main class="about-canvas">
+     <div class="about-left">
+       <div class="about-heading-group">heading + .about-hi</div>
+       <div class="about-bio">...</div>
+       <div class="about-experience">...</div>
+     </div>
+     <div class="about-right">
+       <div class="about-portrait">...</div>
+       <div class="about-contact">...</div>
+     </div>
+   </main>
+*/
+/* Fill the screen when space allows, but never clip shorter windows. */
+body[data-page="about"] {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
+body[data-page="about"] > .site-header {
+  flex-shrink: 0;
+  /* Inherits its exact padding, typography and alignment from styles.css. */
+}
+
+/* 01. TWO-COLUMN LAYOUT */
 .about-canvas {
-  position: relative;
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: start;
+  gap: clamp(36px, 5vw, 95px);
+
   width: 100%;
-  max-width: 1180px;
-  min-height: 766px;
+  max-width: 1530px;
+  min-height: 0;
   margin: 0 auto;
+  padding: clamp(30px, 5svh, 55px) var(--page-gutter) clamp(35px, 5svh, 65px);
+
   background: #fff;
   color: #111;
   font-family: var(--font-body);
-}
-
-/* Medium: all headings and navigational labels */
-.site-header,
-.site-header a,
-.project-number,
-.card-caption,
-.card-caption .brand,
-.work-copy h2,
-.project-links h2,
-.project-credits h2,
-.project-navigation,
-.project-navigation a {
-  font-size: var(--type-medium);
+  font-size: var(--type-small);
   line-height: var(--line-height-main);
-  font-weight: 400;
 }
 
-/* 02. HEADER + HOMEPAGE INTRO */
-.site-header {
+/* Each column stacks independently: no shared grid rows. */
+.about-left,
+.about-right {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px var(--page-gutter);
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
 }
 
-/* link fix */
-/* Links: one consistent dotted style */
-a:not(.project-card),
-a:not(.project-card):visited {
+/* 02. HEADING — TOP LEFT */
+.about-heading-group {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+}
+
+.about-heading {
+  position: static;
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-main);
+  font-size: var(--type-large);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: normal;
+}
+
+.about-hi {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 7%;
+  font-family: var(--font-main);
+  font-size: var(--type-small);
+  font-weight: 400;
   color: var(--link-color);
-  text-decoration: underline dotted currentColor;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-a:not(.project-card):hover {
-  color: var(--link-hover);
-}
-a .interactive-letter,
-a .interactive-word {
-  color: inherit;
+  white-space: nowrap;
 }
 
-/* demo */
-
-#demo {
-  line-height: 1.15 !important;
-}
-#demo .typewriter-link,
-#demo .typewriter-link:visited {
-  color: #a4b51b;
-  text-decoration: none;
-  border-bottom: 2px dotted #a4b51b;
-}
-#demo .typewriter-link .letter {
-  color: inherit !important;
-}
-#demo .typewriter-link:hover {
-  color: #ff87f4;
-  border-bottom-color: #a4b51b;
-}
-
-/* ABOUT BODY COPY — SAME AS REST OF WEBSITE */
-
-.about-bio,
-.about-bio p,
-.about-experience,
-.about-experience p,
-.about-experience a,
-.about-contact a {
+/* 03. BIO — LEFT, INDEPENDENT OF PORTRAIT HEIGHT */
+.about-bio {
+  position: relative; /* Anchor for the bio doodles. */
+  width: 100%;
+  max-width: 450px;
+  margin-top: clamp(58px, 11svh, 110px);
   font-family: var(--font-body);
   font-size: var(--type-small);
   font-weight: 400;
   line-height: var(--line-height-main);
 }
 
-/* CONTACT HEADING */
-.about-contact h2 {
-  font-family: var(--font-main);
-  font-size: var(--type-medium);
-  font-weight: 400;
-  line-height: var(--line-height-main);
-  color: var(--link-color);
+.about-bio p,
+.about-experience p {
+  margin: 0;
+  font: inherit;
 }
 
-/* MAIN ABOUT HEADING */
-.about-heading {
-  font-family: var(--font-main);
-  font-size: var(--type-large);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-/* INTERACTIVE BODY LETTERS */
-.about-bio .interactive-text .letter,
-.about-experience .interactive-text .letter,
-.about-contact a .interactive-text .letter {
-  font-family: var(--font-body);
-}
-/* 02. NAVIGATION */
-
-.about-nav {
+/* 04. EXPERIENCE — LEFT, OWN VERTICAL SPACING */
+.about-experience {
   position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 24px var(--page-gutter);
-
-  font-family: var(--font-main);
-  font-size: var(--type-medium);
+  width: 100%;
+  --experience-indent: clamp(0px, 7vw, 110px);
+  max-width: min(450px, calc(100% - var(--experience-indent)));
+  margin-top: clamp(65px, 17svh, 165px);
+  margin-left: var(--experience-indent);
+  font-family: var(--font-body);
+  font-size: var(--type-small);
   font-weight: 400;
   line-height: var(--line-height-main);
 }
 
-.about-nav a,
-.about-nav a:visited {
-  font-family: var(--font-main);
-  color: var(--link-color);
+/* Company logos remain inline with the text. */
+.about-experience .experience-logo {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
   text-decoration: none;
 }
 
-.about-nav a:hover {
-  color: var(--link-hover);
+.about-experience .experience-logo img {
+  display: block;
+  width: auto;
+  height: 1.5em;
+  max-width: 6em;
+  object-fit: contain;
 }
 
-/* 03. MAIN HEADING */
-
-.about-heading {
-  position: absolute;
-  top: 120px;
-  left: 8%;
-  margin: 0;
-
-  font-family: var(--font-main);
-  font-size: clamp(36px, 4vw, 46px);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: 0;
-  white-space: nowrap;
+.about-experience .experience-logo-wide img {
+  max-width: 9em;
 }
 
-/* Small HI annotation */
-
-.about-hi {
-  position: absolute;
-  top: 178px;
-  left: 32%;
-
-  font-family: var(--font-main);
-  /* font-size: 12px; */
-  font-weight: 400;
-  color: var(--link-color);
-}
-
-/* 04. BIO */
-
-.about-bio {
-  position: absolute;
-  top: 285px;
-  left: 8%;
-  width: 355px;
-  max-width: 100%;
-
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: 0;
-}
-
-.about-bio p {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: inherit;
-  font-weight: 400;
-  line-height: inherit;
-}
-
-/* Bio handwritten decorations */
-
-.about-bio-doodles {
-  position: absolute;
-  top: 225px;
-  left: 7%;
-  width: 450px;
-  height: 255px;
-  object-fit: fill;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* 05. PORTRAIT */
-
+/* 05. PORTRAIT — TOP RIGHT */
 .about-portrait {
-  position: absolute;
-  top: 141px;
-  left: 62.2%;
-  width: 24.6%;
+  position: relative; /* Anchor for portrait doodles. */
+  width: min(100%, 375px);
   aspect-ratio: 289 / 319;
   margin: 0;
   background: #936565;
+  flex-shrink: 0;
 }
 
-.about-portrait img {
+.about-portrait > img:not(.about-portrait-doodles) {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Portrait flourishes */
-
-.about-portrait-doodles {
-  position: absolute;
-  top: 105px;
-  left: 58%;
-  width: 33%;
-  height: 410px;
-  object-fit: fill;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* 06. EXPERIENCE */
-
-.about-experience {
-  position: absolute;
-  top: 593px;
-  left: 16.3%;
-  width: 360px;
-
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.25;
-}
-
-.about-experience p {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 13px;
-  line-height: inherit;
-}
-
-.about-experience a,
-.about-experience a:visited {
-  font-family: var(--font-body);
-  color: #111;
-  text-decoration: none;
-}
-
-.about-experience a:hover {
-  color: var(--link-hover);
-}
-
-/* 07. CONTACT */
-
+/* 06. CONTACT — RIGHT, SPACED FROM PORTRAIT INDEPENDENTLY */
 .about-contact {
-  position: absolute;
-  top: 544px;
-  left: 62%;
-  width: max-content;
-  max-width: 35%;
-
+  position: relative; /* Anchor for contact doodles. */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  margin: 0;
-  font-family: var(--font-body);
-  color: #a4b51b;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: clamp(42px, 8svh, 100px) 0 0;
+  color: var(--link-color);
 }
 
 .about-contact h2 {
   margin: 0 0 5px;
-
   font-family: var(--font-main);
-  font-size: 13px;
+  font-size: var(--type-medium);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: var(--line-height-main);
   color: var(--link-color);
 }
 
-.about-contact a,
-.about-contact a:visited {
+.about-contact a {
   display: block;
-
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: var(--type-small);
   font-weight: 400;
-  line-height: 1.3;
-
-  color: #a4b51b;
-  text-decoration: underline;
-  text-decoration-style: solid;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  line-height: var(--line-height-main);
 }
 
-.about-contact a:hover {
-  color: var(--link-hover);
-}
-
-/* Contact handwritten decorations */
-
+/* 07. DECORATIVE OVERLAYS
+     Put each doodle INSIDE its corresponding .about-bio,
+     .about-portrait, or .about-contact element. Then it moves with that section. */
+.about-bio-doodles,
+.about-portrait-doodles,
 .about-contact-doodles {
   position: absolute;
-  top: 560px;
-  left: 59%;
-  width: 28%;
-  height: 105px;
-  object-fit: fill;
+  height: auto;
+  object-fit: contain;
   pointer-events: none;
   user-select: none;
 }
 
-/* 08. INTERACTIVE TEXT FONT FIX */
+.about-bio .about-bio-doodles {
+  top: -38px;
+  left: -40px;
+  width: calc(100% + 95px);
+  max-width: none;
+}
 
-/* Preserve Inter Tight even when JS wraps
-   individual characters in .letter spans */
+.about-portrait > .about-portrait-doodles {
+  top: -40px;
+  left: -40px;
+  width: calc(100% + 80px);
+  max-width: none;
+}
 
+.about-contact > .about-contact-doodles {
+  top: -25px;
+  left: -35px;
+  width: min(120%, 380px);
+  max-width: none;
+}
+
+/* 08. KEEP INTERACTIVE LETTERS IN THE CORRECT FONTS */
 .about-bio .interactive-text,
 .about-bio .interactive-text .letter,
 .about-experience .interactive-text,
 .about-experience .interactive-text .letter,
-.about-contact .interactive-text,
-.about-contact .interactive-text .letter {
+.about-contact a .interactive-text,
+.about-contact a .interactive-text .letter {
   font-family: var(--font-body);
 }
-
-/* Preserve Xanh Mono for headings */
 
 .about-heading .interactive-text,
 .about-heading .interactive-text .letter,
 .about-contact h2 .interactive-text,
-.about-contact h2 .interactive-text .letter,
-.about-nav .interactive-text,
-.about-nav .interactive-text .letter {
+.about-contact h2 .interactive-text .letter {
   font-family: var(--font-main);
 }
 
-/* 09. TABLET */
+/* DESKTOP — SPREAD CONTENT VERTICALLY */
 
-@media (min-width: 769px) and (max-width: 1000px) {
-  .about-heading {
-    font-size: clamp(32px, 4vw, 42px);
+/* @media (min-width: 901px) {
+  .about-canvas {
+    align-items: stretch;
+    padding-bottom: clamp(50px, 10svh, 200px);
+  }
+
+  .about-left,
+  .about-right {
+    justify-content: space-between;
+  }
+
+  .about-bio,
+  .about-experience,
+  .about-contact {
+    margin-top: 0;
+  }
+} */
+
+/* 09. SMALLER DESKTOPS: reduce spacing, rather than overlapping. */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .about-canvas {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(25px, 4vw, 55px);
   }
 
   .about-bio {
-    left: 6%;
-    width: 34%;
-  }
-
-  .about-bio-doodles {
-    left: 5%;
-    width: 42%;
+    max-width: 390px;
+    margin-top: clamp(34px, 7svh, 72px);
   }
 
   .about-experience {
-    left: 12%;
-    width: 35%;
+    margin-top: clamp(48px, 11svh, 100px);
+    --experience-indent: clamp(0px, 4vw, 50px);
   }
 
   .about-portrait {
-    left: 62%;
-    width: 29%;
+    width: min(100%, 34svh, 340px);
   }
 
   .about-contact {
-    left: 62%;
-  }
-
-  .about-portrait-doodles {
-    left: 58%;
-    width: 38%;
+    margin-top: clamp(28px, 6svh, 65px);
   }
 }
 
-/* 10. MOBILE */
-
-@media (max-width: 768px) {
+/* Reduce vertical spacing in short laptop windows; allow natural scroll. */
+@media (min-width: 901px) and (max-height: 700px) {
   .about-canvas {
-    position: relative;
+    padding-top: clamp(16px, 3svh, 32px);
+    padding-bottom: 24px;
+  }
+
+  .about-bio {
+    margin-top: 38px;
+  }
+  .about-experience {
+    margin-top: 48px;
+  }
+  .about-contact {
+    margin-top: 32px;
+  }
+  .about-portrait {
+    width: min(100%, 38svh, 340px);
+  }
+}
+
+/* 10. TABLET / MOBILE: one vertical flow.
+     display: contents flattens the purely presentational column wrappers
+     so we can retain the natural order: Heading, Bio, Portrait, Experience, Contact. */
+@media (max-width: 900px) {
+  .about-canvas {
     display: flex;
     flex-direction: column;
-    gap: 36px;
-
+    gap: clamp(30px, 5vw, 44px);
     width: 100%;
     max-width: none;
-    min-height: auto;
-    padding: 110px var(--page-gutter) 80px;
+    padding: 30px var(--page-gutter) 80px;
   }
 
-  /* Navigation stays at top */
-
-  .about-nav {
-    position: absolute;
-    top: 24px;
-    left: var(--page-gutter);
-    right: var(--page-gutter);
-
-    font-size: var(--type-medium);
+  .about-left,
+  .about-right {
+    display: contents;
   }
 
-  /* Heading */
-
-  .about-heading {
-    position: relative;
-    top: auto;
-    left: auto;
-
+  .about-heading-group {
+    order: 1;
     width: 100%;
-    margin: 0;
+  }
+  .about-bio {
+    order: 2;
+  }
+  .about-portrait {
+    order: 3;
+  }
+  .about-experience {
+    order: 4;
+  }
+  .about-contact {
+    order: 5;
+  }
 
-    font-size: clamp(32px, 8vw, 46px);
-    white-space: normal;
+  .about-bio,
+  .about-portrait,
+  .about-experience,
+  .about-contact {
+    margin: 0;
+  }
+
+  .about-bio {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .about-portrait {
+    width: min(75%, 320px);
+    align-self: center;
+  }
+
+  .about-experience,
+  .about-contact {
+    width: 100%;
+    max-width: 100%;
   }
 
   .about-hi {
     display: none;
   }
 
-  /* Bio */
-
-  .about-bio {
-    position: relative;
-    top: auto;
-    left: auto;
-
-    width: 100%;
-    max-width: 390px;
-    margin: 0;
-
-    font-size: 14px;
-    line-height: 1.35;
-  }
-
-  /* Portrait */
-
-  .about-portrait {
-    position: relative;
-    top: auto;
-    left: auto;
-
-    width: 75%;
-    max-width: 320px;
-    margin: 20px auto 0;
-    align-self: center;
-  }
-
-  /* Experience */
-
-  .about-experience {
-    position: relative;
-    top: auto;
-    left: auto;
-
-    width: 100%;
-    margin: 0;
-
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  /* Contact */
-
-  .about-contact {
-    position: relative;
-    top: auto;
-    left: auto;
-
-    width: 100%;
-    max-width: none;
-    margin: 0;
-  }
-
-  .about-contact h2 {
-    font-size: var(--type-medium);
-  }
-
-  .about-contact a {
-    font-size: 14px;
-  }
-
-  /* Decorations hidden on mobile */
-
+  /* Optional: enable doodles on mobile later with custom offsets. */
   .about-bio-doodles,
   .about-portrait-doodles,
   .about-contact-doodles {
@@ -523,18 +376,15 @@ a .interactive-word {
   }
 }
 
-/* 11. REDUCED MOTION */
+@media (max-width: 600px) {
+  .about-canvas {
+    padding: 30px var(--page-gutter) 60px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .about-canvas .interactive-text .letter {
     animation: none;
     transition: none;
-  }
-}
-
-/* 10. MOBILE */
-@media (max-width: 600px) {
-  .site-header {
-    padding: 20px;
   }
 }
