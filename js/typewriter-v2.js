@@ -38,7 +38,7 @@
   const cursor = document.getElementById("cursor");
   if (!demo || !cursor) return;
 
-  const colors = ["#F43F25", "#C7DD38", "#32B7FF", "#FF87F4"];
+  const colors = ["#F43F25", "#A4B51B", "#32B7FF", "#FF87F4"];
   const symbols = ["&", "*", "$", "!", "#", "%", "+", "@"];
   const specialCharacters = {};
   const wordLinks = {

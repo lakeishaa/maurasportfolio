@@ -126,15 +126,20 @@
         } else if (block.type === "text") {
           let text = esc(block.content || "");
 
-          if (block.link?.text && /^https?:\/\//.test(block.link.url || "")) {
-            const linkText = esc(block.link.text);
+          // Supports multiple links, while keeping the old single-link format
+          const links = block.links || (block.link ? [block.link] : []);
 
-            const linkHTML = `<a href="${esc(block.link.url)}"
+          links.forEach((link) => {
+            if (!link.text || !/^https?:\/\//.test(link.url || "")) return;
+
+            const linkText = esc(link.text);
+
+            const linkHTML = `<a href="${esc(link.url)}"
       target="_blank"
       rel="noopener noreferrer">${linkText}</a>`;
 
             text = text.replace(linkText, linkHTML);
-          }
+          });
 
           content = `<p class="project-intro">${text}</p>`;
         } else if (block.type === "image" || block.type === "video") {

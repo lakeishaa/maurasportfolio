@@ -1,20 +1,16 @@
-/* ABOUT PAGE — TWO INDEPENDENT COLUMNS
-   Load AFTER styles.css. Header, fonts, links and type variables come from styles.css.
+/* ==========================================
+   ABOUT PAGE
+   Loads after styles.css
 
-   Required structure:
-   <main class="about-canvas">
-     <div class="about-left">
-       <div class="about-heading-group">heading + .about-hi</div>
-       <div class="about-bio">...</div>
-       <div class="about-experience">...</div>
-     </div>
-     <div class="about-right">
-       <div class="about-portrait">...</div>
-       <div class="about-contact">...</div>
-     </div>
-   </main>
-*/
-/* Fill the screen when space allows, but never clip shorter windows. */
+   DESKTOP: 1201px+
+   TABLET:  901px–1200px
+   MOBILE:  900px and below
+========================================== */
+
+/* ==========================================
+   01. BASE STYLES
+========================================== */
+
 body[data-page="about"] {
   min-height: 100svh;
   display: flex;
@@ -23,76 +19,98 @@ body[data-page="about"] {
 
 body[data-page="about"] > .site-header {
   flex-shrink: 0;
-  /* Inherits its exact padding, typography and alignment from styles.css. */
 }
 
-/* 01. TWO-COLUMN LAYOUT */
+/* MAIN GRID */
+
 .about-canvas {
   display: grid;
   flex: 1;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  align-items: start;
-  gap: clamp(36px, 5vw, 95px);
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  grid-template-areas:
+    "heading portrait"
+    "bio portrait"
+    "experience contact";
+
+  gap: 0;
 
   width: 100%;
   max-width: 1530px;
   min-height: 0;
   margin: 0 auto;
-  padding: clamp(30px, 5svh, 55px) var(--page-gutter) clamp(35px, 5svh, 65px);
 
   background: #fff;
   color: #111;
+
   font-family: var(--font-body);
   font-size: var(--type-small);
   line-height: var(--line-height-main);
 }
 
-/* Each column stacks independently: no shared grid rows. */
+/* Make children participate in the grid */
+
 .about-left,
 .about-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
+  display: contents;
 }
 
-/* 02. HEADING — TOP LEFT */
+/* ==========================================
+   02. HEADING
+========================================== */
+
 .about-heading-group {
+  grid-area: heading;
+
   position: relative;
+  align-self: start;
+  justify-self: start;
+
   width: max-content;
   max-width: 100%;
+  min-width: 0;
+  margin: 0;
 }
 
 .about-heading {
-  position: static;
   margin: 0;
-  max-width: 100%;
+
   font-family: var(--font-main);
   font-size: var(--type-large);
   font-style: italic;
   font-weight: 400;
   line-height: 1.1;
-  letter-spacing: 0;
-  white-space: normal;
-}
 
-.about-hi {
-  position: absolute;
-  top: calc(100% + 4px);
-  right: 7%;
-  font-family: var(--font-main);
-  font-size: var(--type-small);
-  font-weight: 400;
-  color: var(--link-color);
   white-space: nowrap;
 }
 
-/* 03. BIO — LEFT, INDEPENDENT OF PORTRAIT HEIGHT */
+/* ==========================================
+   03. BIO
+========================================== */
+
 .about-bio {
-  position: relative; /* Anchor for the bio doodles. */
-  width: 100%;
-  max-width: 450px;
-  margin-top: clamp(58px, 11svh, 110px);
+  grid-area: bio;
+
+  position: relative;
+  align-self: center;
+  justify-self: start;
+
+  /* FIXED DESKTOP/TABLET WIDTH */
+  width: 310px;
+  min-width: 310px;
+  max-width: none;
+
+  margin: 0;
+  padding: 0;
+
   font-family: var(--font-body);
   font-size: var(--type-small);
   font-weight: 400;
@@ -105,21 +123,28 @@ body[data-page="about"] > .site-header {
   font: inherit;
 }
 
-/* 04. EXPERIENCE — LEFT, OWN VERTICAL SPACING */
+/* ==========================================
+   04. EXPERIENCE
+========================================== */
+
 .about-experience {
+  grid-area: experience;
+
   position: relative;
+  align-self: start;
+  justify-self: start;
+
   width: 100%;
-  --experience-indent: clamp(0px, 7vw, 110px);
-  max-width: min(450px, calc(100% - var(--experience-indent)));
-  margin-top: clamp(65px, 17svh, 165px);
-  margin-left: var(--experience-indent);
+  max-width: 450px;
+  min-width: 0;
+
+  margin: 0;
+
   font-family: var(--font-body);
   font-size: var(--type-small);
-  font-weight: 400;
   line-height: var(--line-height-main);
 }
 
-/* Company logos remain inline with the text. */
 .about-experience .experience-logo {
   display: inline-block;
   vertical-align: middle;
@@ -130,7 +155,7 @@ body[data-page="about"] > .site-header {
 .about-experience .experience-logo img {
   display: block;
   width: auto;
-  height: 1.5em;
+  height: 2.2em;
   max-width: 6em;
   object-fit: contain;
 }
@@ -139,14 +164,23 @@ body[data-page="about"] > .site-header {
   max-width: 9em;
 }
 
-/* 05. PORTRAIT — TOP RIGHT */
+/* ==========================================
+   05. PORTRAIT
+========================================== */
+
 .about-portrait {
-  position: relative; /* Anchor for portrait doodles. */
+  grid-area: portrait;
+
+  position: relative;
+  align-self: start;
+  justify-self: center;
+
   width: min(100%, 375px);
+  min-width: 0;
   aspect-ratio: 289 / 319;
+
   margin: 0;
   background: #936565;
-  flex-shrink: 0;
 }
 
 .about-portrait > img:not(.about-portrait-doodles) {
@@ -156,73 +190,52 @@ body[data-page="about"] > .site-header {
   object-fit: cover;
 }
 
-/* 06. CONTACT — RIGHT, SPACED FROM PORTRAIT INDEPENDENTLY */
+/* ==========================================
+   06. CONTACT
+========================================== */
+
 .about-contact {
-  position: relative; /* Anchor for contact doodles. */
+  grid-area: contact;
+
+  position: relative;
+  align-self: start;
+  justify-self: start;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   width: 100%;
-  max-width: 100%;
   min-width: 0;
-  margin: clamp(42px, 8svh, 100px) 0 0;
+
+  margin: 0;
   color: var(--link-color);
 }
 
 .about-contact h2 {
   margin: 0 0 5px;
+
   font-family: var(--font-main);
   font-size: var(--type-medium);
   font-weight: 400;
   line-height: var(--line-height-main);
-  color: var(--link-color);
 }
 
 .about-contact a {
   display: block;
   max-width: 100%;
   overflow-wrap: anywhere;
+
   font-family: var(--font-body);
   font-size: var(--type-small);
   font-weight: 400;
   line-height: var(--line-height-main);
 }
 
-/* 07. DECORATIVE OVERLAYS
-     Put each doodle INSIDE its corresponding .about-bio,
-     .about-portrait, or .about-contact element. Then it moves with that section. */
-.about-bio-doodles,
-.about-portrait-doodles,
-.about-contact-doodles {
-  position: absolute;
-  height: auto;
-  object-fit: contain;
-  pointer-events: none;
-  user-select: none;
-}
+/* ==========================================
+   07. INTERACTIVE TEXT
+========================================== */
 
-.about-bio .about-bio-doodles {
-  top: -38px;
-  left: -40px;
-  width: calc(100% + 95px);
-  max-width: none;
-}
-
-.about-portrait > .about-portrait-doodles {
-  top: -40px;
-  left: -40px;
-  width: calc(100% + 80px);
-  max-width: none;
-}
-
-.about-contact > .about-contact-doodles {
-  top: -25px;
-  left: -35px;
-  width: min(120%, 380px);
-  max-width: none;
-}
-
-/* 08. KEEP INTERACTIVE LETTERS IN THE CORRECT FONTS */
 .about-bio .interactive-text,
 .about-bio .interactive-text .letter,
 .about-experience .interactive-text,
@@ -239,152 +252,306 @@ body[data-page="about"] > .site-header {
   font-family: var(--font-main);
 }
 
-/* DESKTOP — SPREAD CONTENT VERTICALLY */
+/* ==========================================
+   08. DOODLE SYSTEM
+========================================== */
 
-/* @media (min-width: 901px) {
+/* Anchor doodles to individual words */
+
+.doodle-anchor {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Shared doodle styles */
+
+.doodle,
+.about-heading-doodle {
+  position: absolute;
+  display: block;
+
+  height: auto;
+  max-width: none;
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+/* ==========================================
+   09. DESKTOP
+   1201px+
+========================================== */
+
+@media (min-width: 1201px) {
+  /* PAGE SPACING */
+
   .about-canvas {
-    align-items: stretch;
-    padding-bottom: clamp(50px, 10svh, 200px);
+    padding: 55px 80px 65px;
   }
 
-  .about-left,
-  .about-right {
-    justify-content: space-between;
+  /* HEADING */
+
+  .about-heading {
+    font-size: clamp(48px, 4.5vw, 70px);
   }
 
-  .about-bio,
-  .about-experience,
+  /* BIO */
+
+  .about-bio {
+    width: 310px;
+    min-width: 310px;
+  }
+
+  /* EXPERIENCE */
+
+  .about-experience {
+    padding-top: 45px;
+    padding-left: 80px;
+  }
+
+  /* CONTACT */
+
   .about-contact {
-    margin-top: 0;
+    padding-top: 45px;
+    padding-left: 80px;
   }
-} */
 
-/* 09. SMALLER DESKTOPS: reduce spacing, rather than overlapping. */
+  /* PORTRAIT */
+
+  .about-portrait {
+    width: min(100%, 375px);
+  }
+
+  /* SALAM KENAL */
+
+  .about-heading-doodle {
+    width: 180px;
+
+    top: 75%;
+    left: 75%;
+  }
+
+  /* MAURA DOODLE */
+
+  .doodle-name {
+    width: 350px;
+
+    top: -65px;
+    left: 45px;
+    right: auto;
+
+    transform: none;
+  }
+
+  /* AND EATS DOODLE */
+
+  .doodle-writes {
+    width: 300px;
+
+    top: -90px;
+    left: 30px;
+    right: auto;
+
+    transform: none;
+  }
+}
+
+/* ==========================================
+   10. TABLET
+   901px–1200px
+
+   Same two-column grid as desktop
+========================================== */
+
 @media (min-width: 901px) and (max-width: 1200px) {
+  /* PAGE SPACING */
+
   .about-canvas {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: clamp(25px, 4vw, 55px);
+    padding: 40px 35px 50px;
   }
+
+  /* HEADING */
+
+  .about-heading {
+    font-size: clamp(34px, 4vw, 48px);
+  }
+
+  /* BIO */
 
   .about-bio {
-    max-width: 390px;
-    margin-top: clamp(34px, 7svh, 72px);
+    width: 310px;
+    min-width: 310px;
   }
+
+  /* EXPERIENCE */
 
   .about-experience {
-    margin-top: clamp(48px, 11svh, 100px);
-    --experience-indent: clamp(0px, 4vw, 50px);
+    padding-top: 30px;
+    padding-left: 30px;
   }
 
-  .about-portrait {
-    width: min(100%, 34svh, 340px);
-  }
+  /* CONTACT */
 
   .about-contact {
-    margin-top: clamp(28px, 6svh, 65px);
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  /* PORTRAIT */
+
+  .about-portrait {
+    width: min(100%, 340px);
+  }
+
+  /* SALAM KENAL */
+
+  .about-heading-doodle {
+    width: 150px;
+
+    top: 75%;
+    left: 75%;
+  }
+
+  /* MAURA DOODLE */
+
+  .doodle-name {
+    width: 350px;
+
+    top: -65px;
+    left: 45px;
+    right: auto;
+
+    transform: none;
+  }
+
+  /* AND EATS DOODLE */
+
+  .doodle-writes {
+    width: 300px;
+
+    top: -90px;
+    left: 30px;
+    right: auto;
+
+    transform: none;
   }
 }
 
-/* Reduce vertical spacing in short laptop windows; allow natural scroll. */
-@media (min-width: 901px) and (max-height: 700px) {
-  .about-canvas {
-    padding-top: clamp(16px, 3svh, 32px);
-    padding-bottom: 24px;
-  }
+/* ==========================================
+   11. MOBILE
+   900px and below
 
-  .about-bio {
-    margin-top: 38px;
-  }
-  .about-experience {
-    margin-top: 48px;
-  }
-  .about-contact {
-    margin-top: 32px;
-  }
-  .about-portrait {
-    width: min(100%, 38svh, 340px);
-  }
-}
+   Single-column layout
+========================================== */
 
-/* 10. TABLET / MOBILE: one vertical flow.
-     display: contents flattens the purely presentational column wrappers
-     so we can retain the natural order: Heading, Bio, Portrait, Experience, Contact. */
 @media (max-width: 900px) {
+  /* GRID */
+
   .about-canvas {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(30px, 5vw, 44px);
-    width: 100%;
-    max-width: none;
-    padding: 30px var(--page-gutter) 80px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+
+    grid-template-areas:
+      "heading"
+      "bio"
+      "portrait"
+      "experience"
+      "contact";
+
+    row-gap: 75px;
+
+    padding: 30px var(--page-gutter) 60px;
   }
 
-  .about-left,
-  .about-right {
-    display: contents;
-  }
+  /* HEADING */
 
   .about-heading-group {
-    order: 1;
-    width: 100%;
-  }
-  .about-bio {
-    order: 2;
-  }
-  .about-portrait {
-    order: 3;
-  }
-  .about-experience {
-    order: 4;
-  }
-  .about-contact {
-    order: 5;
-  }
-
-  .about-bio,
-  .about-portrait,
-  .about-experience,
-  .about-contact {
-    margin: 0;
-  }
-
-  .about-bio {
-    width: 100%;
-    max-width: 440px;
-  }
-
-  .about-portrait {
-    width: min(75%, 320px);
-    align-self: center;
-  }
-
-  .about-experience,
-  .about-contact {
     width: 100%;
     max-width: 100%;
   }
 
-  .about-hi {
-    display: none;
+  .about-heading {
+    font-size: clamp(34px, 7vw, 52px);
+    white-space: normal;
   }
 
-  /* Optional: enable doodles on mobile later with custom offsets. */
-  .about-bio-doodles,
-  .about-portrait-doodles,
-  .about-contact-doodles {
-    display: none;
+  /* BIO */
+
+  .about-bio {
+    width: 100%;
+    min-width: 0;
+    max-width: 310px;
+
+    align-self: start;
+    padding: 0;
+  }
+
+  /* PORTRAIT */
+
+  .about-portrait {
+    width: min(85%, 340px);
+    justify-self: center;
+  }
+
+  /* EXPERIENCE */
+
+  .about-experience {
+    width: 100%;
+    max-width: 450px;
+    padding: 0;
+  }
+
+  /* CONTACT */
+
+  .about-contact {
+    width: 100%;
+    max-width: 450px;
+    padding: 0;
+  }
+
+  /* SALAM KENAL */
+
+  .about-heading-doodle {
+    width: 95px;
+
+    top: 85%;
+    left: 40%;
+  }
+
+  /* MAURA DOODLE */
+
+  .doodle-name {
+    width: 170px;
+
+    top: -35px;
+    left: 20px;
+    right: auto;
+
+    transform: none;
+  }
+
+  /* AND EATS DOODLE */
+
+  .doodle-writes {
+    width: 140px;
+
+    top: -40px;
+    left: 10px;
+    right: auto;
+
+    transform: none;
   }
 }
 
-@media (max-width: 600px) {
-  .about-canvas {
-    padding: 30px var(--page-gutter) 60px;
-  }
-}
+/* ==========================================
+   12. ACCESSIBILITY
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .about-canvas .interactive-text .letter {
-    animation: none;
+  .about-heading-doodle,
+  .doodle {
     transition: none;
   }
 }

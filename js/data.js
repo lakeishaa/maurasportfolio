@@ -328,16 +328,16 @@ window.PORTFOLIO = [
       {
         type: "text",
         content:
-          "Money stress is real for Zillennials. But Venmo believed it didn't have to be.",
-        col: 4,
+          "We created zesty and playful organic social content that turned Venmo into a destination for feel-good money—no matter what transaction you're making.",
+        col: 7,
         span: 3,
         row: 2,
       },
       {
         type: "text",
         content:
-          "We created zesty and playful organic social content that turned Venmo into a destination for feel-good money—no matter what transaction you're making.",
-        col: 7,
+          "Money stress is real for Zillennials. But Venmo believed it didn't have to be.",
+        col: 4,
         span: 4,
         row: 1,
       },
@@ -1205,7 +1205,7 @@ window.PORTFOLIO = [
       {
         type: "text",
         content:
-          "To show just how powerful their digital tools are, I wrote three spots that tapped into everyone’s habit of being on their phones, yet doing what you least expect—banking.",
+          "To show just how powerful their digital tools are, I wrote three spots that tapped into everyone's habit of being on their phones, yet doing what you least expect—banking.",
         col: 8,
         span: 3,
         row: 2,
@@ -1522,39 +1522,224 @@ window.PORTFOLIO = [
     tagline: "Shame On U",
     shape: "landscape",
 
-    cover: "assets/baskin/cover.gif",
+    cover: "assets/color-of-change/ooh/image-1.png",
 
     hoverImages: [
-      "assets/new-project/cover.jpg",
-      "assets/new-project/cover-2.jpg",
-      "assets/new-project/cover-3.jpg",
+      "assets/color-of-change/ooh/image-1.png",
+      "assets/color-of-change/image-1.png",
+      "assets/color-of-change/image-2.png",
+      "assets/color-of-change/ooh/image-2.png",
     ],
 
-    intro:
-      "Hate crimes on college campuses are rising, but administrators are not acting enough to fight against it. Color of Change asked us to find a solution in a two-week competition, Indoor Recess. \n\nOur response as Team 9? To say Shame On U to universities who have sheltered hate crimes, and expose their true colors.\n\nAwarded Overall Winning Campaign, Best Creative, and Recess Monitor’s Pick.",
+    // intro:
+    //   'Hate crimes on college campuses are rising, but administrators are not acting enough to fight against it. <a href="https://colorofchange.org/" target="_blank" rel="noopener noreferrer">Color of Change</a> asked us to find a solution in a two-week competition, <a href="https://www.linkedin.com/company/indoor-recess/about/" target="_blank" rel="noopener noreferrer">Indoor Recess</a> \n\n Our response as Team 9? To say Shame On U to universities who have sheltered hate crimes, and expose their true colors. \n\n Awarded  <a href="https://www.linkedin.com/posts/indoor-recess_indoorrecess-students-advertising-activity-6684970387660431360-s6f-?utm_source=share&utm_medium=member_desktop&rcm=ACoAACETLtgBbBMSmUAaNVVXg83V9BXMqKlmoxs" target="_blank" rel="noopener noreferrer">Overall Winning Campaign, Best Creative, and Recess Monitor’s Pick</a>.',
+
+    heroBlocks: [
+      {
+        type: "text",
+        content:
+          "Hate crimes on college campuses are rising, but administrators are not acting enough to fight against it. Color of Change asked us to find a solution in a two-week competition, Indoor Recess.",
+        links: [
+          {
+            text: "Color of Change",
+            url: "https://colorofchange.org/",
+          },
+          {
+            text: "Indoor Recess",
+            url: "https://www.indoorrecess.com/",
+          },
+        ],
+        col: 1,
+        span: 4,
+        row: 1,
+      },
+      {
+        type: "text",
+        content:
+          "Our response as Team 9? To say Shame On U to universities who have sheltered hate crimes, and expose their true colors. \n\n Awarded Overall Winning Campaign, Best Creative, and Recess Monitor’s Pick.",
+        link: {
+          text: "Overall Winning Campaign, Best Creative, and Recess Monitor’s Pick.",
+          url: "https://www.linkedin.com/posts/indoor-recess_indoorrecess-students-advertising-activity-6684970387660431360-s6f-?utm_source=share&utm_medium=member_desktop&rcm=ACoAACETLtgBbBMSmUAaNVVXg83V9BXMqKlmoxs",
+        },
+        col: 4,
+        span: 4,
+        row: 2,
+      },
+      {
+        type: "image",
+        src: "assets/color-of-change/logo-2.png",
+        col: 8,
+        span: 5,
+        row: 1,
+      },
+    ],
 
     hero: {
       type: "image",
-      src: "assets/new-project/hero.jpg",
+      src: "assets/color-of-change/logo-2.png",
     },
 
     sections: [
       {
-        title: "Campaign",
-        description: "A short description of the work.",
+        title: "ShameOnU.com",
+        description:
+          "All of our ads have a call to action to our main website, where we have a “Hall of Shame” to feature universities with many race-related issues. Users can also voice their concerns on social media and sign university-specific petitions to demand change.",
+        media: [
+          {
+            type: "video",
+            src: "assets/color-of-change/shameonu.com/video-1.mp4",
+            label: "",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          // {
+          //   type: "image",
+          //   src: "assets/new-project/02.jpg",
+          // },
+        ],
+      },
+      {
+        title: "Twitter Takeover",
+        description:
+          "Incoming and current students often have questions about their schools on Twitter. We reply to them with the truth.",
         media: [
           {
             type: "image",
-            src: "assets/new-project/01.jpg",
+            src: "assets/color-of-change/twitter/image-1.png",
           },
           {
             type: "image",
-            src: "assets/new-project/02.jpg",
+            src: "assets/color-of-change/twitter/image-2.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/twitter/image-3.png",
+          },
+        ],
+      },
+      {
+        title: "Instagram Intervention",
+        description:
+          "We partner with famous alumni and student influencers to challenge their alma mater or current school with the #ShameOnU.",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-1/image-1.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-1/image-2.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-1/image-3.png",
+          },
+        ],
+      },
+      {
+        title: "Instagram Intervention",
+        description:
+          "This sparks a movement against universities that have not been acting enough against hate crime.",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-2/image-1.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-2/image-2.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-2/image-3.png",
+          },
+        ],
+      },
+      {
+        title: "@ColorOfChange Posts",
+        description:
+          "Graphics will populate @ColorOfChange's sponsored ads, which takes people directly to the petition page on ShameOnU.com",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/posts/image-1.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/posts/image-2.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/posts/image-3.png",
+          },
+        ],
+      },
+      {
+        title: "YouTube Bumpers",
+        description:
+          "Everyone gets excited when it's college decision day. But what if you find out that your dream school is home to hate crime? Before you choose, best to peruse.",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/youtube/image-1.png",
+          },
+        ],
+      },
+      {
+        title: "Out Of Home",
+        description: "",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/ooh/image-1.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/ooh/image-2.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/ooh/image-3.jpg",
+          },
+        ],
+      },
+      {
+        title: "Experiential",
+        description:
+          "People can “apply” to any university featured in the Hall of Shame and receive an admissions package. Instead of receiving a bundle of pride, people will find shameful stats about that university — all delivered to their doorstep.",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/experiential/image-1.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/experiential/image-2.png",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/experiential/image-3.png",
+          },
+        ],
+      },
+      {
+        title: "ShameOnU.com/Graduates",
+        description:
+          "How about the universities that do change? We take their ShameOnU badge away, and replace it with a GoodOnU badge.",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/good-on-u/image-1.png",
           },
         ],
       },
     ],
 
-    credits: [],
+    credits: [
+      { role: "Art Director", name: " Elizabeth Ustinov\nJennifer LaTorraca" },
+      { role: "Copywriter", name: "Isabella Ciardelli\nMe!" },
+    ],
   },
 ];
