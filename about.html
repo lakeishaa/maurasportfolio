@@ -2,155 +2,99 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Maura Munaf</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/about.css" />
-    <!-- <link rel="stylesheet" href="css/about-2-delete.css" /> -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Maura Munaf</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Xanh+Mono:ital@0;1&display=swap"
       rel="stylesheet"
     />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/typewriter.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/about.css" />
   </head>
   <body data-page="about">
     <header class="site-header">
       <a href="index.html">Home ⌂</a>
-      <a href="about.html">About ⍰</a>
+      <a href="about.html" aria-current="page">About ⍰</a>
     </header>
 
-    <!-- <main class="about-canvas">
-      <h1 class="about-heading">Nice To Meet You!</h1>
-      <span class="about-hi">Salam kenal!</span>
+    <main class="about-canvas">
+      <div class="about-heading-group">
+        <h1 class="about-heading">Nice To Meet You!</h1>
+        <img
+          class="about-heading-doodle"
+          src="assets/about/doodle-1.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
 
-      <div class="about-bio">
+      <section class="about-bio" aria-label="Biography">
         <p>
-          Maura Munaf is a Senior Copywriter based in New York City, but born
-          and raised in Jakarta, Indonesia. She despises anything bland, so she
-          chases full-body flavor and playfulness in everything she writes. Come
-          to her with your skincare haul and favorite movie line.
+          <span class="doodle-anchor"
+            >Maura<img
+              class="doodle doodle-name"
+              src="assets/about/doodle-3.svg"
+              alt=""
+              aria-hidden="true"
+          /></span>
+          Munaf is a Senior Copywriter based in New York City, but born and
+          raised in Jakarta, Indonesia. She despises anything bland, so she
+          chases full-body flavor and playfulness in everything she
+          <span class="doodle-anchor"
+            >writes.<img
+              class="doodle doodle-writes"
+              src="assets/about/doodle-2.svg"
+              alt=""
+              aria-hidden="true"
+          /></span>
+          Come to her with your skincare haul and
+          <span class="doodle-anchor"
+            >favorite movie line.<img
+              class="doodle doodle-movie"
+              src="assets/about/doodle-4.svg"
+              alt=""
+              aria-hidden="true"
+          /></span>
         </p>
-      </div>
+      </section>
 
-      <div class="about-portrait">
-        <img src="./assets/about/portrait.png" alt="Portrait" />
-      </div>
-
-      <div class="about-experience">
+      <section class="about-experience" aria-label="Experience">
         <p>
           Currently at
-          <a href="#" class="experience-logo">
-            <img src="assets/about/company-1.png" alt="Company 1" /> </a
+          <a class="experience-logo" href="#"
+            ><img src="assets/about/company-1.png" alt="We Are Social" /></a
           >.
         </p>
-
         <p>
           Before that, at
-          <a href="#" class="experience-logo experience-logo-wide">
-            <img src="assets/about/company-2.png" alt="Company 2" />
-          </a>
+          <a class="experience-logo experience-logo-wide" href="#"
+            ><img src="assets/about/company-2.png" alt="Ogilvy"
+          /></a>
           and
-          <a href="#" class="experience-logo">
-            <img src="assets/about/company-3.png" alt="Company 3" /> </a
+          <a class="experience-logo" href="#"
+            ><img src="assets/about/company-3.png" alt="22squared" /></a
           >.
         </p>
+      </section>
+
+      <div class="about-portrait">
+        <img
+          class="about-photo"
+          src="assets/about/portrait.png"
+          alt="Portrait of Maura Munaf"
+        />
+        <!-- Optional portrait flourishes: uncomment if the asset exists. -->
+        <!-- <img class="portrait-flourish" src="assets/about/portrait-flourish.svg" alt="" aria-hidden="true" /> -->
       </div>
 
-      <div class="about-contact">
+      <section class="about-contact" aria-label="Contact">
         <h2>CONTACT</h2>
-        <a href="https://instagram.com/">◎ mayzurstla ↗</a>
-        <a href="mailto:email.m@gmail.com">✉ mayzura.m@gmail.com ↗</a>
-        <a href="https://linkedin.com/">▣ linkedin.com/in/mauramunaf/ ↗</a>
-      </div>
-
-    </main> -->
-
-    <main class="about-canvas">
-      <!-- LEFT COLUMN -->
-      <div class="about-left">
-        <div class="about-heading-group">
-          <h1 class="about-heading">Nice To Meet You!</h1>
-
-          <img
-            class="about-heading-doodle"
-            src="assets/about/doodle-1.svg"
-            alt=""
-            aria-hidden="true"
-          />
-        </div>
-
-        <div class="about-bio">
-          <p>
-            <span class="doodle-anchor">
-              Maura
-              <img
-                class="doodle doodle-name"
-                src="assets/about/doodle-3.svg"
-                alt=""
-                aria-hidden="true"
-              />
-            </span>
-            is a Senior Copywriter based in New York City, but born and raised
-            in Jakarta, Indonesia. She despises anything bland, so she chases
-            full-body flavor and playfulness in everything she
-            <span class="doodle-anchor">
-              writes.
-              <img
-                class="doodle doodle-writes"
-                src="assets/about/doodle-2.svg"
-                alt=""
-                aria-hidden="true"
-              />
-            </span>
-          </p>
-        </div>
-
-        <div class="about-experience">
-          <p>
-            Currently at
-            <a href="#" class="experience-logo">
-              <img src="assets/about/company-1.png" alt="Company 1" /> </a
-            >.
-          </p>
-
-          <p>
-            Before that, at
-            <a href="#" class="experience-logo experience-logo-wide">
-              <img src="assets/about/company-2.png" alt="Company 2" />
-            </a>
-            and
-            <a href="#" class="experience-logo">
-              <img src="assets/about/company-3.png" alt="Company 3" /> </a
-            >.
-          </p>
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="about-right">
-        <div class="about-portrait">
-          <img src="./assets/about/portrait.png" alt="Portrait" />
-        </div>
-
-        <div class="about-contact">
-          <h2>CONTACT</h2>
-          <!-- <a href="https://instagram.com/">◎ mayzurstla ↗</a>
-          <a href="mailto:email.m@gmail.com">✉ mayzura.m@gmail.com ↗</a>
-          <a href="https://linkedin.com/">▣ linkedin.com/in/mauramunaf/ ↗</a> -->
-          <a href="https://instagram.com/">◎ Instagram ↗</a>
-          <a href="mailto:email.m@gmail.com">✉ Email.@gmail.com ↗</a>
-          <a href="https://linkedin.com/">▣ linkedin.com/in// ↗</a>
-        </div>
-      </div>
+        <a href="https://instagram.com/">◎ Instagram ↗</a>
+        <a href="mailto:email.m@gmail.com">✉ Email@gmail.com ↗</a>
+        <a href="https://linkedin.com/">▣ linkedin.com/in/ ↗</a>
+      </section>
     </main>
 
     <img
@@ -159,6 +103,7 @@
       alt=""
       aria-hidden="true"
     />
+
     <script src="js/gif-cursor.js"></script>
     <script src="js/data.js"></script>
     <script src="js/site.js"></script>

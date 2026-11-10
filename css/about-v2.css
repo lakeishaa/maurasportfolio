@@ -1,0 +1,557 @@
+/* ==========================================
+   ABOUT PAGE
+   Loads after styles.css
+
+   DESKTOP: 1201px+
+   TABLET:  901px–1200px
+   MOBILE:  900px and below
+========================================== */
+
+/* ==========================================
+   01. BASE STYLES
+========================================== */
+
+body[data-page="about"] {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-page="about"] > .site-header {
+  flex-shrink: 0;
+}
+
+/* MAIN GRID */
+
+.about-canvas {
+  display: grid;
+  flex: 1;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  grid-template-areas:
+    "heading portrait"
+    "bio portrait"
+    "experience contact";
+
+  gap: 0;
+
+  width: 100%;
+  max-width: 1530px;
+  min-height: 0;
+  margin: 0 auto;
+
+  background: #fff;
+  color: #111;
+
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+/* Make children participate in the grid */
+
+.about-left,
+.about-right {
+  display: contents;
+}
+
+/* ==========================================
+   02. HEADING
+========================================== */
+
+.about-heading-group {
+  grid-area: heading;
+
+  position: relative;
+  align-self: start;
+  justify-self: start;
+
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.about-heading {
+  margin: 0;
+
+  font-family: var(--font-main);
+  font-size: var(--type-large);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+
+  white-space: nowrap;
+}
+
+/* ==========================================
+   03. BIO
+========================================== */
+
+.about-bio {
+  grid-area: bio;
+
+  position: relative;
+  align-self: center;
+  justify-self: start;
+
+  /* FIXED DESKTOP/TABLET WIDTH */
+  width: 310px;
+  min-width: 310px;
+  max-width: none;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+.about-bio p,
+.about-experience p {
+  margin: 0;
+  font: inherit;
+}
+
+/* ==========================================
+   04. EXPERIENCE
+========================================== */
+
+.about-experience {
+  grid-area: experience;
+
+  position: relative;
+  align-self: start;
+  justify-self: start;
+
+  width: 100%;
+  max-width: 450px;
+  min-width: 0;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  line-height: var(--line-height-main);
+}
+
+.about-experience .experience-logo {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.about-experience .experience-logo img {
+  display: block;
+  width: auto;
+  height: 2.2em;
+  max-width: 6em;
+  object-fit: contain;
+}
+
+.about-experience .experience-logo-wide img {
+  max-width: 9em;
+}
+
+/* ==========================================
+   05. PORTRAIT
+========================================== */
+
+.about-portrait {
+  grid-area: portrait;
+
+  position: relative;
+  align-self: start;
+  justify-self: center;
+
+  width: min(100%, 375px);
+  min-width: 0;
+  aspect-ratio: 289 / 319;
+
+  margin: 0;
+  background: #936565;
+}
+
+.about-portrait > img:not(.about-portrait-doodles) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   06. CONTACT
+========================================== */
+
+.about-contact {
+  grid-area: contact;
+
+  position: relative;
+  align-self: start;
+  justify-self: start;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  color: var(--link-color);
+}
+
+.about-contact h2 {
+  margin: 0 0 5px;
+
+  font-family: var(--font-main);
+  font-size: var(--type-medium);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+.about-contact a {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+
+  font-family: var(--font-body);
+  font-size: var(--type-small);
+  font-weight: 400;
+  line-height: var(--line-height-main);
+}
+
+/* ==========================================
+   07. INTERACTIVE TEXT
+========================================== */
+
+.about-bio .interactive-text,
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text,
+.about-experience .interactive-text .letter,
+.about-contact a .interactive-text,
+.about-contact a .interactive-text .letter {
+  font-family: var(--font-body);
+}
+
+.about-heading .interactive-text,
+.about-heading .interactive-text .letter,
+.about-contact h2 .interactive-text,
+.about-contact h2 .interactive-text .letter {
+  font-family: var(--font-main);
+}
+
+/* ==========================================
+   08. DOODLE SYSTEM
+========================================== */
+
+/* Anchor doodles to individual words */
+
+.doodle-anchor {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Shared doodle styles */
+
+.doodle,
+.about-heading-doodle {
+  position: absolute;
+  display: block;
+
+  height: auto;
+  max-width: none;
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+/* ==========================================
+   09. DESKTOP
+   1201px+
+========================================== */
+
+@media (min-width: 1201px) {
+  /* PAGE SPACING */
+
+  .about-canvas {
+    padding: 55px 80px 65px;
+  }
+
+  /* HEADING */
+
+  .about-heading {
+    font-size: clamp(48px, 4.5vw, 70px);
+  }
+
+  /* BIO */
+
+  .about-bio {
+    width: 310px;
+    min-width: 310px;
+  }
+
+  /* EXPERIENCE */
+
+  .about-experience {
+    padding-top: 45px;
+    padding-left: 80px;
+  }
+
+  /* CONTACT */
+
+  .about-contact {
+    padding-top: 45px;
+    padding-left: 80px;
+  }
+
+  /* PORTRAIT */
+
+  .about-portrait {
+    width: min(100%, 375px);
+  }
+
+  /* SALAM KENAL */
+
+  .about-heading-doodle {
+    width: 180px;
+
+    top: 75%;
+    left: 75%;
+  }
+
+  /* MAURA DOODLE */
+
+  .doodle-name {
+    width: 350px;
+
+    top: -65px;
+    left: 45px;
+    right: auto;
+
+    transform: none;
+  }
+
+  /* AND EATS DOODLE */
+
+  .doodle-writes {
+    width: 300px;
+
+    top: -90px;
+    left: 30px;
+    right: auto;
+
+    transform: none;
+  }
+}
+
+/* ==========================================
+   10. TABLET
+   901px–1200px
+
+   Same two-column grid as desktop
+========================================== */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  /* PAGE SPACING */
+
+  .about-canvas {
+    padding: 40px 35px 50px;
+  }
+
+  /* HEADING */
+
+  .about-heading {
+    font-size: clamp(34px, 4vw, 48px);
+  }
+
+  /* BIO */
+
+  .about-bio {
+    width: 310px;
+    min-width: 310px;
+  }
+
+  /* EXPERIENCE */
+
+  .about-experience {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  /* CONTACT */
+
+  .about-contact {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  /* PORTRAIT */
+
+  .about-portrait {
+    width: min(100%, 340px);
+  }
+
+  /* SALAM KENAL */
+
+  .about-heading-doodle {
+    width: 150px;
+
+    top: 75%;
+    left: 75%;
+  }
+
+  /* MAURA DOODLE */
+
+  .doodle-name {
+    width: 350px;
+
+    top: -65px;
+    left: 45px;
+    right: auto;
+
+    transform: none;
+  }
+
+  /* AND EATS DOODLE */
+
+  .doodle-writes {
+    width: 300px;
+
+    top: -90px;
+    left: 30px;
+    right: auto;
+
+    transform: none;
+  }
+}
+
+/* ==========================================
+   11. MOBILE
+   900px and below
+
+   Single-column layout
+========================================== */
+
+@media (max-width: 900px) {
+  /* GRID */
+
+  .about-canvas {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+
+    grid-template-areas:
+      "heading"
+      "bio"
+      "portrait"
+      "experience"
+      "contact";
+
+    row-gap: 75px;
+
+    padding: 30px var(--page-gutter) 60px;
+  }
+
+  /* HEADING */
+
+  .about-heading-group {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-heading {
+    font-size: clamp(34px, 7vw, 52px);
+    white-space: normal;
+  }
+
+  /* BIO */
+
+  .about-bio {
+    width: 100%;
+    min-width: 0;
+    max-width: 310px;
+
+    align-self: start;
+    padding: 0;
+  }
+
+  /* PORTRAIT */
+
+  .about-portrait {
+    width: min(85%, 340px);
+    justify-self: center;
+  }
+
+  /* EXPERIENCE */
+
+  .about-experience {
+    width: 100%;
+    max-width: 450px;
+    padding: 0;
+  }
+
+  /* CONTACT */
+
+  .about-contact {
+    width: 100%;
+    max-width: 450px;
+    padding: 0;
+  }
+
+  /* SALAM KENAL */
+
+  .about-heading-doodle {
+    width: 95px;
+
+    top: 85%;
+    left: 40%;
+  }
+
+  /* MAURA DOODLE */
+
+  .doodle-name {
+    width: 170px;
+
+    top: -35px;
+    left: 20px;
+    right: auto;
+
+    transform: none;
+  }
+
+  /* AND EATS DOODLE */
+
+  .doodle-writes {
+    width: 140px;
+
+    top: -40px;
+    left: 10px;
+    right: auto;
+
+    transform: none;
+  }
+}
+
+/* ==========================================
+   12. ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-heading-doodle,
+  .doodle {
+    transition: none;
+  }
+}
