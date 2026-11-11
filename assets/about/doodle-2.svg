@@ -2,24 +2,63 @@
 <!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 607.7 214.5" style="enable-background:new 0 0 607.7 214.5;" xml:space="preserve">
+
 <style type="text/css">
-.st0 {
-  fill: none;
-  stroke: #a4b51b;
-  stroke-width: 2px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: handwriting 0.34s linear both;
-}
-@keyframes handwriting {
-  to { stroke-dashoffset: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cls-1 { animation: none !important; stroke-dashoffset: 0; }
-}
+  .st0 {
+    fill: none;
+    stroke: #a4b51b;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: handwriting 0.34s linear both;
+  }
+
+  /* 01 — Underline */
+  .st0:nth-of-type(1) {
+    animation-duration: 0.65s;
+    animation-delay: 0s;
+  }
+
+  /* 02 — Arrow */
+  .st0:nth-of-type(2) {
+    animation-duration: 0.65s;
+    animation-delay: 0.65s;
+  }
+
+  /* 03 — Handwritten text */
+  .st0:nth-of-type(3)  { animation-delay: 1.30s; }
+  .st0:nth-of-type(4)  { animation-delay: 1.48s; }
+  .st0:nth-of-type(5)  { animation-delay: 1.66s; }
+  .st0:nth-of-type(6)  { animation-delay: 1.84s; }
+  .st0:nth-of-type(7)  { animation-delay: 2.02s; }
+  .st0:nth-of-type(8)  { animation-delay: 2.20s; }
+  .st0:nth-of-type(9)  { animation-delay: 2.38s; }
+  .st0:nth-of-type(10) { animation-delay: 2.56s; }
+  .st0:nth-of-type(11) { animation-delay: 2.74s; }
+  .st0:nth-of-type(12) { animation-delay: 2.92s; }
+  .st0:nth-of-type(13) { animation-delay: 3.10s; }
+  .st0:nth-of-type(14) { animation-delay: 3.28s; }
+
+  @keyframes handwriting {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .st0 {
+      animation: none !important;
+      stroke-dashoffset: 0;
+    }
+  }
 </style>
+
 <path class="st0" pathLength="1" d="M39,101.2c54,1.6,108,1.4,161.9-0.8"/>
 <path class="st0" pathLength="1" d="M231.1,102.7c7.9-1.7,16.1-1.1,24.2-0.9c22.4,0.6,44.9-1.5,67-6.2c-5.1-2.3-10.2-4.7-15.3-7.2
 	c4.1,1.2,8.2,2.7,12.2,4.5c0.5,0.3,1.1,0.5,1.3,1.1c0.3,0.7,0,1.4-0.3,2.1c-2.3,5.8-4.8,11.7-7.1,17.5"/>

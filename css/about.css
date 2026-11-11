@@ -1,59 +1,69 @@
-/* ABOUT — consistent two-column editorial layout.
-   Desktop and tablet share the SAME grid and bio width.
-   Only narrow/mobile screens stack. Loads after styles.css. */
+/* =========================================
+   ABOUT PAGE — RESPONSIVE EDITORIAL LAYOUT
+   4 BREAKPOINTS
+   ========================================= */
 
-/* 01 — BASE */
+/* 01 — GLOBAL */
 body[data-page="about"] {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
+
 body[data-page="about"] > .site-header {
   flex-shrink: 0;
 }
 
 .about-canvas {
-  --bio-width: 310px;
-  --page-side: clamp(24px, 5vw, 80px);
-  --column-gap: clamp(45px, 7vw, 115px);
+  --bio-width: 420px;
+  --page-side: 6vw;
+  --column-gap: 8vw;
   --photo-width: 375px;
-  --heading-size: clamp(39px, 4.2vw, 70px);
+  --heading-size: 58px;
 
   flex: 1;
   display: grid;
+
   width: 100%;
   max-width: 1530px;
   min-width: 0;
-  min-height: 0;
   margin-inline: auto;
-  padding: clamp(32px, 5vh, 60px) var(--page-side) clamp(40px, 5vh, 70px);
+
+  padding: 55px var(--page-side) 65px;
+
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) auto;
+
   grid-template-areas:
     "heading portrait"
     "bio portrait"
     "experience contact";
+
   column-gap: var(--column-gap);
-  row-gap: 0;
+
   background: #fff;
   color: #111;
+
   font-family: var(--font-body, "Inter Tight", sans-serif);
-  font-size: var(--type-small, 14px);
-  line-height: var(--line-height-main, 1.4);
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* 02 — HEADING */
 .about-heading-group {
   grid-area: heading;
   position: relative;
+
   align-self: start;
   justify-self: start;
+
   width: max-content;
   max-width: 100%;
-  min-width: 0;
 }
+
 .about-heading {
   margin: 0;
+
   font-family: var(--font-main, "Xanh Mono", monospace);
   font-size: var(--heading-size);
   font-weight: 400;
@@ -62,43 +72,76 @@ body[data-page="about"] > .site-header {
   white-space: nowrap;
 }
 
-/* 03 — BIO: FIXED 310px on desktop AND tablet */
+/* 03 — BIO: NEVER CHANGE WIDTH */
 .about-bio {
   grid-area: bio;
   position: relative;
+
   align-self: center;
   justify-self: start;
+
   width: var(--bio-width);
   min-width: var(--bio-width);
-  max-width: none;
-  padding: 0;
+  max-width: var(--bio-width);
+
   margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 1.4;
 }
+
 .about-bio p,
 .about-experience p {
   margin: 0;
   font: inherit;
 }
 
-/* 04 — EXPERIENCE */
+/* 04 — PORTRAIT */
+.about-portrait {
+  grid-area: portrait;
+  position: relative;
+
+  align-self: start;
+  justify-self: center;
+
+  width: min(100%, var(--photo-width));
+  aspect-ratio: 289 / 319;
+  min-width: 0;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait-flourish {
+  position: absolute;
+  inset: -7%;
+  width: 114%;
+  height: 114%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+/* 05 — EXPERIENCE */
 .about-experience {
   grid-area: experience;
+
   align-self: end;
   justify-self: start;
+
   min-width: 0;
   padding-top: 35px;
-  padding-left: clamp(0px, 5vw, 85px);
 }
 
 .experience-logo {
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: bottom;
   line-height: 0;
   text-decoration: none;
-}
-
-.experience-logo-wide {
-  vertical-align: bottom !important;
 }
 
 .experience-logo img {
@@ -110,50 +153,31 @@ body[data-page="about"] > .site-header {
   object-position: bottom;
 }
 
-/* 05 — PORTRAIT */
-.about-portrait {
-  grid-area: portrait;
-  position: relative;
-  align-self: start;
-  justify-self: center;
-  width: min(100%, var(--photo-width));
-  aspect-ratio: 289 / 319;
-  min-width: 0;
-}
-.about-photo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.portrait-flourish {
-  position: absolute;
-  inset: -7%;
-  width: 114%;
-  height: 114%;
-  object-fit: fill;
-  pointer-events: none;
-}
-
 /* 06 — CONTACT */
 .about-contact {
   grid-area: contact;
+
   align-self: end;
   justify-self: start;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   min-width: 0;
   padding-top: 35px;
-  padding-left: clamp(0px, 5vw, 85px);
+
   color: var(--link-color, #a4b51b);
 }
+
 .about-contact h2 {
   margin: 0 0 5px;
+
   font-family: var(--font-main, "Xanh Mono", monospace);
   font-size: var(--type-medium, 18px);
   font-weight: 400;
 }
+
 .about-contact a {
   display: block;
   max-width: 100%;
@@ -161,34 +185,38 @@ body[data-page="about"] > .site-header {
   color: inherit;
 }
 
-/* 07 — WORD-ANCHORED DOODLES */
+/* 07 — DOODLES: FIXED PIXEL POSITIONING */
 .doodle-anchor {
   position: relative;
   display: inline-block;
   white-space: nowrap;
 }
+
 .doodle,
 .about-heading-doodle {
   position: absolute;
   display: block;
+
   height: auto;
   max-width: none;
+
   pointer-events: none;
   user-select: none;
   z-index: 2;
 }
-/* Pixel offsets stay fixed relative to the word, not the viewport.
-   Tune these values to your SVG artboards. */
+
 .about-heading-doodle {
   width: 140px;
   top: 75%;
   left: 75%;
 }
+
 .doodle-name {
   width: 300px;
   top: -68px;
   left: -15px;
 }
+
 .doodle-writes {
   width: 260px;
   top: -24px;
@@ -201,7 +229,7 @@ body[data-page="about"] > .site-header {
   left: -70px;
 }
 
-/* 08 — INTERACTIVE TEXT (if your existing scripts wrap letters) */
+/* 08 — INTERACTIVE TEXT */
 .about-bio .interactive-text,
 .about-bio .interactive-text .letter,
 .about-experience .interactive-text,
@@ -210,6 +238,7 @@ body[data-page="about"] > .site-header {
 .about-contact a .interactive-text .letter {
   font-family: var(--font-body, "Inter Tight", sans-serif);
 }
+
 .about-heading .interactive-text,
 .about-heading .interactive-text .letter,
 .about-contact h2 .interactive-text,
@@ -217,94 +246,244 @@ body[data-page="about"] > .site-header {
   font-family: var(--font-main, "Xanh Mono", monospace);
 }
 
-/* 09 — DESKTOP: >= 1201px */
-@media (min-width: 1201px) {
+/* =========================================
+   09 — LARGE DESKTOP: 1440px+
+   MacBook Pro 16"
+   ========================================= */
+
+@media (min-width: 1440px) {
   .about-canvas {
+    --page-side: 8vw;
+    --column-gap: 8vw;
     --photo-width: 375px;
-    --column-gap: clamp(65px, 7vw, 115px);
+    --heading-size: 58px;
+
+    padding-top: 65px;
+    padding-bottom: 90px;
+  }
+
+  .about-bio {
+    align-self: center;
+  }
+
+  .about-experience {
+    padding-top: 60px;
+  }
+
+  .about-contact {
+    padding-top: 60px;
   }
 }
 
-/* 10 — TABLET / SMALL LAPTOP: 901–1200px
-   EXACT SAME TWO-COLUMN GRID AND BIO WIDTH */
-@media (min-width: 901px) and (max-width: 1200px) {
+/* =========================================
+   10 — LAPTOP: 1025px–1439px
+   MacBook Air
+   ========================================= */
+
+@media (min-width: 1025px) and (max-width: 1439px) {
   .about-canvas {
-    --page-side: clamp(24px, 3.5vw, 45px);
-    --column-gap: clamp(25px, 4vw, 55px);
+    --page-side: 6vw;
+    --column-gap: 6vw;
     --photo-width: 340px;
-    --heading-size: clamp(34px, 4vw, 48px);
+    --heading-size: 48px;
+
+    padding-top: 45px;
+    padding-bottom: 55px;
   }
+
+  .about-bio {
+    align-self: center;
+  }
+
   .about-experience,
   .about-contact {
-    padding-left: clamp(0px, 2vw, 28px);
-  }
-  .about-heading-doodle {
-    width: 125px;
+    padding-top: 35px;
   }
 }
 
-/* 11 — MOBILE / NARROW: <= 900px
-   Only here does the layout become one column. */
-@media (max-width: 900px) {
+/* =========================================
+   11 — TABLET: 601px–1024px
+   Frame 66
+   ========================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
   .about-canvas {
-    --page-side: clamp(20px, 5vw, 35px);
-    --heading-size: clamp(34px, 7vw, 52px);
+    --page-side: 6vw;
+    --column-gap: 4vw;
+    --photo-width: 340px;
+    --heading-size: 45px;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    grid-template-rows:
+      auto
+      auto
+      minmax(220px, 1fr) /* More space between bio and portrait */
+      auto
+      auto;
+
+    /* row-gap: 20px; */
+
+    grid-template-areas:
+      "heading heading"
+      "bio bio"
+      ". ."
+      "contact portrait"
+      ". experience";
+
+    padding-top: 40px;
+    padding-bottom: 55px;
+  }
+
+  .about-heading-group {
+    align-self: start;
+    margin-bottom: 80px;
+    /* padding-bottom: 40px; */
+  }
+
+  .about-bio {
+    align-self: start;
+    justify-self: start;
+    margin-left: 35px;
+    margin-top: 70px;
+  }
+
+  .about-portrait {
+    align-self: end;
+    justify-self: center;
+  }
+
+  .about-contact {
+    align-self: end;
+    justify-self: start;
+    padding: 0;
+    margin-left: 35px;
+  }
+
+  .about-experience {
+    align-self: start;
+    justify-self: center;
+    padding-top: 15px;
+  }
+}
+
+/* =============== for experience logo */
+
+@media (max-width: 1024px) {
+  .about-experience {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
+    white-space: nowrap;
+    width: max-content;
+    max-width: none;
+  }
+
+  .about-experience p {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .experience-logo {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}
+
+/* =========================================
+   12 — MOBILE: 600px and below
+   iPhone 16
+   ========================================= */
+
+@media (max-width: 600px) {
+  .about-canvas {
+    --page-side: 20px;
+    --photo-width: 100%;
+    --heading-size: clamp(30px, 7vw, 40px);
+
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows:
+      auto
+      auto
+      auto
+      auto
+      minmax(60px, 1fr)
+      auto;
+
     grid-template-areas:
       "heading"
       "bio"
       "portrait"
-      "experience"
-      "contact";
-    row-gap: clamp(65px, 9vw, 100px);
-    padding-top: 35px;
-    padding-bottom: 65px;
+      "contact"
+      "."
+      "experience";
+
+    padding: 35px var(--page-side) 25px;
   }
+
   .about-heading-group {
-    width: 100%;
+    justify-self: start;
+    margin-bottom: 65px;
   }
+
   .about-heading {
-    white-space: normal;
+    white-space: nowrap;
   }
+
+  /* Keep bio composition unchanged */
   .about-bio {
-    width: min(100%, var(--bio-width));
-    min-width: 0;
-    max-width: var(--bio-width);
-    align-self: start;
+    justify-self: start;
+    /* align-self: start; */
+    left: -70px;
+    top: 36px;
+
+    width: 420px;
+    min-width: 420px;
+    max-width: 420px;
+
+    margin: 0 0 125px;
+
+    transform: scale(0.65);
   }
-  .about-portrait {
-    width: min(85%, 340px);
-    justify-self: center;
-  }
-  .about-experience,
-  .about-contact {
-    padding: 0;
-    align-self: start;
-  }
+
   .about-heading-doodle {
-    width: 105px;
-    top: 85%;
-    left: 55%;
-    display: none;
+    transform: scale(0.7);
   }
-  .doodle-name {
-    width: 210px;
-    top: -60px;
-    left: -20px;
-    display: none;
+
+  .about-portrait {
+    justify-self: center;
+    align-self: start;
+
+    width: min(90%, 340px);
+    margin-bottom: 25px;
   }
-  .doodle-writes {
-    width: 165px;
-    top: -16px;
-    left: -45px;
-    display: none;
+
+  .about-contact {
+    justify-self: start;
+    align-self: start;
+
+    padding: 0;
   }
-  .about-movie {
-    display: none;
+
+  .about-experience {
+    justify-self: center;
+    align-self: end;
+
+    padding: 0;
+  }
+
+  .about-experience p {
+    white-space: nowrap;
+    font-size: 11px;
+  }
+
+  .experience-logo img {
+    height: 2em;
   }
 }
 
+/* 13 — ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
   .doodle,
   .about-heading-doodle {

@@ -1,0 +1,313 @@
+/* ABOUT — consistent two-column editorial layout.
+   Desktop and tablet share the SAME grid and bio width.
+   Only narrow/mobile screens stack. Loads after styles.css. */
+
+/* 01 — BASE */
+body[data-page="about"] {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+body[data-page="about"] > .site-header {
+  flex-shrink: 0;
+}
+
+.about-canvas {
+  --bio-width: 310px;
+  --page-side: clamp(24px, 5vw, 80px);
+  --column-gap: clamp(45px, 7vw, 115px);
+  --photo-width: 375px;
+  --heading-size: clamp(39px, 4.2vw, 70px);
+
+  flex: 1;
+  display: grid;
+  width: 100%;
+  max-width: 1530px;
+  min-width: 0;
+  min-height: 0;
+  margin-inline: auto;
+  padding: clamp(32px, 5vh, 60px) var(--page-side) clamp(40px, 5vh, 70px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "heading portrait"
+    "bio portrait"
+    "experience contact";
+  column-gap: var(--column-gap);
+  row-gap: 0;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-body, "Inter Tight", sans-serif);
+  font-size: var(--type-small, 14px);
+  line-height: var(--line-height-main, 1.4);
+}
+
+/* 02 — HEADING */
+.about-heading-group {
+  grid-area: heading;
+  position: relative;
+  align-self: start;
+  justify-self: start;
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+}
+.about-heading {
+  margin: 0;
+  font-family: var(--font-main, "Xanh Mono", monospace);
+  font-size: var(--heading-size);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* 03 — BIO: FIXED 310px on desktop AND tablet */
+.about-bio {
+  grid-area: bio;
+  position: relative;
+  align-self: center;
+  justify-self: start;
+  width: var(--bio-width);
+  min-width: var(--bio-width);
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+.about-bio p,
+.about-experience p {
+  margin: 0;
+  font: inherit;
+}
+
+/* 04 — EXPERIENCE */
+.about-experience {
+  grid-area: experience;
+  align-self: end;
+  justify-self: start;
+  min-width: 0;
+  padding-top: 35px;
+  padding-left: clamp(0px, 5vw, 85px);
+}
+
+.experience-logo {
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.experience-logo-wide {
+  vertical-align: bottom !important;
+}
+
+.experience-logo img {
+  display: block;
+  height: 2.3em;
+  width: auto;
+  max-width: 4.5em;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* 05 — PORTRAIT */
+.about-portrait {
+  grid-area: portrait;
+  position: relative;
+  align-self: start;
+  justify-self: center;
+  width: min(100%, var(--photo-width));
+  aspect-ratio: 289 / 319;
+  min-width: 0;
+}
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portrait-flourish {
+  position: absolute;
+  inset: -7%;
+  width: 114%;
+  height: 114%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+/* 06 — CONTACT */
+.about-contact {
+  grid-area: contact;
+  align-self: end;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding-top: 35px;
+  padding-left: clamp(0px, 5vw, 85px);
+  color: var(--link-color, #a4b51b);
+}
+.about-contact h2 {
+  margin: 0 0 5px;
+  font-family: var(--font-main, "Xanh Mono", monospace);
+  font-size: var(--type-medium, 18px);
+  font-weight: 400;
+}
+.about-contact a {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: inherit;
+}
+
+/* 07 — WORD-ANCHORED DOODLES */
+.doodle-anchor {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.doodle,
+.about-heading-doodle {
+  position: absolute;
+  display: block;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+/* Pixel offsets stay fixed relative to the word, not the viewport.
+   Tune these values to your SVG artboards. */
+.about-heading-doodle {
+  width: 140px;
+  top: 75%;
+  left: 75%;
+}
+.doodle-name {
+  width: 300px;
+  top: -68px;
+  left: -15px;
+}
+.doodle-writes {
+  width: 260px;
+  top: -24px;
+  left: -40px;
+}
+
+.doodle-movie {
+  width: 330px;
+  top: 10px;
+  left: -70px;
+}
+
+/* 08 — INTERACTIVE TEXT (if your existing scripts wrap letters) */
+.about-bio .interactive-text,
+.about-bio .interactive-text .letter,
+.about-experience .interactive-text,
+.about-experience .interactive-text .letter,
+.about-contact a .interactive-text,
+.about-contact a .interactive-text .letter {
+  font-family: var(--font-body, "Inter Tight", sans-serif);
+}
+.about-heading .interactive-text,
+.about-heading .interactive-text .letter,
+.about-contact h2 .interactive-text,
+.about-contact h2 .interactive-text .letter {
+  font-family: var(--font-main, "Xanh Mono", monospace);
+}
+
+/* 09 — DESKTOP: >= 1201px */
+@media (min-width: 1201px) {
+  .about-canvas {
+    --photo-width: 375px;
+    --column-gap: clamp(65px, 7vw, 115px);
+  }
+}
+
+/* 10 — TABLET / SMALL LAPTOP: 901–1200px
+   EXACT SAME TWO-COLUMN GRID AND BIO WIDTH */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .about-canvas {
+    --page-side: clamp(24px, 3.5vw, 45px);
+    --column-gap: clamp(25px, 4vw, 55px);
+    --photo-width: 340px;
+    --heading-size: clamp(34px, 4vw, 48px);
+  }
+  .about-experience,
+  .about-contact {
+    padding-left: clamp(0px, 2vw, 28px);
+  }
+  .about-heading-doodle {
+    width: 125px;
+  }
+}
+
+/* 11 — MOBILE / NARROW: <= 900px
+   Only here does the layout become one column. */
+@media (max-width: 900px) {
+  .about-canvas {
+    --page-side: clamp(20px, 5vw, 35px);
+    --heading-size: clamp(34px, 7vw, 52px);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "heading"
+      "bio"
+      "portrait"
+      "experience"
+      "contact";
+    row-gap: clamp(65px, 9vw, 100px);
+    padding-top: 35px;
+    padding-bottom: 65px;
+  }
+  .about-heading-group {
+    width: 100%;
+  }
+  .about-heading {
+    white-space: normal;
+  }
+  .about-bio {
+    width: min(100%, var(--bio-width));
+    min-width: 0;
+    max-width: var(--bio-width);
+    align-self: start;
+  }
+  .about-portrait {
+    width: min(85%, 340px);
+    justify-self: center;
+  }
+  .about-experience,
+  .about-contact {
+    padding: 0;
+    align-self: start;
+  }
+  .about-heading-doodle {
+    width: 105px;
+    top: 85%;
+    left: 55%;
+    display: none;
+  }
+  .doodle-name {
+    width: 210px;
+    top: -60px;
+    left: -20px;
+    display: none;
+  }
+  .doodle-writes {
+    width: 165px;
+    top: -16px;
+    left: -45px;
+    display: none;
+  }
+  .about-movie {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doodle,
+  .about-heading-doodle {
+    transition: none;
+  }
+}

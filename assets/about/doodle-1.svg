@@ -11,6 +11,18 @@
   animation: handwriting 1.4s ease-in-out forwards;
 }
 
+  /* 01 — Underline */
+  .cls-1:nth-of-type(1) {
+    animation-duration: 0.65s;
+    animation-delay: 0s;
+  }
+
+  /* 02 — Arrow */
+  .cls-1:nth-of-type(2) {
+    animation-duration: 0.65s;
+    animation-delay: 0.65s;
+  }
+
 /* Letters appear one after another */
 .cls-1:nth-of-type(1)  { animation-delay: 0s; }
 .cls-1:nth-of-type(2)  { animation-delay: 0.3s; }
