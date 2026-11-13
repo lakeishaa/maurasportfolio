@@ -1,5 +1,3 @@
-// typewriter.js
-
 (() => {
   "use strict";
 
@@ -20,7 +18,8 @@
   const TYPO_NOTICE_DELAY_RANDOM = 600;
   const TYPO_RETYPE_DELAY_MIN = 100;
   const TYPO_RETYPE_DELAY_RANDOM = 150;
-  const START_DELAY = 700;
+  const START_DELAY = 100;
+  // const START_DELAY = 700;
   const THINKING_PAUSE_1 = 800;
   const THINKING_PAUSE_2 = 600;
   const THINKING_PAUSE_3 = 900;
@@ -38,7 +37,7 @@
   const cursor = document.getElementById("cursor");
   if (!demo || !cursor) return;
 
-  const colors = ["#F43F25", "#C7DD38", "#32B7FF", "#FF87F4"];
+  const colors = ["#F43F25", "#A4B51B", "#32B7FF", "#FF87F4"];
   const symbols = ["&", "*", "$", "!", "#", "%", "+", "@"];
   const specialCharacters = {};
   const wordLinks = {
@@ -91,6 +90,7 @@
         Math.random() < SYMBOL_CHANCE ? randomSymbol() : original;
 
       letter.classList.add("active");
+      window.playTypewriterSound?.();
 
       setTimeout(() => {
         if (!letter.isConnected) return;
@@ -245,6 +245,11 @@
     for (const character of text) {
       createCharacter(character);
       updateTypingColorTrail();
+
+      if (character !== " ") {
+        window.playTypewriterSound?.();
+      }
+
       await sleep(typingDelay(character));
     }
   }
@@ -345,6 +350,14 @@
     finishTypingColors();
   }
 
-  if (document.readyState === "complete") humanType();
-  else window.addEventListener("load", humanType, { once: true });
+  // if (document.readyState === "complete") humanType();
+  // else window.addEventListener("load", humanType, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", humanType, {
+      once: true,
+    });
+  } else {
+    humanType();
+  }
 })();

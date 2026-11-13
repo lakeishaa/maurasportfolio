@@ -1,4 +1,4 @@
-// typewriter-v2.js
+// typewriter.js
 
 (() => {
   "use strict";
@@ -38,7 +38,7 @@
   const cursor = document.getElementById("cursor");
   if (!demo || !cursor) return;
 
-  const colors = ["#F43F25", "#A4B51B", "#32B7FF", "#FF87F4"];
+  const colors = ["#F43F25", "#C7DD38", "#32B7FF", "#FF87F4"];
   const symbols = ["&", "*", "$", "!", "#", "%", "+", "@"];
   const specialCharacters = {};
   const wordLinks = {
@@ -91,7 +91,6 @@
         Math.random() < SYMBOL_CHANCE ? randomSymbol() : original;
 
       letter.classList.add("active");
-      window.playTypewriterSound?.();
 
       setTimeout(() => {
         if (!letter.isConnected) return;
@@ -246,11 +245,6 @@
     for (const character of text) {
       createCharacter(character);
       updateTypingColorTrail();
-
-      if (character !== " ") {
-        window.playTypewriterSound?.();
-      }
-
       await sleep(typingDelay(character));
     }
   }
