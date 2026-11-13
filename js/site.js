@@ -65,7 +65,7 @@
            href="${esc(m.url)}"
            target="_blank"
            rel="noopener noreferrer">
-          ${esc(m.label || "View post")} ↗
+          ${esc(m.label || "View post")} ⇢
         </a>`;
     } else {
       content = `
@@ -80,7 +80,7 @@
 
     const assetLink = /^https?:\/\//.test(m.link || "")
       ? `<a href="${esc(m.link)}" target="_blank"
-              rel="noopener noreferrer">View original ↗</a>`
+              rel="noopener noreferrer">View original ⇢</a>`
       : "";
 
     return `
@@ -250,7 +250,7 @@
         <a href="${esc(item.url)}"
           target="_blank"
           rel="noopener noreferrer">
-          ${esc(item.title || "View link")} ↗
+          ${esc(item.title || "View link")} ⇢
         </a>`
       )
       .join("");
