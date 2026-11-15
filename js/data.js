@@ -1725,7 +1725,7 @@ window.PORTFOLIO = [
         ],
       },
       {
-        title: "ShameOnU.com/Graduates",
+        title: "ShameOnU.com / Graduates",
         description:
           "How about the universities that do change? We take their ShameOnU badge away, and replace it with a GoodOnU badge.",
         media: [
