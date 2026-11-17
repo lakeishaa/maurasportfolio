@@ -32,12 +32,12 @@ window.PORTFOLIO = [
     hoverImages: [
       // "assets/baskin-if/cover.png",
       "assets/baskin-if/cover.gif",
-      "assets/baskin-if/landing/1.png",
-      "assets/baskin-if/landing/2.png",
-      "assets/baskin-if/landing/3.png",
-      "assets/baskin-if/landing/4.png",
-      "assets/baskin-if/landing/5.png",
-      "assets/baskin-if/landing/6.jpg",
+      // "assets/baskin-if/landing/1.png",
+      // "assets/baskin-if/landing/2.png",
+      // "assets/baskin-if/landing/3.png",
+      // "assets/baskin-if/landing/4.png",
+      // "assets/baskin-if/landing/5.png",
+      // "assets/baskin-if/landing/6.jpg",
     ],
 
     intro: `Our brains are in adulting mode 24/7. That leaves barely any time for our inner child to play.
@@ -113,9 +113,10 @@ window.PORTFOLIO = [
             src: "assets/baskin-if/tv/video-1.mp4",
             label: "",
             ratio: "wide",
-            autoplay: true,
+            // autoplay: true,
             muted: true,
             loop: true,
+            controls: true,
           },
           {
             // type: "youtube",
@@ -127,9 +128,10 @@ window.PORTFOLIO = [
             src: "assets/baskin-if/tv/video-2.mp4",
             label: "",
             ratio: "wide",
-            autoplay: true,
+            // autoplay: true,
             muted: true,
             loop: true,
+            controls: true,
           },
         ],
       },
@@ -157,55 +159,55 @@ window.PORTFOLIO = [
         media: [
           // IMAGE 1
           {
+            type: "video",
+            src: "assets/baskin-if/4d/asset-1.mp4",
+            label: "4D PhotoBooth",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          {
             type: "image",
-            src: "assets/baskin-if/4d/image-1.png",
+            src: "assets/baskin-if/4d/asset-2.png",
             ratio: "portrait",
           },
-
-          // VIDEO 1
-          // {
-          //   type: "video",
-          //   src: "assets/baskin-if/4d/video-1.mp4",
-          //   ratio: "portrait",
-          // },
-
-          // IMAGE 2
           {
             type: "image",
             src: "assets/baskin-if/landing/6.jpg",
             ratio: "portrait",
           },
-
-          // VIDEO 2
           // {
           //   type: "video",
-          //   src: "assets/baskin-if/4d/video-2.mp4",
+          //   src: "assets/baskin-if/4d/asset-2.mov",
+          //   label: "4D PhotoBooth",
           //   ratio: "wide",
+          //   autoplay: true,
+          //   muted: true,
+          //   loop: true,
           // },
-
-          // IMAGE 3
           {
-            type: "image",
-            src: "assets/baskin-if/landing/3.png",
-            ratio: "portrait",
+            type: "video",
+            src: "assets/baskin-if/4d/asset-4.mov",
+            label: "4D PhotoBooth",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
-
           {
             type: "image",
-            src: "assets/baskin-if/4d/image-2.png",
-            ratio: "portrait",
+            src: "assets/baskin-if/4d/asset-5.png",
+            ratio: "wide",
           },
-
           {
-            type: "image",
-            src: "assets/baskin-if/landing/2.png",
-            ratio: "portrait",
-          },
-
-          {
-            type: "image",
-            src: "assets/baskin-if/4d/image-3.png",
-            ratio: "portrait",
+            type: "video",
+            src: "assets/baskin-if/4d/asset-6.mov",
+            label: "4D PhotoBooth",
+            ratio: "wide",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
         ],
       },
@@ -250,6 +252,7 @@ window.PORTFOLIO = [
             autoplay: true,
             muted: true,
             loop: true,
+            // controls: true,
           },
           {
             type: "video",
@@ -259,6 +262,7 @@ window.PORTFOLIO = [
             autoplay: true,
             muted: true,
             loop: true,
+            // controls: true,
           },
           {
             type: "video",
@@ -268,6 +272,7 @@ window.PORTFOLIO = [
             autoplay: true,
             muted: true,
             loop: true,
+            // controls: true,
           },
           {
             type: "video",
@@ -277,6 +282,7 @@ window.PORTFOLIO = [
             autoplay: true,
             muted: true,
             loop: true,
+            // controls: true,
           },
         ],
       },
@@ -288,7 +294,7 @@ window.PORTFOLIO = [
       { role: "Senior Art Director", name: "Ryan Bailey" },
       { role: "Senior Copywriter", name: "Me!" },
       { role: "Junior Art Director", name: "Jeremiah Adeola" },
-      { role: "Junior Copywriterr", name: "Dana Gross" },
+      { role: "Junior Copywriter", name: "Dana Gross" },
       { role: "Producer", name: "Dana Taji" },
       { role: "Production House", name: "Unicorns & Unicorns" },
       { role: "Director", name: "John Poliquin" },
@@ -484,20 +490,76 @@ window.PORTFOLIO = [
       },
       {
         title: "Twitter",
-        layout: "staggered",
+        layout: "social",
         media: [
-          { type: "image", src: "assets/venmo/twitter/image-1.png" },
-          { type: "image", src: "assets/venmo/twitter/image-2.png" },
-          { type: "image", src: "assets/venmo/twitter/image-3.png" },
-          { type: "image", src: "assets/venmo/twitter/image-4.png" },
-          { type: "image", src: "assets/venmo/twitter/image-5.png" },
-          { type: "image", src: "assets/venmo/twitter/image-6.png" },
-          { type: "image", src: "assets/venmo/twitter/image-7.png" },
-          { type: "image", src: "assets/venmo/twitter/image-8.png" },
-          { type: "image", src: "assets/venmo/twitter/image-9.png" },
-          { type: "image", src: "assets/venmo/twitter/image-10.png" },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-1.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-4.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-5.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-6.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-7.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-8.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-9.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/venmo/twitter/image-10.png",
+            ratio: "portrait",
+          },
         ],
       },
+      // {
+      //   title: "Twitter",
+      //   layout: "staggered",
+      //   media: [
+      //     { type: "image", src: "assets/venmo/twitter/image-1.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-2.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-3.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-4.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-5.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-6.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-7.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-8.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-9.png" },
+      //     { type: "image", src: "assets/venmo/twitter/image-10.png" },
+      //   ],
+      // },
     ],
 
     credits: [
@@ -519,21 +581,22 @@ window.PORTFOLIO = [
     title: "Undeniably Fᶦᶻᶻing Delicious",
     heroLayout: "split-text",
 
-    cover: "assets/fanta/cover-2.gif",
+    // cover: "assets/fanta/landing/10.gif",
+    cover: "assets/fanta/cover.png",
     // hoverCover: "assets/fanta/landing/2.png",
     shape: "portrait",
 
     hoverImages: [
-      "assets/fanta/cover-2.gif",
-      //   "assets/fanta/landing/1.jpg",
-      "assets/fanta/landing/2.png",
-      //   "assets/fanta/landing/3.png",
-      "assets/fanta/landing/1.gif",
-      //   "assets/fanta/landing/5.jpg",
-      "assets/fanta/landing/6.jpg",
-      "assets/fanta/landing/7.png",
-      "assets/fanta/landing/8.jpg",
-      // "assets/fanta/landing/3.png",
+      // "assets/fanta/cover-2.gif",
+      // //   "assets/fanta/landing/1.jpg",
+      // "assets/fanta/landing/2.png",
+      // //   "assets/fanta/landing/3.png",
+      // "assets/fanta/landing/1.gif",
+      // //   "assets/fanta/landing/5.jpg",
+      // "assets/fanta/landing/6.jpg",
+      // "assets/fanta/landing/7.png",
+      // "assets/fanta/landing/8.jpg",
+      // // "assets/fanta/landing/3.png",
       "assets/fanta/landing/10.gif",
     ],
 
@@ -645,7 +708,7 @@ window.PORTFOLIO = [
         ],
       },
       {
-        title: "Threads Posts",
+        title: "Threads & Broadcast Posts",
         layout: "social",
         media: [
           {
@@ -743,7 +806,6 @@ window.PORTFOLIO = [
       { role: "ACD Art", name: "Sofia Rembalsky" },
       { role: "ACD Copy", name: "Allison Macintosh" },
       { role: "Sr. Content Creator (Copy)", name: "Me!" },
-      { role: "Junior Copywriter", name: "Dana Gross" },
       {
         role: "Sr. Content Creators (Art)",
         name: "Helen Ratner\nSmitee Oberoi\nJamar Callender",
@@ -760,17 +822,19 @@ window.PORTFOLIO = [
     brand: "Baskin-Robbins",
     tagline: "A World of Flavors",
 
-    cover: "assets/baskin/cover.gif",
+    // cover: "assets/baskin/cover.gif",
+    cover: "assets/baskin/cover.jpeg",
     shape: "landscape",
 
     hoverImages: [
+      // "assets/baskin/cover.jpeg",
       "assets/baskin/cover.gif",
-      "assets/baskin/landing/1.png",
-      "assets/baskin/landing/2.png",
-      "assets/baskin/landing/3.png",
-      "assets/baskin/landing/4.png",
-      "assets/baskin/landing/5.png",
-      "assets/baskin/landing/6.png",
+      // "assets/baskin/landing/1.png",
+      // "assets/baskin/landing/2.png",
+      // "assets/baskin/landing/3.png",
+      // "assets/baskin/landing/4.png",
+      // "assets/baskin/landing/5.png",
+      // "assets/baskin/landing/6.png",
     ],
 
     intro:
@@ -823,27 +887,48 @@ window.PORTFOLIO = [
         layout: "editorial",
         media: [
           {
-            type: "image",
-            src: "assets/baskin/trolli/image-1.png",
+            // type: "image",
+            // src: "assets/baskin/trolli/image-1.png",
+            // ratio: "portrait",
+            type: "video",
+            src: "assets/baskin//trolli/video-1.mp4",
             ratio: "portrait",
+            // autoplay: true,
+            muted: true,
+            loop: true,
+            controls: true,
           },
           {
             type: "video",
-            src: "assets/baskin//trolli/video-1.mov",
+            src: "assets/baskin//trolli/video-2.mp4",
             ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
           },
           {
-            type: "image",
-            src: "assets/baskin/trolli/image-2.png",
+            type: "video",
+            src: "assets/baskin//trolli/video-3.mov",
             ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
+          // {
+          //   type: "image",
+          //   src: "assets/baskin/trolli/image-2.png",
+          //   ratio: "portrait",
+          // },
         ],
       },
       {
         title: "Sweet on Sydney",
+        description: `Press:<br> 
+        <a href="https://www.hollywoodreporter.com/lifestyle/lifestyle-news/sydney-sweeney-baskin-robbins-ice-cream-collaboration-1236300838/" target="_blank" rel="noopener noreferrer">Hollywood Reporter ⇢</a><br>
+        <a href="https://hypebae.com/2025/7/laneige-sydney-sweeney-baskin-robbins-collaboration-rainbow-sherbet-lip-sleeping-mask-where-to-buy" target="_blank" rel="noopener noreferrer">Hypebae ⇢</a><br>
+        <a href="https://lifestyle.si.com/fashion-beauty/sydney-sweeney-pretty-in-pink-new-baskin-robbins-collab" target="_blank" rel="noopener noreferrer">Sports Illustrated ⇢</a><br>
+        <a href="https://www.dailymail.com/yourmoney/consumer/article-14839951/ice-cream-chain-limited-edition-menu-sydney-sweeney-baskin-robbins.html" target="_blank" rel="noopener noreferrer">Daily Mail ⇢</a><br>
+        <a href="https://www.elitedaily.com/lifestyle/baskin-robbins-sydney-sweeney-menu-review" target="_blank" rel="noopener noreferrer">Elite Daily ⇢</a><br>`,
         layout: "editorial",
         media: [
           {
@@ -866,16 +951,16 @@ window.PORTFOLIO = [
             src: "assets/baskin/sydney/image-4.png",
             ratio: "portrait",
           },
-          {
-            type: "image",
-            src: "assets/baskin/sydney/image-6.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/sydney/image-5.png",
-            ratio: "portrait",
-          },
+          // {
+          //   type: "image",
+          //   src: "assets/baskin/sydney/image-6.png",
+          //   ratio: "portrait",
+          // },
+          // {
+          //   type: "image",
+          //   src: "assets/baskin/sydney/image-5.png",
+          //   ratio: "portrait",
+          // },
         ],
       },
       {
@@ -884,64 +969,37 @@ window.PORTFOLIO = [
         media: [
           {
             type: "video",
-            src: "assets/baskin//island/video-1.mov",
+            src: "assets/baskin//island/video-1.mp4",
             ratio: "portrait",
-            autoplay: true,
+            // autoplay: true,
             muted: true,
             loop: true,
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-1.png",
-            ratio: "portrait",
+            controls: true,
           },
           {
             type: "video",
-            src: "assets/baskin//island/video-2.mov",
+            src: "assets/baskin//island/carousel-here.mp4",
+            ratio: "portrait",
+            // autoplay: true,
+            muted: true,
+            loop: true,
+            controls: true,
+          },
+          {
+            type: "video",
+            src: "assets/baskin/island/video-3.mov",
             ratio: "portrait",
             autoplay: true,
             muted: true,
             loop: true,
           },
           {
-            type: "image",
-            src: "assets/baskin/island/image-2.png",
+            type: "video",
+            src: "assets/baskin/island/video-4.mov",
             ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-3.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-4.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-5.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-6.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-7.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-8.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/baskin/island/image-9.png",
-            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
           },
         ],
       },
@@ -994,16 +1052,16 @@ window.PORTFOLIO = [
     brand: "Walmart",
     tagline: "Your Next Era",
 
-    cover: "assets/walmart/cover.gif",
+    cover: "assets/walmart/cover.png",
     shape: "portrait",
 
     hoverImages: [
       "assets/walmart/cover.gif",
-      "assets/walmart/landing/1.png",
-      "assets/walmart/landing/2.png",
-      "assets/walmart/landing/3.png",
-      "assets/walmart/landing/4.png",
-      "assets/walmart/landing/5.png",
+      // "assets/walmart/landing/1.png",
+      // "assets/walmart/landing/2.png",
+      // "assets/walmart/landing/3.png",
+      // "assets/walmart/landing/4.png",
+      // "assets/walmart/landing/5.png",
     ],
 
     intro:
@@ -1074,24 +1132,24 @@ window.PORTFOLIO = [
         type: "text",
         content:
           "For Walmart’s spring campaign in 2024, we channeled big new year, new me energy through 6 paid social spots–all shot with an iPhone.",
-        col: 4,
+        col: 2,
         span: 2,
         row: 2,
-      },
-      {
-        type: "hero",
-        col: 7,
-        span: 3,
-        row: 1,
-        className: "portrait-hero",
       },
       {
         type: "text",
         content:
           "Whether you’re becoming a pro pet parent or a proud homebody, we showed how Walmart can be your partner in your next era.",
-        col: 10,
+        col: 4,
         span: 3,
         row: 3,
+      },
+      {
+        type: "hero",
+        col: 9,
+        span: 3,
+        row: 1,
+        className: "portrait-hero",
       },
     ],
 
@@ -1102,57 +1160,65 @@ window.PORTFOLIO = [
         media: [
           {
             type: "video",
-            src: "assets/walmart/video-1.mp4",
-            label: "Walmart Video 1",
-            ratio: "wide",
-            autoplay: true,
-            muted: true,
-            loop: true,
-          },
-          {
-            type: "video",
-            src: "assets/walmart/video-2.mp4",
-            label: "Walmart Video 2",
-            ratio: "wide",
-            autoplay: true,
-            muted: true,
-            loop: true,
-          },
-          {
-            type: "video",
             src: "assets/walmart/video-3.mp4",
             label: "Walmart Video 3",
             ratio: "wide",
-            autoplay: true,
+            // autoplay: true,
             muted: true,
             loop: true,
-          },
-          {
-            type: "video",
-            src: "assets/walmart/video-4.mp4",
-            label: "Walmart Video 4",
-            ratio: "wide",
-            autoplay: true,
-            muted: true,
-            loop: true,
+            controls: "true",
           },
           {
             type: "video",
             src: "assets/walmart/video-5.mp4",
             label: "Walmart Video 5",
             ratio: "wide",
-            autoplay: true,
+            // autoplay: true,
             muted: true,
             loop: true,
+            controls: "true",
           },
+        ],
+      },
+      {
+        title: "Campaign Films",
+        layout: "media",
+        media: [
+          {
+            type: "video",
+            src: "assets/walmart/video-4.mp4",
+            label: "Walmart Video 4",
+            ratio: "wide",
+            // autoplay: true,
+            muted: true,
+            loop: true,
+            controls: "true",
+          },
+          {
+            type: "video",
+            src: "assets/walmart/video-2.mp4",
+            label: "Walmart Video 2",
+            ratio: "wide",
+            // autoplay: true,
+            muted: true,
+            loop: true,
+            controls: "true",
+          },
+        ],
+      },
+      {
+        title: "Campaign Film",
+        layout: "media",
+        media: [
           {
             type: "video",
             src: "assets/walmart/video-6.mp4",
             label: "Walmart Video 6",
             ratio: "wide",
-            autoplay: true,
+            // autoplay: true,
             muted: true,
             loop: true,
+            controls: "true",
           },
         ],
       },
@@ -1178,16 +1244,17 @@ window.PORTFOLIO = [
     brand: "Merrill",
     tagline: "Can't Stop Banking",
 
-    cover: "assets/merrill/cover.gif",
+    cover: "assets/merrill/cover.png",
     shape: "landscape",
 
     hoverImages: [
-      "assets/merrill/cover.jpg",
-      "assets/merrill/landing/1.png",
-      "assets/merrill/landing/2.png",
-      "assets/merrill/landing/3.png",
-      "assets/merrill/landing/4.jpg",
-      "assets/merrill/landing/5.png",
+      // "assets/merrill/cover.jpg",
+      "assets/merrill/cover.gif",
+      // "assets/merrill/landing/1.png",
+      // "assets/merrill/landing/2.png",
+      // "assets/merrill/landing/3.png",
+      // "assets/merrill/landing/4.jpg",
+      // "assets/merrill/landing/5.png",
     ],
 
     intro:
@@ -1214,7 +1281,7 @@ window.PORTFOLIO = [
 
     sections: [
       {
-        title: "Campaign Films",
+        title: "Campaign Film",
         layout: "media",
         media: [
           {
@@ -1226,6 +1293,12 @@ window.PORTFOLIO = [
             muted: true,
             loop: true,
           },
+        ],
+      },
+      {
+        title: "Campaign Film",
+        layout: "media",
+        media: [
           {
             type: "video",
             src: "assets/merrill/video-2.mp4",
@@ -1235,6 +1308,12 @@ window.PORTFOLIO = [
             muted: true,
             loop: true,
           },
+        ],
+      },
+      {
+        title: "Campaign Film",
+        layout: "media",
+        media: [
           {
             type: "video",
             src: "assets/merrill/video-3.mp4",
@@ -1287,26 +1366,26 @@ window.PORTFOLIO = [
       {
         type: "text",
         content:
-          "To build a more inclusive financial future, Circle is the bridge that brings two incompatible things together.",
-        col: 2,
-        span: 3,
+          "To build a more inclusive financial future, Circle is the bridge that brings two incompatible things together.\n\nBetween traditional and digital currencies. Between banking and blockchain. Between today and tomorrow.",
+        col: 4,
+        span: 4,
         row: 1,
       },
-      {
-        type: "text",
-        content:
-          "Between traditional and digital currencies. Between banking and blockchain. Between today and tomorrow.",
-        col: 5,
-        span: 2,
-        row: 1,
-      },
+      // {
+      //   type: "text",
+      //   content:
+      //     "Between traditional and digital currencies. Between banking and blockchain. Between today and tomorrow.",
+      //   col: 5,
+      //   span: 2,
+      //   row: 1,
+      // },
       {
         type: "text",
         content:
           "I helped build an awareness campaign that took place in the space between, because that's where Circle lives. For entrepreneurs, developers, and creators to build for the future. ",
-        col: 6,
-        span: 6,
-        row: 3,
+        col: 7,
+        span: 4,
+        row: 2,
       },
     ],
 
@@ -1328,11 +1407,6 @@ window.PORTFOLIO = [
             loop: true,
           },
           {
-            type: "image",
-            src: "assets/circle/main/image-1.png",
-            ratio: "portrait",
-          },
-          {
             type: "video",
             src: "assets/circle/main/video-2.mov",
             label: "",
@@ -1342,11 +1416,6 @@ window.PORTFOLIO = [
             loop: true,
           },
           {
-            type: "image",
-            src: "assets/circle/main/image-2.png",
-            ratio: "portrait",
-          },
-          {
             type: "video",
             src: "assets/circle/main/video-3.mov",
             label: "",
@@ -1354,11 +1423,6 @@ window.PORTFOLIO = [
             autoplay: true,
             muted: true,
             loop: true,
-          },
-          {
-            type: "image",
-            src: "assets/circle/main/image-3.png",
-            ratio: "portrait",
           },
           {
             type: "video",
@@ -1375,6 +1439,11 @@ window.PORTFOLIO = [
         title: "OOH Placements",
         layout: "editorial",
         media: [
+          {
+            type: "image",
+            src: "assets/circle/main/image-1.png",
+            ratio: "portrait",
+          },
           {
             type: "image",
             src: "assets/circle/ooh/image-1.png",
@@ -1397,7 +1466,17 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
+            src: "assets/circle/main/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
             src: "assets/circle/ooh/image-5.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/main/image-3.png",
             ratio: "portrait",
           },
         ],
@@ -1500,11 +1579,11 @@ window.PORTFOLIO = [
             src: "assets/protest/image-2.png",
             ratio: "portrait",
           },
-          {
-            type: "image",
-            src: "assets/protest/image-3.png",
-            ratio: "portrait",
-          },
+          // {
+          //   type: "image",
+          //   src: "assets/protest/image-3.png",
+          //   ratio: "portrait",
+          // },
         ],
       },
     ],
@@ -1549,8 +1628,8 @@ window.PORTFOLIO = [
             url: "https://www.indoorrecess.com/",
           },
         ],
-        col: 1,
-        span: 4,
+        col: 3,
+        span: 3,
         row: 1,
       },
       {

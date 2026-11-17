@@ -172,8 +172,8 @@
     if (!root) return;
     root.innerHTML = projects
       .map(
-        (p, i) =>
-          `<a class="project-card ${esc(p.shape || "")}" href="project.html?slug=${encodeURIComponent(p.slug)}"><figure><div class="project-number">${String(i + 1).padStart(2, "0")}.</div>${url(p.cover) ? `<img class="cover ${esc(p.shape || "")}" src="${esc(url(p.cover))}" alt="${esc(p.brand)}">` : `<div class="cover placeholder ${esc(p.shape || "")}">${esc(p.brand)}</div>`}<figcaption class="card-caption"><span class="brand">${esc(p.brand)}</span><br>${esc(p.tagline)}</figcaption></figure></a>`
+        (p) =>
+          `<a class="project-card ${esc(p.shape || "")}" href="project.html?slug=${encodeURIComponent(p.slug)}"><figure>${url(p.cover) ? `<img class="cover ${esc(p.shape || "")}" src="${esc(url(p.cover))}" alt="${esc(p.brand)}">` : `<div class="cover placeholder ${esc(p.shape || "")}">${esc(p.brand)}</div>`}<figcaption class="card-caption"><span class="brand">${esc(p.brand)}</span><br>${esc(p.tagline)}</figcaption></figure></a>`
       )
       .join("");
   }
@@ -609,7 +609,8 @@
       let lastTime = null;
 
       // Adjust speed here (pixels per second)
-      const speed = 35;
+      const speed = 17;
+      // const speed = 25;
 
       function animate(time) {
         if (lastTime === null) lastTime = time;

@@ -95,7 +95,7 @@ a .interactive-word {
 /* Medium: all headings and navigational labels */
 .site-header,
 .site-header a,
-.project-number,
+/* .project-number, */
 .card-caption,
 .card-caption .brand,
 .work-copy h2,
@@ -255,7 +255,7 @@ a .interactive-word {
   }
 
   .project-card:nth-child(5) {
-    grid-column: 1 / span 4;
+    grid-column: 3 / span 4;
   }
 
   .project-card:nth-child(6) {
@@ -278,9 +278,9 @@ a .interactive-word {
   }
 }
 
-.project-number {
+/* .project-number {
   margin-bottom: 6px;
-}
+} */
 .card-caption {
   margin-top: 8px;
 }
