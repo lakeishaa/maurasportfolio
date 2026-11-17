@@ -608,6 +608,25 @@ iframe.media-item.social {
   height: var(--gallery-height);
   max-width: none;
 }
+
+/* Default gallery: 400px */
+
+/* Selected galleries: 25% taller */
+.work-section.gallery-tall {
+  --gallery-height: 500px;
+}
+
+.work-section.gallery-large {
+  --gallery-height: 580px; /* +20% */
+}
+
+/* Allow taller content without vertical clipping */
+.work-section.gallery-tall .work-scroll {
+  max-height: none;
+}
+
+/* make gallery bigger ^^ */
+
 /* 07. PRESS + CREDITS: GROUPED ON RIGHT */
 .project-bottom {
   display: grid;

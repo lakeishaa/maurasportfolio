@@ -44,7 +44,13 @@ window.PORTFOLIO = [
 
     Introducing, Treat Your Imagination 🍨🌈
     
-    In partnership with Paramount Pictures and John Krasinski's <a href="https://www.imdb.com/title/tt11152168/" target="_blank" rel="noopener noreferrer">IF</a>, I helped create an integrated campaign that brought imaginary friends (or IFs) into the real world—all with the help of Baskin-Robbins ice cream.`,
+    In partnership with Paramount Pictures and John Krasinski's <a href="https://www.imdb.com/title/tt11152168/" target="_blank" rel="noopener noreferrer">IF</a>, I helped create an integrated campaign that brought imaginary friends (or IFs) into the real world—all with the help of Baskin-Robbins ice cream.<br>
+    Press:
+        <a href="https://www.mashed.com/1574149/baskin-robbins-new-menu-inspired-if-movie/" target="_blank" rel="noopener noreferrer">Mashed ⇢</a>
+        <a href="https://ktla.com/video/if-partners-with-baskin-robbins-to-treat-your-imagination-and-taste-buds/9662877/" target="_blank" rel="noopener noreferrer">KTLA5 ⇢</a>
+        <a href="https://www.nasdaq.com/press-release/treat-your-imagination-with-baskin-robbins-exclusive-if-movie-menu-2024-05-01">Nasdaq ⇢</a>
+        <a href="https://www.foodworldnews.com/articles/70845/20240507/bring-imagination-life-baskin-robbins-movie-experience.htm" target="_blank" rel="noopener noreferrer">Food World News ⇢</a>
+        <a href="https://comicbook.com/movies/news/if-movie-website-imaginary-friends-generator/" target="_blank" rel="noopener noreferrer">Comic Book ⇢</a>`,
 
     hero: {
       type: "video",
@@ -71,28 +77,28 @@ window.PORTFOLIO = [
       },
     ],
 
-    press: [
-      {
-        title: "Mashed",
-        url: "https://www.mashed.com/1574149/baskin-robbins-new-menu-inspired-if-movie/",
-      },
-      {
-        title: "KTLA5",
-        url: "https://ktla.com/video/if-partners-with-baskin-robbins-to-treat-your-imagination-and-taste-buds/9662877/",
-      },
-      {
-        title: "Nasdaq",
-        url: "https://www.nasdaq.com/press-release/treat-your-imagination-with-baskin-robbins-exclusive-if-movie-menu-2024-05-01",
-      },
-      {
-        title: "Food World News",
-        url: "https://www.foodworldnews.com/articles/70845/20240507/bring-imagination-life-baskin-robbins-movie-experience.htm",
-      },
-      {
-        title: "Comic Book",
-        url: "https://comicbook.com/movies/news/if-movie-website-imaginary-friends-generator/",
-      },
-    ],
+    // press: [
+    //   {
+    //     title: "Mashed",
+    //     url: "https://www.mashed.com/1574149/baskin-robbins-new-menu-inspired-if-movie/",
+    //   },
+    //   {
+    //     title: "KTLA5",
+    //     url: "https://ktla.com/video/if-partners-with-baskin-robbins-to-treat-your-imagination-and-taste-buds/9662877/",
+    //   },
+    //   {
+    //     title: "Nasdaq",
+    //     url: "https://www.nasdaq.com/press-release/treat-your-imagination-with-baskin-robbins-exclusive-if-movie-menu-2024-05-01",
+    //   },
+    //   {
+    //     title: "Food World News",
+    //     url: "https://www.foodworldnews.com/articles/70845/20240507/bring-imagination-life-baskin-robbins-movie-experience.htm",
+    //   },
+    //   {
+    //     title: "Comic Book",
+    //     url: "https://comicbook.com/movies/news/if-movie-website-imaginary-friends-generator/",
+    //   },
+    // ],
 
     links: [
       // { title: "Campaign website", url: "https://..." },
@@ -236,6 +242,7 @@ window.PORTFOLIO = [
 
       {
         title: "Social Takeover",
+        className: "gallery-tall",
         description: "",
         media: [
           // ...Array.from({ length: 4 }, (_, i) => ({
@@ -352,6 +359,7 @@ window.PORTFOLIO = [
     sections: [
       {
         title: "IRL Content",
+        className: "gallery-tall",
         layout: "social",
         media: [
           {
@@ -403,6 +411,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Meme Content",
+        className: "gallery-tall",
         layout: "social",
         media: [
           {
@@ -439,6 +448,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Vibey Content",
+        className: "gallery-tall",
         layout: "social",
         media: [
           {
@@ -625,6 +635,7 @@ window.PORTFOLIO = [
     sections: [
       {
         title: "IG Posts",
+        className: "gallery-tall",
         layout: "social",
         media: [
           {
@@ -658,6 +669,7 @@ window.PORTFOLIO = [
       },
       {
         title: "TikTok Posts",
+        className: "gallery-tall",
         layout: "social",
         media: [
           {
@@ -858,32 +870,33 @@ window.PORTFOLIO = [
       // },
     ],
 
-    press: [
-      // put in
-      {
-        title: "Hollywood Reporter",
-        url: "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/sydney-sweeney-baskin-robbins-ice-cream-collaboration-1236300838/",
-      },
-      {
-        title: "Hypebae",
-        url: "https://hypebae.com/2025/7/laneige-sydney-sweeney-baskin-robbins-collaboration-rainbow-sherbet-lip-sleeping-mask-where-to-buy",
-      },
-      {
-        title: " Sports Illustrated",
-        url: "https://lifestyle.si.com/fashion-beauty/sydney-sweeney-pretty-in-pink-new-baskin-robbins-collab",
-      },
-      {
-        title: "Daily Mail",
-        url: "https://www.dailymail.com/yourmoney/consumer/article-14839951/ice-cream-chain-limited-edition-menu-sydney-sweeney-baskin-robbins.html",
-      },
-      {
-        title: "Elite Daily",
-        url: "https://www.elitedaily.com/lifestyle/baskin-robbins-sydney-sweeney-menu-review",
-      },
-    ],
+    // press: [
+    //   // put in
+    //   {
+    //     title: "Hollywood Reporter",
+    //     url: "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/sydney-sweeney-baskin-robbins-ice-cream-collaboration-1236300838/",
+    //   },
+    //   {
+    //     title: "Hypebae",
+    //     url: "https://hypebae.com/2025/7/laneige-sydney-sweeney-baskin-robbins-collaboration-rainbow-sherbet-lip-sleeping-mask-where-to-buy",
+    //   },
+    //   {
+    //     title: " Sports Illustrated",
+    //     url: "https://lifestyle.si.com/fashion-beauty/sydney-sweeney-pretty-in-pink-new-baskin-robbins-collab",
+    //   },
+    //   {
+    //     title: "Daily Mail",
+    //     url: "https://www.dailymail.com/yourmoney/consumer/article-14839951/ice-cream-chain-limited-edition-menu-sydney-sweeney-baskin-robbins.html",
+    //   },
+    //   {
+    //     title: "Elite Daily",
+    //     url: "https://www.elitedaily.com/lifestyle/baskin-robbins-sydney-sweeney-menu-review",
+    //   },
+    // ],
     sections: [
       {
         title: "Trolli Sour Blast",
+        className: "gallery-tall",
         layout: "editorial",
         media: [
           {
@@ -923,6 +936,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Sweet on Sydney",
+        className: "gallery-tall",
         description: `Press:<br> 
         <a href="https://www.hollywoodreporter.com/lifestyle/lifestyle-news/sydney-sweeney-baskin-robbins-ice-cream-collaboration-1236300838/" target="_blank" rel="noopener noreferrer">Hollywood Reporter ⇢</a><br>
         <a href="https://hypebae.com/2025/7/laneige-sydney-sweeney-baskin-robbins-collaboration-rainbow-sherbet-lip-sleeping-mask-where-to-buy" target="_blank" rel="noopener noreferrer">Hypebae ⇢</a><br>
@@ -965,6 +979,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Island Sips",
+        className: "gallery-tall",
         layout: "editorial",
         media: [
           {
@@ -977,13 +992,24 @@ window.PORTFOLIO = [
             controls: true,
           },
           {
-            type: "video",
-            src: "assets/baskin//island/carousel-here.mp4",
+            type: "image",
+            src: "assets/baskin/island/image-1.png",
             ratio: "portrait",
-            // autoplay: true,
-            muted: true,
-            loop: true,
-            controls: true,
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-3.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/baskin/island/image-4.png",
+            ratio: "portrait",
           },
           {
             type: "video",
@@ -1005,6 +1031,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Galactic Brownie",
+        className: "gallery-tall",
         layout: "editorial",
         media: [
           {
@@ -1014,7 +1041,7 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin/galactic/image-2.png",
+            src: "assets/baskin/galactic/image-4.png",
             ratio: "portrait",
           },
           {
@@ -1024,7 +1051,7 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin/galactic/image-4.png",
+            src: "assets/baskin/galactic/image-2.png",
             ratio: "portrait",
           },
         ],
@@ -1156,6 +1183,7 @@ window.PORTFOLIO = [
     sections: [
       {
         title: "Campaign Films",
+        className: "gallery-large",
         layout: "media",
         media: [
           {
@@ -1182,6 +1210,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Campaign Films",
+        className: "gallery-large",
         layout: "media",
         media: [
           {
@@ -1208,6 +1237,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Campaign Film",
+        className: "gallery-large",
         layout: "media",
         media: [
           {
@@ -1282,6 +1312,7 @@ window.PORTFOLIO = [
     sections: [
       {
         title: "Campaign Film",
+        className: "gallery-tall",
         layout: "media",
         media: [
           {
@@ -1297,6 +1328,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Campaign Film",
+        className: "gallery-tall",
         layout: "media",
         media: [
           {
@@ -1312,6 +1344,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Campaign Film",
+        className: "gallery-tall",
         layout: "media",
         media: [
           {
@@ -1437,6 +1470,7 @@ window.PORTFOLIO = [
       },
       {
         title: "OOH Placements",
+        className: "gallery-tall",
         layout: "editorial",
         media: [
           {
@@ -1483,6 +1517,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Print Ads",
+        className: "gallery-tall",
         layout: "editorial",
         media: [
           {
@@ -1567,6 +1602,7 @@ window.PORTFOLIO = [
     sections: [
       {
         title: "Poster Design",
+        className: "gallery-large",
         layout: "editorial",
         media: [
           {
@@ -1628,7 +1664,7 @@ window.PORTFOLIO = [
             url: "https://www.indoorrecess.com/",
           },
         ],
-        col: 3,
+        col: 4,
         span: 3,
         row: 1,
       },
@@ -1640,15 +1676,15 @@ window.PORTFOLIO = [
           text: "Overall Winning Campaign, Best Creative, and Recess Monitor’s Pick.",
           url: "https://www.linkedin.com/posts/indoor-recess_indoorrecess-students-advertising-activity-6684970387660431360-s6f-?utm_source=share&utm_medium=member_desktop&rcm=ACoAACETLtgBbBMSmUAaNVVXg83V9BXMqKlmoxs",
         },
-        col: 4,
+        col: 5,
         span: 4,
         row: 2,
       },
       {
         type: "image",
         src: "assets/color-of-change/logo-2.png",
-        col: 8,
-        span: 5,
+        col: 9,
+        span: 4,
         row: 1,
       },
     ],
@@ -1661,6 +1697,7 @@ window.PORTFOLIO = [
     sections: [
       {
         title: "ShameOnU.com",
+        className: "gallery-tall",
         description:
           "All of our ads have a call to action to our main website, where we have a “Hall of Shame” to feature universities with many race-related issues. Users can also voice their concerns on social media and sign university-specific petitions to demand change.",
         media: [
@@ -1680,7 +1717,28 @@ window.PORTFOLIO = [
         ],
       },
       {
+        title: "ShameOnU Badge & Manifesto",
+        className: "gallery-tall",
+        description: "",
+        media: [
+          {
+            type: "video",
+            src: "assets/color-of-change/shameonu.com/video-1.mp4",
+            label: "",
+            ratio: "portrait",
+            autoplay: true,
+            muted: true,
+            loop: true,
+          },
+          // {
+          //   type: "image",
+          //   src: "assets/new-project/02.jpg",
+          // },
+        ],
+      },
+      {
         title: "Twitter Takeover",
+        className: "gallery-tall",
         description:
           "Incoming and current students often have questions about their schools on Twitter. We reply to them with the truth.",
         media: [
@@ -1700,6 +1758,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Instagram Intervention",
+        className: "gallery-tall",
         description:
           "We partner with famous alumni and student influencers to challenge their alma mater or current school with the #ShameOnU.",
         media: [
@@ -1719,6 +1778,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Instagram Intervention",
+        className: "gallery-tall",
         description:
           "This sparks a movement against universities that have not been acting enough against hate crime.",
         media: [
@@ -1738,6 +1798,7 @@ window.PORTFOLIO = [
       },
       {
         title: "@ColorOfChange Posts",
+        className: "gallery-tall",
         description:
           "Graphics will populate @ColorOfChange's sponsored ads, which takes people directly to the petition page on ShameOnU.com",
         media: [
@@ -1757,6 +1818,7 @@ window.PORTFOLIO = [
       },
       {
         title: "YouTube Bumpers",
+        className: "gallery-tall",
         description:
           "Everyone gets excited when it's college decision day. But what if you find out that your dream school is home to hate crime? Before you choose, best to peruse.",
         media: [
@@ -1768,6 +1830,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Out Of Home",
+        className: "gallery-tall",
         description: "",
         media: [
           {
@@ -1786,6 +1849,7 @@ window.PORTFOLIO = [
       },
       {
         title: "Experiential",
+        className: "gallery-tall",
         description:
           "People can “apply” to any university featured in the Hall of Shame and receive an admissions package. Instead of receiving a bundle of pride, people will find shameful stats about that university — all delivered to their doorstep.",
         media: [
@@ -1805,6 +1869,7 @@ window.PORTFOLIO = [
       },
       {
         title: "ShameOnU.com / Graduates",
+        className: "gallery-tall",
         description:
           "How about the universities that do change? We take their ShameOnU badge away, and replace it with a GoodOnU badge.",
         media: [
