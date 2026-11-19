@@ -52,13 +52,26 @@
       ${m.poster && url(m.poster) ? `poster="${esc(url(m.poster))}"` : ""}
     ></video>`;
     } else if (m.type === "image" && url(m.src)) {
-      content = `
-        <img
-          class="${cls}"
-          src="${esc(url(m.src))}"
-          alt="${esc(m.alt || m.title || "Project artwork")}"
-          loading="lazy"
-        >`;
+      const imageHTML = `
+    <img
+      class="${cls}"
+      src="${esc(url(m.src))}"
+      alt="${esc(m.alt || m.title || "Project artwork")}"
+      loading="lazy"
+    >`;
+
+      const clickUrl = /^https?:\/\//.test(m.clickUrl || "")
+        ? m.clickUrl
+        : null;
+
+      content = clickUrl
+        ? `<a
+         class="gallery-image-link"
+         href="${esc(clickUrl)}"
+         target="_blank"
+         rel="noopener noreferrer"
+       >${imageHTML}</a>`
+        : imageHTML;
     } else if (m.type === "link" && /^https:\/\//.test(m.url || "")) {
       content = `
         <a class="${cls} media-placeholder"

@@ -1701,41 +1701,40 @@ window.PORTFOLIO = [
     },
 
     sections: [
+      // {
+      //   title: "ShameOnU Badge & Manifesto",
+      //   className: "gallery-tall",
+      //   description: "",
+      //   media: [
+      //     {
+      //       type: "image",
+      //       // src: "assets/color-of-change/badge/image-1.png",
+      //       src: "assets/color-of-change/twitter/image-1.png",
+      //       type: "portrait",
+      //     },
+      //     {
+      //       type: "image",
+      //       src: "assets/color-of-change/badge/image-2.png",
+      //       type: "wide",
+      //     },
+      //   ],
+      // },
       {
         title: "ShameOnU Badge & Manifesto",
-        className: "gallery-tall",
-        description: "",
+        className: "gallery-large",
+        layout: "editorial",
         media: [
           {
             type: "image",
             src: "assets/color-of-change/badge/image-1.png",
-            // src: "assets/color-of-change/twitter/image-1.png",
-            type: "portrait",
+            ratio: "portrait",
           },
           {
             type: "image",
             src: "assets/color-of-change/badge/image-2.png",
-            type: "wide",
-          },
-        ],
-      },
-      {
-        title: "ShameOnU.com",
-        className: "gallery-tall",
-        description: "",
-        media: [
-          // {
-          //   type: "video",
-          //   src: "assets/color-of-change/shameonu.com/video-1.mp4",
-          //   label: "",
-          //   ratio: "portrait",
-          //   autoplay: true,
-          //   muted: true,
-          //   loop: true,
-          // },
-          {
-            type: "image",
-            src: "assets/new-project/02.jpg",
+            ratio: "portrait",
+            clickUrl:
+              "https://static1.squarespace.com/static/5e2b589288711351fde60314/t/5f84862b39d96a26785e672d/1602520619617/ShameOnU_Manifesto.pdf",
           },
         ],
       },
