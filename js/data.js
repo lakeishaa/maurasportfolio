@@ -1469,8 +1469,7 @@ window.PORTFOLIO = [
         ],
       },
       {
-        title: "OOH Placements",
-        className: "gallery-tall",
+        title: "Main Look & Feel",
         layout: "editorial",
         media: [
           {
@@ -1478,6 +1477,23 @@ window.PORTFOLIO = [
             src: "assets/circle/main/image-1.png",
             ratio: "portrait",
           },
+          {
+            type: "image",
+            src: "assets/circle/main/image-2.png",
+            ratio: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/circle/main/image-3.png",
+            ratio: "portrait",
+          },
+        ],
+      },
+      {
+        title: "OOH Placements",
+        className: "gallery-tall",
+        layout: "editorial",
+        media: [
           {
             type: "image",
             src: "assets/circle/ooh/image-1.png",
@@ -1500,17 +1516,7 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/circle/main/image-2.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
             src: "assets/circle/ooh/image-5.png",
-            ratio: "portrait",
-          },
-          {
-            type: "image",
-            src: "assets/circle/main/image-3.png",
             ratio: "portrait",
           },
         ],
@@ -1696,30 +1702,48 @@ window.PORTFOLIO = [
 
     sections: [
       {
+        title: "ShameOnU Badge & Manifesto",
+        className: "gallery-tall",
+        description: "",
+        media: [
+          {
+            type: "image",
+            src: "assets/color-of-change/badge/image-1.png",
+            // src: "assets/color-of-change/twitter/image-1.png",
+            type: "portrait",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/badge/image-2.png",
+            type: "wide",
+          },
+        ],
+      },
+      {
+        title: "ShameOnU.com",
+        className: "gallery-tall",
+        description: "",
+        media: [
+          // {
+          //   type: "video",
+          //   src: "assets/color-of-change/shameonu.com/video-1.mp4",
+          //   label: "",
+          //   ratio: "portrait",
+          //   autoplay: true,
+          //   muted: true,
+          //   loop: true,
+          // },
+          {
+            type: "image",
+            src: "assets/new-project/02.jpg",
+          },
+        ],
+      },
+      {
         title: "ShameOnU.com",
         className: "gallery-tall",
         description:
           "All of our ads have a call to action to our main website, where we have a “Hall of Shame” to feature universities with many race-related issues. Users can also voice their concerns on social media and sign university-specific petitions to demand change.",
-        media: [
-          {
-            type: "video",
-            src: "assets/color-of-change/shameonu.com/video-1.mp4",
-            label: "",
-            ratio: "portrait",
-            autoplay: true,
-            muted: true,
-            loop: true,
-          },
-          // {
-          //   type: "image",
-          //   src: "assets/new-project/02.jpg",
-          // },
-        ],
-      },
-      {
-        title: "ShameOnU Badge & Manifesto",
-        className: "gallery-tall",
-        description: "",
         media: [
           {
             type: "video",
