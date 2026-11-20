@@ -15,7 +15,7 @@ body[data-page="about"] > .site-header {
 }
 
 .about-canvas {
-  --bio-width: 420px;
+  --bio-width: 504px;
   --page-side: 6vw;
   --column-gap: 8vw;
   --photo-width: 375px;
@@ -47,6 +47,7 @@ body[data-page="about"] > .site-header {
   font-family: var(--font-body, "Inter Tight", sans-serif);
   font-size: 14px;
   line-height: 1.4;
+  /* transform: scale(1.2); */
 }
 
 /* 02 — HEADING */
@@ -87,8 +88,9 @@ body[data-page="about"] > .site-header {
   margin: 0;
   padding: 0;
 
-  font-size: 14px;
+  font-size: 16.8px;
   line-height: 1.4;
+  top: 30px;
 }
 
 .about-bio p,
@@ -244,9 +246,9 @@ body[data-page="about"] > .site-header {
 }
 
 .about-heading-doodle {
-  width: 140px;
-  top: 75%;
-  left: 75%;
+  width: 108px;
+  top: 100%;
+  left: 80%;
 }
 
 .doodle-name {
@@ -474,16 +476,20 @@ body[data-page="about"] > .site-header {
   .about-bio {
     justify-self: start;
     /* align-self: start; */
-    left: -70px;
+    left: -75px;
     top: 36px;
 
-    width: 420px;
+    /* width: 420px;
     min-width: 420px;
-    max-width: 420px;
+    max-width: 420px; */
+
+    width: 504px;
+    min-width: 504px;
+    max-width: 504px;
 
     margin: 0 0 125px;
 
-    transform: scale(0.65);
+    transform: scale(0.7);
   }
 
   .about-heading-doodle {
@@ -529,5 +535,170 @@ body[data-page="about"] > .site-header {
   .doodle,
   .about-heading-doodle {
     transition: none;
+  }
+}
+
+/* =========================================
+   PRESS / AWARDS / EDUCATION
+   ========================================= */
+
+.about-extras {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1530px;
+  margin: 0 auto;
+  padding: 50px 6vw 70px;
+
+  display: grid;
+  grid-template-columns: 48% 25% 15%;
+  grid-template-areas:
+    "press awards ."
+    "press . education";
+
+  column-gap: 6%;
+  row-gap: 60px;
+
+  font-family: var(--font-body, "Inter Tight", sans-serif);
+  font-size: 14px;
+  line-height: 1.25;
+  color: #111;
+}
+
+/* COLUMN POSITIONS */
+
+.about-extra-press {
+  grid-area: press;
+}
+
+.about-extra-awards {
+  grid-area: awards;
+  padding-top: 50px;
+}
+
+.about-extra-education {
+  grid-area: education;
+  align-self: end;
+}
+
+/* TYPOGRAPHY */
+
+.about-extra h2 {
+  margin: 0 0 16px;
+
+  font-family: var(--font-main, "Xanh Mono", monospace);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: var(--link-color, #a4b51b);
+}
+
+.about-extra ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-extra li {
+  margin: 0 0 18px;
+}
+
+.about-extra li:last-child {
+  margin-bottom: 0;
+}
+
+.about-extra p {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.about-extra a {
+  color: var(--link-color, #a4b51b);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+/* PRESS WIDTH */
+
+.about-extra-press ul {
+  max-width: 310px;
+}
+
+/* =========================================
+     LARGE DESKTOP
+     ========================================= */
+
+@media (min-width: 1440px) {
+  .about-extras {
+    padding-inline: 8vw;
+  }
+}
+
+/* =========================================
+     TABLET
+     ========================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .about-extras {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    grid-template-areas:
+      "press awards"
+      "press education";
+
+    column-gap: 8vw;
+    row-gap: 50px;
+
+    padding: 50px 6vw 70px;
+  }
+
+  .about-extra-awards {
+    padding-top: 0;
+  }
+
+  .about-extra-education {
+    align-self: end;
+  }
+}
+
+/* =========================================
+     MOBILE
+     ========================================= */
+
+@media (max-width: 600px) {
+  .about-extras {
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+      "press"
+      "awards"
+      "education";
+
+    row-gap: 50px;
+
+    padding: 40px 20px 70px;
+  }
+
+  .about-extra-awards {
+    padding-top: 0;
+  }
+
+  .about-extra-education {
+    align-self: start;
+  }
+
+  .about-extra-press ul {
+    max-width: 100%;
+  }
+
+  .about-extra h2 {
+    margin-bottom: 15px;
+  }
+
+  .about-extra li {
+    margin-bottom: 20px;
   }
 }

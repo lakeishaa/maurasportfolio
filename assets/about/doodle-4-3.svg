@@ -7,7 +7,7 @@
   .st0 {
     fill: none;
     stroke: #a4b51b;
-    stroke-width: 2px;
+    stroke-width: 2.8px;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 1;
