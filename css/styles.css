@@ -1425,3 +1425,62 @@ body:has(.staggered-row-scroll:hover) #gif-cursor {
     display: none;
   }
 }
+
+/* help */
+
+/* Thicken Xanh Mono heading and individual letters */
+/* .about-heading,
+.about-heading .letter,
+.about-contact h2,
+.about-contact h2 .letter,
+.about-extra h2,
+.about-extra h2 .letter {
+  -webkit-text-stroke: 0.7px red !important;
+} */
+
+/* .about-heading {
+  color: red !important;
+  outline: 2px solid red !important;
+} */
+
+/* Xanh Mono — thicker text, including JS-generated letters */
+:root {
+  --xanh-stroke: 0.015em;
+}
+
+:is(
+  .card-caption,
+  .project-heading,
+  .project-brand,
+  .about-heading,
+  .about-contact h2,
+  .about-extra h2,
+  .work-copy h2,
+  .site-header,
+  .project-navigation,
+  .project-links h2
+),
+:is(
+    .card-caption,
+    .project-heading,
+    .project-brand,
+    .about-heading,
+    .about-contact h2,
+    .about-extra h2,
+    .work-copy h2,
+    .project-navigation,
+    .project-links h2
+  )
+  * {
+  -webkit-text-stroke: var(--xanh-stroke) currentColor !important;
+  paint-order: stroke fill;
+}
+
+/* TEST: JavaScript-generated text */
+.interactive-text,
+.interactive-text *,
+.letter,
+.interactive-letter {
+  -webkit-text-stroke: 0.015em currentColor !important;
+  paint-order: stroke fill;
+}
