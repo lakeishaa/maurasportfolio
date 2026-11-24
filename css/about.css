@@ -719,8 +719,8 @@ body[data-page="about"] > .site-header {
   }
 
   .about-bio {
-    font-size: 14px !important;
-    color: red !important;
+    /* font-size: 14px !important; */
+    /* color: red !important */
   }
 }
 
