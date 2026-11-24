@@ -717,6 +717,10 @@ body[data-page="about"] > .site-header {
   .about-extra li {
     margin-bottom: 20px;
   }
+
+  .about-bio {
+    font-size: 14px;
+  }
 }
 
 /* doodle about css */
