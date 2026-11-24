@@ -99,6 +99,11 @@ body[data-page="about"] > .site-header {
   font: inherit;
 }
 
+/* Desktop: show original line breaks */
+.about-bio .mobile-br {
+  display: none;
+}
+
 /* 04 — PORTRAIT */
 /* .about-portrait {
   grid-area: portrait;
@@ -473,23 +478,34 @@ body[data-page="about"] > .site-header {
   }
 
   /* Keep bio composition unchanged */
-  .about-bio {
-    justify-self: start;
-    /* align-self: start; */
-    left: -75px;
-    top: 36px;
 
-    /* width: 420px;
-    min-width: 420px;
-    max-width: 420px; */
+  @media (max-width: 600px) {
+    .about-bio {
+      justify-self: start;
+      /* left: -75px; */
+      top: 100px;
 
-    width: 504px;
-    min-width: 504px;
-    max-width: 504px;
+      min-width: 504px;
+      max-width: 504px;
 
-    margin: 0 0 125px;
+      min-height: 200px;
+      margin: 0 0 250px;
 
-    transform: scale(0.7);
+      font-size: 14px;
+
+      /* Vertically center the paragraph */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .about-bio .desktop-br {
+    display: none;
+  }
+
+  .about-bio .mobile-br {
+    display: inline;
   }
 
   .about-heading-doodle {
@@ -703,4 +719,31 @@ body[data-page="about"] > .site-header {
   }
 }
 
+/* doodle about css */
 
+/* Desktop */
+.doodle-desktop {
+  display: block;
+}
+
+.doodle-mobile {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .doodle-desktop {
+    display: none;
+  }
+
+  .doodle-mobile {
+    display: block;
+  }
+
+  /* Position mobile doodle independently */
+  .doodle-writes-mobile {
+    width: 280px;
+    top: -25px;
+    left: -40px;
+  }
+}
