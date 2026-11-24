@@ -1,7 +1,7 @@
 // <![CDATA[
 var colour = "#FF87F4"; // in addition to "random" can be set to any valid colour eg "#f0f" or "red"
 // var colour = "#32B7FF";
-var sparkles = 30;
+var sparkles = 15;
 
 /****************************
  * Tinkerbell Magic Sparkle *
@@ -76,7 +76,8 @@ function sparkle() {
     if (starv[c]) update_star(c);
     if (tinyv[c]) update_tiny(c);
   }
-  setTimeout("sparkle()", 40);
+  // setTimeout("sparkle()", 40);
+  setTimeout(sparkle, 40);
 }
 
 function update_star(i) {
