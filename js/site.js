@@ -351,8 +351,15 @@
           <section class="work-section ${esc(section.className || "")}" aria-label="${esc(section.title)}">
             <div class="work-scroll" tabindex="0">
               <div class="work-copy">
-              <h2 class="interactive-text">${String(index + 1).padStart(2, "0")}. ${esc(section.title)}</h2>
-                ${section.description ? `<p>${section.description}</p>` : ""}
+              ${
+                section.hideHeading
+                  ? ""
+                  : `
+              <h2 class="interactive-text">
+                ${String(index + 1).padStart(2, "0")}. ${esc(section.title)}
+              </h2>
+            `
+              }                ${section.description ? `<p>${section.description}</p>` : ""}
               </div>
 
               ${
