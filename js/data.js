@@ -1145,6 +1145,7 @@ window.PORTFOLIO = [
       muted: true,
       loop: true,
       controls: true,
+      // ratio: "",
     },
 
     heroBlocks: [
