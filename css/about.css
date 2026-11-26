@@ -753,8 +753,10 @@ body[data-page="about"] > .site-header {
   }
 }
 
+/* h1 desktop */
+
 /* for h1 */
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   .intro {
     container-type: inline-size;
   }
@@ -763,6 +765,25 @@ body[data-page="about"] > .site-header {
     width: 100%;
     max-width: 100%;
     font-size: 5.4cqw;
+  }
+} */
+
+@media (min-width: 1440px) {
+  h1#demo {
+    transform: scale(1.1);
+    transform-origin: top left;
+  }
+}
+
+@media (min-width: 1920px) {
+  h1#demo {
+    transform: scale(1.4);
+  }
+}
+
+@media (min-width: 2560px) {
+  h1#demo {
+    transform: scale(1.8);
   }
 }
 
