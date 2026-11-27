@@ -175,12 +175,12 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin-if/4d/asset-2.png",
+            src: "assets/baskin-if/4d/asset-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin-if/4d/asset-3.jpg",
+            src: "assets/baskin-if/4d/asset-3.webp",
             ratio: "portrait",
           },
           // {
@@ -203,7 +203,7 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin-if/4d/asset-5.png",
+            src: "assets/baskin-if/4d/asset-5.webp",
             ratio: "wide",
           },
           {
@@ -233,7 +233,7 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin-if/imagination-station/image-1.png",
+            src: "assets/baskin-if/imagination-station/image-1.webp",
             label: "Imagination Station Image",
             ratio: "wide",
           },
@@ -364,47 +364,47 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-1.png",
+            src: "assets/venmo/irl-content/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-2.png",
+            src: "assets/venmo/irl-content/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-3.png",
+            src: "assets/venmo/irl-content/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-4.png",
+            src: "assets/venmo/irl-content/image-4.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-5.png",
+            src: "assets/venmo/irl-content/image-5.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-6.png",
+            src: "assets/venmo/irl-content/image-6.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-7.png",
+            src: "assets/venmo/irl-content/image-7.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-8.png",
+            src: "assets/venmo/irl-content/image-8.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/irl-content/image-9.png",
+            src: "assets/venmo/irl-content/image-9.webp",
             ratio: "portrait",
           },
         ],
@@ -416,32 +416,32 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/venmo/meme-content/image-1.png",
+            src: "assets/venmo/meme-content/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/meme-content/image-2.png",
+            src: "assets/venmo/meme-content/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/meme-content/image-3.png",
+            src: "assets/venmo/meme-content/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/meme-content/image-4.png",
+            src: "assets/venmo/meme-content/image-4.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/meme-content/image-5.png",
+            src: "assets/venmo/meme-content/image-5.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/meme-content/image-6.png",
+            src: "assets/venmo/meme-content/image-6.webp",
             ratio: "portrait",
           },
         ],
@@ -453,47 +453,47 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-1.png",
+            src: "assets/venmo/vibey-content/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-2.png",
+            src: "assets/venmo/vibey-content/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-3.png",
+            src: "assets/venmo/vibey-content/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-4.png",
+            src: "assets/venmo/vibey-content/image-4.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-5.png",
+            src: "assets/venmo/vibey-content/image-5.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-6.png",
+            src: "assets/venmo/vibey-content/image-6.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-7.png",
+            src: "assets/venmo/vibey-content/image-7.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-8.png",
+            src: "assets/venmo/vibey-content/image-8.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/vibey-content/image-9.png",
+            src: "assets/venmo/vibey-content/image-9.webp",
             ratio: "portrait",
           },
         ],
@@ -504,52 +504,52 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/venmo/twitter/image-1.png",
+            src: "assets/venmo/twitter/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-2.png",
+            src: "assets/venmo/twitter/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-3.png",
+            src: "assets/venmo/twitter/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-4.png",
+            src: "assets/venmo/twitter/image-4.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-5.png",
+            src: "assets/venmo/twitter/image-5.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-6.png",
+            src: "assets/venmo/twitter/image-6.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-7.png",
+            src: "assets/venmo/twitter/image-7.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-8.png",
+            src: "assets/venmo/twitter/image-8.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-9.png",
+            src: "assets/venmo/twitter/image-9.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/venmo/twitter/image-10.png",
+            src: "assets/venmo/twitter/image-10.webp",
             ratio: "portrait",
           },
         ],
@@ -726,42 +726,42 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/fanta/threads/image-5.png",
+            src: "assets/fanta/threads/image-5.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-1.png",
+            src: "assets/fanta/threads/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-6.png",
+            src: "assets/fanta/threads/image-6.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-2.png",
+            src: "assets/fanta/threads/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-7.png",
+            src: "assets/fanta/threads/image-7.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-3.png",
+            src: "assets/fanta/threads/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-8.png",
+            src: "assets/fanta/threads/image-8.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/fanta/threads/image-4.png",
+            src: "assets/fanta/threads/image-4.webp",
             ratio: "portrait",
           },
         ],
@@ -949,22 +949,22 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/baskin/sydney/image-1.png",
+            src: "assets/baskin/sydney/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/sydney/image-2.png",
+            src: "assets/baskin/sydney/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/sydney/image-3.png",
+            src: "assets/baskin/sydney/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/sydney/image-4.png",
+            src: "assets/baskin/sydney/image-4.webp",
             ratio: "portrait",
           },
           // {
@@ -995,22 +995,22 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin/island/image-1.png",
+            src: "assets/baskin/island/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/island/image-2.png",
+            src: "assets/baskin/island/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/island/image-3.png",
+            src: "assets/baskin/island/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/island/image-4.png",
+            src: "assets/baskin/island/image-4.webp",
             ratio: "portrait",
           },
           {
@@ -1038,22 +1038,22 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/baskin/galactic/image-1.png",
+            src: "assets/baskin/galactic/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/galactic/image-4.png",
+            src: "assets/baskin/galactic/image-4.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/galactic/image-3.png",
+            src: "assets/baskin/galactic/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/baskin/galactic/image-2.png",
+            src: "assets/baskin/galactic/image-2.webp",
             ratio: "portrait",
           },
         ],
@@ -1479,17 +1479,17 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/circle/main/image-1.png",
+            src: "assets/circle/main/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/main/image-2.png",
+            src: "assets/circle/main/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/main/image-3.png",
+            src: "assets/circle/main/image-3.webp",
             ratio: "portrait",
           },
         ],
@@ -1501,27 +1501,27 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/circle/ooh/image-1.png",
+            src: "assets/circle/ooh/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/ooh/image-2.png",
+            src: "assets/circle/ooh/image-2.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/ooh/image-3.png",
+            src: "assets/circle/ooh/image-3.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/ooh/image-4.png",
+            src: "assets/circle/ooh/image-4.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/ooh/image-5.png",
+            src: "assets/circle/ooh/image-5.webp",
             ratio: "portrait",
           },
         ],
@@ -1533,12 +1533,12 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/circle/print/image-1.png",
+            src: "assets/circle/print/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/circle/print/image-2.png",
+            src: "assets/circle/print/image-2.webp",
             ratio: "portrait",
           },
         ],
@@ -1569,7 +1569,10 @@ window.PORTFOLIO = [
     cover: "assets/protest/cover.webp",
     shape: "portrait",
 
-    hoverImages: ["assets/protest/cover.webp", "assets/protest/landing/image-1.webp"],
+    hoverImages: [
+      "assets/protest/cover.webp",
+      "assets/protest/landing/image-1.webp",
+    ],
 
     intro:
       'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',
@@ -1618,12 +1621,12 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/protest/image-1.png",
+            src: "assets/protest/image-1.webp",
             ratio: "portrait",
           },
           {
             type: "image",
-            src: "assets/protest/image-2.png",
+            src: "assets/protest/image-2.webp",
             ratio: "portrait",
           },
           // {
@@ -1693,7 +1696,7 @@ window.PORTFOLIO = [
       },
       {
         type: "image",
-        src: "assets/color-of-change/logo-2.png",
+        src: "assets/color-of-change/logo-2.webp",
         col: 9,
         span: 4,
         row: 1,
@@ -1702,7 +1705,7 @@ window.PORTFOLIO = [
 
     hero: {
       type: "image",
-      src: "assets/color-of-change/logo-2.png",
+      src: "assets/color-of-change/logo-2.webp",
     },
 
     sections: [
@@ -1731,7 +1734,7 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/badge/image-1.png",
+            src: "assets/color-of-change/badge/image-1.webp",
             ratio: "portrait",
           },
           {
@@ -1772,15 +1775,15 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/twitter/image-1.png",
+            src: "assets/color-of-change/twitter/image-1.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/twitter/image-2.png",
+            src: "assets/color-of-change/twitter/image-2.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/twitter/image-3.png",
+            src: "assets/color-of-change/twitter/image-3.webp",
           },
         ],
       },
@@ -1792,15 +1795,15 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/instagram-1/image-1.png",
+            src: "assets/color-of-change/instagram-1/image-1.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/instagram-1/image-2.png",
+            src: "assets/color-of-change/instagram-1/image-2.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/instagram-1/image-3.png",
+            src: "assets/color-of-change/instagram-1/image-3.webp",
           },
         ],
       },
@@ -1812,15 +1815,19 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/instagram-2/image-1.png",
+            src: "assets/color-of-change/instagram-2/image-1.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/instagram-2/image-2.png",
+            src: "assets/color-of-change/instagram-2/image-2.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/instagram-2/image-3.png",
+            src: "assets/color-of-change/instagram-2/image-3.webp",
+          },
+          {
+            type: "image",
+            src: "assets/color-of-change/instagram-2/image-4.webp",
           },
         ],
       },
@@ -1832,15 +1839,15 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/posts/image-1.png",
+            src: "assets/color-of-change/posts/image-1.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/posts/image-2.png",
+            src: "assets/color-of-change/posts/image-2.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/posts/image-3.png",
+            src: "assets/color-of-change/posts/image-3.webp",
           },
         ],
       },
@@ -1852,7 +1859,7 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/youtube/image-1.png",
+            src: "assets/color-of-change/youtube/image-1.webp",
           },
         ],
       },
@@ -1863,15 +1870,15 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/ooh/image-1.png",
+            src: "assets/color-of-change/ooh/image-1.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/ooh/image-2.png",
+            src: "assets/color-of-change/ooh/image-2.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/ooh/image-3.jpg",
+            src: "assets/color-of-change/ooh/image-3.webp",
           },
         ],
       },
@@ -1883,15 +1890,15 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/experiential/image-1.png",
+            src: "assets/color-of-change/experiential/image-1.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/experiential/image-2.png",
+            src: "assets/color-of-change/experiential/image-2.webp",
           },
           {
             type: "image",
-            src: "assets/color-of-change/experiential/image-3.png",
+            src: "assets/color-of-change/experiential/image-3.webp",
           },
         ],
       },
@@ -1903,7 +1910,7 @@ window.PORTFOLIO = [
         media: [
           {
             type: "image",
-            src: "assets/color-of-change/good-on-u/image-1.png",
+            src: "assets/color-of-change/good-on-u/image-1.webp",
           },
         ],
       },
