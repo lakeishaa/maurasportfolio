@@ -26,7 +26,7 @@ window.PORTFOLIO = [
     heroLayout: "image-right",
     tagline: "Treat Your Imagination",
 
-    cover: "assets/baskin-if/cover.png",
+    cover: "assets/baskin-if/cover.webp",
     shape: "portrait",
 
     hoverImages: [
@@ -180,7 +180,7 @@ window.PORTFOLIO = [
           },
           {
             type: "image",
-            src: "assets/baskin-if/landing/6.jpg",
+            src: "assets/baskin-if/4d/asset-3.jpg",
             ratio: "portrait",
           },
           // {
@@ -324,14 +324,14 @@ window.PORTFOLIO = [
 
     hoverImages: [
       "assets/venmo/cover.jpg",
-      "assets/venmo/landing/1.png",
-      "assets/venmo/landing/2.png",
-      "assets/venmo/landing/3.png",
-      "assets/venmo/landing/4.png",
-      "assets/venmo/landing/5.png",
-      "assets/venmo/landing/6.png",
-      "assets/venmo/landing/7.png",
-      "assets/venmo/landing/8.png",
+      "assets/venmo/landing/1.webp",
+      "assets/venmo/landing/2.webp",
+      "assets/venmo/landing/3.webp",
+      "assets/venmo/landing/4.webp",
+      "assets/venmo/landing/5.webp",
+      "assets/venmo/landing/6.webp",
+      "assets/venmo/landing/7.webp",
+      "assets/venmo/landing/8.webp",
     ],
 
     intro:
@@ -592,7 +592,7 @@ window.PORTFOLIO = [
     heroLayout: "split-text",
 
     // cover: "assets/fanta/landing/10.gif",
-    cover: "assets/fanta/cover.png",
+    cover: "assets/fanta/cover.webp",
     // hoverCover: "assets/fanta/landing/2.png",
     shape: "portrait",
 
@@ -607,7 +607,7 @@ window.PORTFOLIO = [
       // "assets/fanta/landing/7.png",
       // "assets/fanta/landing/8.jpg",
       // // "assets/fanta/landing/3.png",
-      "assets/fanta/landing/10.gif",
+      "assets/fanta/10.gif",
     ],
 
     intro:
@@ -835,11 +835,12 @@ window.PORTFOLIO = [
     tagline: "A World of Flavors",
 
     // cover: "assets/baskin/cover.gif",
-    cover: "assets/baskin/cover.jpeg",
+    cover: "assets/baskin/cover.webp",
     shape: "landscape",
 
     hoverImages: [
       // "assets/baskin/cover.jpeg",
+      "assets/baskin/cover-gif.webp",
       "assets/baskin/cover.gif",
       // "assets/baskin/landing/1.png",
       // "assets/baskin/landing/2.png",
@@ -1079,7 +1080,7 @@ window.PORTFOLIO = [
     brand: "Walmart",
     tagline: "Your Next Era",
 
-    cover: "assets/walmart/cover.png",
+    cover: "assets/walmart/cover.webp",
     shape: "portrait",
 
     hoverImages: [
@@ -1277,7 +1278,7 @@ window.PORTFOLIO = [
     brand: "Merrill",
     tagline: "Can't Stop Banking",
 
-    cover: "assets/merrill/cover.png",
+    cover: "assets/merrill/cover.webp",
     shape: "landscape",
 
     hoverImages: [
@@ -1384,20 +1385,20 @@ window.PORTFOLIO = [
     brand: "Circle",
     tagline: "Meet Circle",
 
-    cover: "assets/circle/cover.jpg",
+    cover: "assets/circle/cover.webp",
     shape: "portrait",
 
     hoverImages: [
-      "assets/circle/cover.jpg",
-      "assets/circle/landing/1.png",
-      "assets/circle/ooh/image-4.png",
-      "assets/circle/landing/2.png",
+      "assets/circle/cover.webp",
+      "assets/circle/landing/image-1.png",
+      "assets/circle/landing/image-2.png",
+      "assets/circle/landing/image-3.png",
       // "assets/circle/landing/3.png",
-      "assets/circle/landing/4.png",
+      "assets/circle/landing/image-4.png",
       // "assets/circle/landing/5.png",
-      "assets/circle/landing/6.png",
-      "assets/circle/landing/7.jpg",
-      "assets/circle/ooh/image-2.png",
+      "assets/circle/landing/image-5.png",
+      "assets/circle/landing/image-6.jpg",
+      "assets/circle/landing/image-7.png",
     ],
 
     heroBlocks: [
@@ -1566,10 +1567,10 @@ window.PORTFOLIO = [
     brand: "Protest Poster",
     tagline: "Affordable. But Unlivable.",
 
-    cover: "assets/protest/cover.jpg",
+    cover: "assets/protest/cover.webp",
     shape: "portrait",
 
-    hoverImages: ["assets/protest/cover.jpg", "assets/protest/landing/1.png"],
+    hoverImages: ["assets/protest/cover.webp", "assets/protest/landing/1.png"],
 
     intro:
       'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',
@@ -1648,10 +1649,10 @@ window.PORTFOLIO = [
     tagline: "Shame On U",
     shape: "landscape",
 
-    cover: "assets/color-of-change/ooh/image-1.png",
+    cover: "assets/color-of-change/image-1.webp",
 
     hoverImages: [
-      "assets/color-of-change/ooh/image-1.png",
+      "assets/color-of-change/image-1.webp",
       "assets/color-of-change/image-1.png",
       "assets/color-of-change/image-2.png",
       "assets/color-of-change/ooh/image-2.png",
