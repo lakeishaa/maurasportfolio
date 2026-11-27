@@ -319,11 +319,11 @@ window.PORTFOLIO = [
     tagline: "Social At Venmo",
     heroLayout: "text-right",
 
-    cover: "assets/venmo/cover.jpg",
+    cover: "assets/venmo/cover.webp",
     shape: "large",
 
     hoverImages: [
-      "assets/venmo/cover.jpg",
+      "assets/venmo/cover.webp",
       "assets/venmo/landing/1.webp",
       "assets/venmo/landing/2.webp",
       "assets/venmo/landing/3.webp",
@@ -1391,15 +1391,13 @@ window.PORTFOLIO = [
 
     hoverImages: [
       "assets/circle/cover.webp",
-      "assets/circle/landing/image-1.png",
-      "assets/circle/landing/image-2.png",
-      "assets/circle/landing/image-3.png",
-      // "assets/circle/landing/3.png",
-      "assets/circle/landing/image-4.png",
-      // "assets/circle/landing/5.png",
-      "assets/circle/landing/image-5.png",
-      "assets/circle/landing/image-6.jpg",
-      "assets/circle/landing/image-7.png",
+      "assets/circle/landing/image-1.webp",
+      "assets/circle/landing/image-2.webp",
+      "assets/circle/landing/image-3.webp",
+      "assets/circle/landing/image-4.webp",
+      "assets/circle/landing/image-5.webp",
+      "assets/circle/landing/image-6.webp",
+      "assets/circle/landing/image-7.webp",
     ],
 
     heroBlocks: [
@@ -1571,7 +1569,7 @@ window.PORTFOLIO = [
     cover: "assets/protest/cover.webp",
     shape: "portrait",
 
-    hoverImages: ["assets/protest/cover.webp", "assets/protest/landing/1.png"],
+    hoverImages: ["assets/protest/cover.webp", "assets/protest/landing/image-1.webp"],
 
     intro:
       'To address the issue of homelessness in the United States, we designed a poster that replicates the essence and style of furniture ads, yet "selling" the lifestyle that no one would dream of living. \n\n Because living unhoused is affordable, but unlivable.\n\n Won a <a href="https://graphis.com/account/login?redirect=%2Fcompetitions%2Fawards&search=maura+munaf/" target="_blank" rel="noopener noreferrer">Graphis Silver Award</a>.',
@@ -1654,9 +1652,9 @@ window.PORTFOLIO = [
 
     hoverImages: [
       "assets/color-of-change/image-1.webp",
-      "assets/color-of-change/image-1.png",
-      "assets/color-of-change/image-2.png",
-      "assets/color-of-change/ooh/image-2.png",
+      "assets/color-of-change/image-2.webp",
+      "assets/color-of-change/image-3.webp",
+      "assets/color-of-change/image-4.webp",
     ],
 
     // intro:
