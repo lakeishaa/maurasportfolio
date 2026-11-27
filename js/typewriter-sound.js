@@ -5,7 +5,7 @@
   const soundFiles = [
     "assets/sound/typewriter-1.mp3",
     "assets/sound/typewriter-2.mp3",
-    "assets/sound/typewriter-3.m",
+    "assets/sound/typewriter-3.mp3",
   ];
 
   // const VOLUME = 0.25;

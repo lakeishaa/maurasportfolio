@@ -194,7 +194,7 @@ window.PORTFOLIO = [
           // },
           {
             type: "video",
-            src: "assets/baskin-if/4d/asset-4.mov",
+            src: "assets/baskin-if/4d/asset-4.mp4",
             label: "4D PhotoBooth",
             ratio: "wide",
             autoplay: true,
@@ -208,7 +208,7 @@ window.PORTFOLIO = [
           },
           {
             type: "video",
-            src: "assets/baskin-if/4d/asset-6.mov",
+            src: "assets/baskin-if/4d/asset-6.mp4",
             label: "4D PhotoBooth",
             ratio: "wide",
             autoplay: true,
