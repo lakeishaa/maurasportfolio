@@ -31,7 +31,7 @@ window.PORTFOLIO = [
 
     hoverImages: [
       // "assets/baskin-if/cover.png",
-      "assets/baskin-if/cover.gif",
+      "assets/baskin-if/cover-gif.webp",
       // "assets/baskin-if/landing/1.png",
       // "assets/baskin-if/landing/2.png",
       // "assets/baskin-if/landing/3.png",
@@ -597,6 +597,7 @@ window.PORTFOLIO = [
     shape: "portrait",
 
     hoverImages: [
+      "assets/fanta/cover-gif.webp",
       // "assets/fanta/cover-2.gif",
       // //   "assets/fanta/landing/1.jpg",
       // "assets/fanta/landing/2.png",
@@ -607,7 +608,7 @@ window.PORTFOLIO = [
       // "assets/fanta/landing/7.png",
       // "assets/fanta/landing/8.jpg",
       // // "assets/fanta/landing/3.png",
-      "assets/fanta/10.gif",
+      // "assets/fanta/10.gif",
     ],
 
     intro:
@@ -841,7 +842,7 @@ window.PORTFOLIO = [
     hoverImages: [
       // "assets/baskin/cover.jpeg",
       "assets/baskin/cover-gif.webp",
-      "assets/baskin/cover.gif",
+      // "assets/baskin/cover.gif",
       // "assets/baskin/landing/1.png",
       // "assets/baskin/landing/2.png",
       // "assets/baskin/landing/3.png",
@@ -1084,7 +1085,7 @@ window.PORTFOLIO = [
     shape: "portrait",
 
     hoverImages: [
-      "assets/walmart/cover.gif",
+      "assets/walmart/cover-gif.webp",
       // "assets/walmart/landing/1.png",
       // "assets/walmart/landing/2.png",
       // "assets/walmart/landing/3.png",
@@ -1283,7 +1284,7 @@ window.PORTFOLIO = [
 
     hoverImages: [
       // "assets/merrill/cover.jpg",
-      "assets/merrill/cover.gif",
+      "assets/merrill/cover-gif.webp",
       // "assets/merrill/landing/1.png",
       // "assets/merrill/landing/2.png",
       // "assets/merrill/landing/3.png",

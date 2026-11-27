@@ -448,6 +448,9 @@ body[data-page="about"] > .site-header {
     --photo-width: 100%;
     --heading-size: clamp(30px, 7vw, 40px);
 
+    box-sizing: border-box;
+    overflow-x: clip;
+
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows:
       auto
